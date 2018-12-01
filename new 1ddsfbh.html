@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>Главная страница</title>
+</head>
+<body>
+ 
+<a href="/one/" onclick="followLink(event, this)">первая страница</a> | 
+<a href="/two/" onclick="followLink(event, this)">вторая страница</a> | 
+<a href="/three/" onclick="followLink(event, this)">третья страница</a>
+ 
+<script type="text/javascript">
+ 
+function followLink(event, link)
+{
+    var nameLink = link.innerHTML;
+    uploadContent(link.href);
+    history.pushState({title:nameLink, href:link.href}, null, link.href);
+    updateTitle(nameLink);
+    event.preventDefault();
+}
+ 
+function updateTitle(title)
+{
+    var elm = document.getElementsByTagName('title')[0];
+    elm.innerHTML = title;
+}
+ 
+function uploadContent(link)
+{
+    //тут реализуем загрузку части страницы с помощью AJAX
+}
+ 
+window.addEventListener("popstate", function(e) {
+    uploadContent(e.state.href);                                     
+    updateTitle(e.state.title);
+}, false );
+ 
+</script>
+ 
+</body>
+</html>

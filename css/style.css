@@ -1,0 +1,16 @@
+body {
+    margin:0;
+}
+.content {
+    width:500px;
+    height:2000px;
+    background: red;
+    display: block;
+    margin: auto;
+}
+.header {
+    position: fixed;
+    height:50px;
+    width:100%;
+    background: green;
+}

@@ -1,0 +1,486 @@
+body{
+	background-image:url(../fon1.jpg);
+	font: 11px Verdana;
+	color: #696969;
+	margin:0;
+}
+
+
+.wrapper{
+	margin: 0px auto;
+	background-color: #dde1e0;
+}
+
+
+.header1{
+	height: 110px;
+	position: relative;
+}
+
+/*cabinet{
+	background-image: url(../header1.png);
+	height: 110px;
+	width: 100%;
+	position: absolute;
+	top:0%;
+	left:0%;
+	
+}*/
+	Позиция относительно дувух картинок opacity: 0.5;
+
+	
+
+	
+.card{
+	position: absolute;
+	top:10%;
+	left:50%;
+}	
+.week{
+	position: relative;
+	top:30px;
+	left:2px;
+}
+.date{
+	position: absolute;
+	top:45px;
+	left:150px;
+}
+.work{
+	position: absolute;
+	top:20px;
+	left:30px;
+}
+.button{
+	position: absolute;
+	top:15%;
+	left:2%;
+}
+.call{
+	position: absolute;
+	top:10%;
+	right:1%;
+} /*сделать формы*/
+.vk{
+	position: absolute;
+	top:52%;
+	right:14%;
+}	
+.fb{
+	position: absolute;
+	top:52%;
+	right:10%;
+}
+
+.ok{
+	position: absolute;
+	top:52%;
+	right:6%;
+}
+.ins{
+	position: absolute;
+	top:52%;
+	right:2%;
+}
+
+.header3{
+	background-color: #CC0F4E;
+	height:60px;
+  	position: relative;
+}  
+
+
+.katalog{
+	position: absolute;
+	top:0%;
+	left:0%;
+}
+
+.menu{
+	position: absolute;
+	top:0%;
+	right:0%;
+	
+}
+.search{
+	cursor: pointer;
+    width: 43px;
+    height: 41px;
+    position: absolute;
+    top: 32%;
+    right: 41%;
+	height:30px;
+	width:30px;
+    border: none;
+    background: url(../41.jpg) center no-repeat;
+}
+.searchinput{
+    position: absolute;
+	top:32%;
+	right:40%;
+	z-index: 4;
+    padding: 0 50px 0 15px;
+    background-color: white;
+    border: 1px solid #d7d7d7;
+    border-radius: 9px 10px 10px 9px;
+	height:30px;
+	width:200px;
+	
+}
+
+
+.content{
+	background-color: #e1d9ce;
+	
+  }
+.new{
+	position: absolute;
+	top:1%;
+	left:1%;
+}
+.photo1{
+	
+	position: absolute;
+	height: 70%;
+	width:25%;
+	top:5%;
+	left:7%;
+	}
+	
+.text11{
+	padding: 10% 10% 10% 10%;
+	}
+	
+.photo2{
+	
+	position: absolute;
+	height: 100%;
+	width:46%;
+	top:10%;
+	right:28%;
+	
+	}
+	
+.photo3{
+	
+	position: absolute;
+	height: 72%;
+	width:30%;
+	bottom:5%;
+	right:5%;
+	}
+.mbutton{
+	width: 20%;
+	height:20%;
+	border:5px solid #ffffff;
+	text-align:center;
+	padding:10px;
+	position:absolute;
+	
+	cursor:pointer;
+	color:#333;
+	border-radius:5px;
+	top:2%;
+	right:40%;
+	background-color:#ffe2d5;
+}
+
+.mbutton:active {
+    background-color:#fffb90;
+}
+.b{
+	position:relative;
+	top:10%;
+	right:0%;
+	width: 70%;
+	height:60%;
+}
+
+.txt1{
+	font-family:Helvetica;
+	font-size:14px;
+	width: 30%;
+	height:10%;
+	color:#3a3634;
+	position:absolute;
+	bottom:8%;
+	left:5%;
+}
+.txt2{
+	font-family:Helvetica;
+	font-size:14px;
+	width: 30%;
+	height:10%;
+	color:#3a3634;
+	position:absolute;
+	top:0;
+	right:5%;
+}
+/*.lheader{
+	background-color: #dde1e0;
+	position: absolute;
+	height: 12%;
+	width:50%;
+	top:0%;
+	left:25%;
+	box-shadow: #484542 -11px 0 0 12px;
+	 opacity:0.8;				  
+    
+	}*/
+	
+.car{
+	position: absolute;
+	top:350px;
+	left:35px;
+	max-width:250px;
+}
+
+
+	
+.chair1{
+	position: absolute;
+	top:350px;
+	left:345px;
+	max-width:250px;
+}	
+	
+.seat{
+	position: absolute;
+	top:350px;
+	left:651px;
+	max-width:250px;
+}	
+
+.photo4{
+	position: absolute;
+	top:80px;
+	left:927px;
+	}	
+.chair{
+	position: absolute;
+	top:350px;
+	left:957px;
+	max-width:250px;
+}	
+
+.photo5{
+	position: absolute;
+	top:441px;
+	left:10px;
+	}
+	
+.stroller{
+	position: absolute;
+	top:711px;
+	left:35px;
+	max-width:250px;
+}
+
+.photo6{
+	position: absolute;
+	top:441px;
+	left:315px;
+	}	
+.stroller2{
+	position: absolute;
+	top:711px;
+	left:345px;
+	max-width:250px;
+}	
+
+.photo7{
+	position: absolute;
+	top:441px;
+	left:621px;
+	}	
+.stroller3{
+	position: absolute;
+	top:711px;
+	left:651px;
+	max-width:250px;
+}	
+
+.photo8{
+	position: absolute;
+	top:441px;
+	left:927px;
+	}	
+.swaddling{
+	position: absolute;
+	top:711px;
+	left:957px;
+	max-width:250px;
+}	
+
+.photo9{
+	position: absolute;
+	top:802px;
+	left:10px;
+	}
+	
+.stroller4{
+	position: absolute;
+	top:1071px;
+	left:35px;
+	max-width:250px;
+}
+
+.photo10{
+	position: absolute;
+	top:802px;
+	left:315px;
+	}	
+.table{
+	position: absolute;
+	top:1071px;
+	left:345px;
+	max-width:250px;
+}	
+.new1 {
+    background-image: url(../2.png);
+	height: 26px;
+	width:54;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: auto auto;
+	position: relative;
+	top:90px;
+	left:10px;
+	line-height: 26px;
+    font-size: 20px;
+	color: #ffffff;
+	}
+
+.basket{
+	position:fixed;
+	height:52px;
+	width:57px;
+	top:230px;
+	right:0;
+}
+.like{
+	position:fixed;
+	height:52px;
+	width:57px;
+	top:290px;
+	right:0;
+}
+.catalog{
+	position:fixed;
+	height:52px;
+	width:57px;
+	top:350px;
+	right:0;
+}
+
+.stock{
+	height:460px;
+	width:1230px;
+	border: 2px solid #00008B;
+	border-radius: 8px;
+	position: absolute;
+	top:1180px;
+	right:0;
+	}
+.header{
+	line-height: 80px;
+	padding: 0 38px;
+	color: #041ba2;
+	font-size: 20px;
+	font-weight: 700;
+	text-transform: uppercase;
+	border-bottom: 1px solid #dfdfdf;
+
+
+}
+.topbutton{
+	width: 100px;
+	border:2px solid #ccc;
+	background:#f7f7f7;
+	text-align:center;
+	padding:10px;
+	position:fixed;
+	bottom:50px;
+	right:50px;
+	cursor:pointer;
+	color:#333;
+	font-family:verdana;
+	font-size:12px;
+	border-radius:5px;
+}
+.inf{
+	width: 100px;
+	height: 50px;
+	position: absolute;
+	right: 10px;
+}
+.phone{
+	width: 100px;
+	height:30px;
+	display:flex;
+    flex-direction:column;
+	align-items:center;
+	justify-content:flex-start;
+	font-family:verdana;
+	font-size:10px;
+	
+}
+.phone1{
+	margin-top:0;
+	}
+	
+.phone2{
+	margin-top:0;
+	}
+
+.net{
+	width: 100px;
+	display:flex;
+	justify-content:space-around;
+	align-items:stretch;
+}
+.text11{
+    opacity: 0.5;
+	}
+	
+.button1{
+	margin-left:400px;
+	width: 500px;
+	height:30px;
+	display:flex;
+    flex-direction:row;
+	align-items:center;
+	justify-content:space-around;
+	font-family:verdana;
+	font-size:10px;
+	/*background: #1e1e1e;
+	box-shadow: inset #1e1e1e 0 0 40px 10px,
+	                  #1e1e1e 0 0 24px 12px;
+    padding: 10px;
+	border-radius: 10px;*/
+	text-shadow: 0px 0px 0px black, 0 0 1em black;
+	font-family: garamond;
+	font-style:normal;
+	font-weight:bolder;
+	font-size:120%;
+	opacity: 0.8;
+  
+}
+.botton2{
+	margin-top:5%;
+	color:#ffffff;
+	}
+.botton3{
+	margin-top:5%;
+	color:#ffffff;
+	}
+.botton4{
+	margin-top:5%;
+	color:#ffffff;
+	}
+.botton5{
+	margin-top:5%;
+	color:#ffffff;
+	}
