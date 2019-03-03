@@ -1,0 +1,49 @@
+.headerMain{
+    position:fixed;
+    margin: 0%;
+	width:100%;
+	background-color: #d4cbcb;
+	z-index: 4;
+	opacity: 0.9;
+	
+}
+	
+/* mark with differing style */
+.mark {
+    font-weight: 400;
+}
+
+/* nav */
+.nav {
+	list-style: none;
+	margin: auto;
+	position: relative;
+	width:100%;
+	
+}
+
+.nav li {
+    float: left;
+    position: relative;
+	width:30%;
+	
+    font-stretch: ultra-condensed;
+	font-family:WaverlyCF-Medium;
+}
+
+/* блоки ссылок */
+.nav li a {
+	display: block;
+	position: relative;
+    text-decoration: none;
+    color: rgb(70, 56, 56);
+    padding: 4%;
+}
+
+/* верхний уровень при наведении */
+.nav > li:hover  {
+    background: #ffffff;
+    
+	
+	/*border-radius: 5px;*/
+}
