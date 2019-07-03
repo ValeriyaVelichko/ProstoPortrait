@@ -1,0 +1,148 @@
+
+
+
+
+.grapfic,.computerGrapfic,.watercolor{
+  margin: 30px;
+  height: 100px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px #ffcda9, 0 0 20px #fff6f0;
+	
+}
+.nav li:nth-child(2)
+{
+	font-size: 20px;
+	font-family:TuesdayNight-Regular;
+	text-align: center;
+	}
+
+.navigation {
+	display: flex;
+ 
+	padding:100px 20% 100px 31%;
+
+	
+}
+.icons{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+ 
+}
+.grapfic:hover,.computerGrapfic:hover,.watercolor:hover{
+  margin: 20px;
+	height: 120px;
+  background-color: #ffcda9;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #ffcda9, 0 0 20px #fff6f0;
+}
+
+
+
+.massagers_white{
+	/*position: absolute; */
+	margin: 0px;
+	right: 10px;
+	list-style:none ;
+	text-decoration: none;
+	
+	
+  }
+  
+  .vk_white,.inst_white,.fb_white {
+	margin: 10px 20px 20px 0;
+	height:52px;
+	  width:52px;
+   
+  }
+
+  .wrapper{
+ width: 100%;
+
+  }
+
+	.container { 
+    background-color: #ffffff;
+    width: 100%; /* ширина блока-контейнера */
+    max-width: 960px; /* максимальная ширина контейнера */
+    margin: 0 auto; /* этот стиль центрирует контейнер */
+}
+#gallery{
+  background-color: #ffffff;
+  height: 100%;
+}
+.photo {
+  background-color: #ffffff;
+    float: left; /* говорим элементам выстраиваться один за другим */
+    width: 33.333333%; /* устанавливаем ширину элемента */
+    padding: 10px; /* добавляем отступы с каждой стороны */
+    box-sizing: border-box; /* меняем способ вычисления ширины */
+}
+
+.photo img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.photo a:hover {
+    opacity: 0.5;
+}
+
+.photo a {
+    display: block;
+    position: relative;
+}
+
+.photo a:after {
+    content: '';
+    background: transparent url(../img/icons/eye-icon.png) no-repeat center;
+    width: 52px;
+    height: 35px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    visibility: hidden;
+}
+h1{
+  color:#2e2c2b; 
+  font-size: 50px; 
+  font-family:TuesdayNight-Regular;
+  padding-top: 100px;
+  text-align: center;
+  padding: 50px;
+}
+
+.content{
+background-color: #fff6f0;
+text-align: center;
+padding: 80px 0 50px 0;
+margin: 0px;
+
+box-shadow: 0 0 30px #ffcda9, 0 0 20px #ffcda9;
+}
+
+.footer{
+  background-color:#2d525b;
+  box-shadow: inset 0 10px 20px #363535;
+  padding: 3%;
+}
+.massagers_white{
+  right: 10px;
+  list-style:none ;
+  text-decoration: none;
+}
+.vk_white,.inst_white,.fb_white {
+  margin: 10px 20px 20px 0;
+  height:52px;
+	width:52px;
+}
+
+  @media screen and (min-width: 800px) {
+		.icons {
+			flex-direction: row;
+		}
