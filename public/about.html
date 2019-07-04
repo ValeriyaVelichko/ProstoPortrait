@@ -31,7 +31,7 @@
             <ul class="nav">
                 <li>
       <div class="dropdown">меню
-        <img class="mainmenubtn" src= "MAIN/img/menu.png">
+        <img class="mainmenubtn" src= "about/images/menu.png">
         <div class="dropdown-child">
           <a href="index.html">главная</a>
           <a href="gallery.html">галерея</a>
@@ -123,13 +123,13 @@
       <div class="footer">
         <ul class="massagers_white">
           <a href= "https://vk.com/v.vyalichka">
-            <tr><img class="vk_white" src="MAIN/img/VK.png" alt=""></tr>
+            <tr><img class="vk_white" src="about/images/vk.png" alt=""></tr>
           </a>
           <a href= "https://www.instagram.com/vyalichka/">
-            <tr><img class="inst_white" src="MAIN/img/INST.png" alt=""></tr>
+            <tr><img class="inst_white" src="about/images/inst.png" alt=""></tr>
           </a>
           <a href= "https://www.facebook.com/v.vyalichka">
-            <tr><img class="fb_white" src="MAIN/img/FB.png" alt=""></tr>
+            <tr><img class="fb_white" src="about/images/fb.png" alt=""></tr>
           </a>
         </ul>
       </div>
@@ -148,175 +148,8 @@
       firebase.initializeApp(config);
    </script>
     
-    <script src="Galeria/JSGaleria/jsHeader.js">
+    <script src="about/js/header.js">
     </script>
-    <script src="Galeria/JSGaleria/slider.js">
-    </script>
-
-
-    <!--
-   
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-    <div id="news" class="news">
-   
-
-    </div>
-    <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                var db = firebase.firestore();
-                //var newsRef = db.collection('News').doc('nwmoFtyROQWhv8MUCwKy');
-    
-                //db.collection("News").add({
-                //    image: "image url 2",
-                //    header: "header 2",
-                //    source: "onliner",
-                //    text: "новость текст 2"
-                //})
-                //    .then(function (docRef) {
-                //        console.log("Document written with ID: ", docRef.id);
-                //    })
-                //    .catch(function (error) {
-                //        console.error("Error adding document: ", error);
-                //    });
-var divMain = document.createElement("main");
-
-divMain.classList.add("main", "columns");    
-
-                db.collection("News").get()
-                    .then(function (objNews) {
-                        objNews.forEach(function (doc) {
-                            var newsObject = doc.data();
-                            addNewOnPage(newsObject);
-                        });
-                    })
-
-                function addNewOnPage(newsOne) {
-    
-                 
-                  
-
-            
-
-
-var divSection = document.createElement("section");
-divMain.appendChild(divSection);
-divSection.classList.add("column", "main-column");
-
-
-var divLink = document.createElement("a");
-divLink.href = 'http://google.ru';
-divLink.title = 'это ссылка';
-divLink.appendChild(document.createTextNode(''));
-divSection.appendChild(divLink);
-divLink.classList.add("article", "first-article");
-
-var divBody = document.createElement("div");
-divLink.appendChild(divBody);
-divBody.classList.add("article-body");
-
-var divH = document.createElement("h2");
-divH.innerHTML = newsOne.header;
-divBody.appendChild(divH);
-divH.classList.add("article-title");
-
-var divP = document.createElement("p");
-divP.innerHTML = newsOne.text;
-divBody.appendChild(divP);
-divP.classList.add("article-content");
-
-var divFooter = document.createElement("footer");
-divFooter.innerHTML = newsOne.source;
-divBody.appendChild(divFooter);
-divFooter.classList.add("article-info");
-
-
-                }
-    
-           
-
-
-db.collection("SecondNews").get()
-                    .then(function (objSecondNews) {
-                        objSecondNews.forEach(function (doc) {
-                            var secondnewsObject = doc.data();
-                            addNewOnPage(secondnewsObject);
-                        });
-                    })
-
-                function addNewOnPage(newstwo) {
-
-                  
-                 
-           
-
-
-var divSectionsec = document.createElement("section");
-divMain.appendChild(divSectionsec);
-divSectionsec.classList.add("column");
-
-var divLinksec = document.createElement("a");
-divLinksec.href = 'http://google.ru';
-divLinksec.title = 'это ссылка';
-divLinksec.appendChild(document.createTextNode(''));
-divSectionsec.appendChild(divLinksec);
-divLinksec.classList.add("article");
-
-
-var imgsec = document.createElement("img");
-imgsec.src = newstwo.image;
-divLinksec.appendChild(imgsec);
-imgsec.classList.add("article-image");
-
-var divBodysec = document.createElement("div");
-divLinksec.appendChild(divBodysec);
-divBodysec.classList.add("article-body");
-
-var divHsec = document.createElement("h2");
-divHsec.innerHTML = newstwo.header;
-divBodysec.appendChild(divHsec);
-divHsec.classList.add("article-title");
-
-var divPsec = document.createElement("p");
-divPsec.innerHTML = newstwo.text;
-divBodysec.appendChild(divPsec);
-divPsec.classList.add("article-content");
-
-var divFootersec = document.createElement("footer");
-divBodysec.appendChild(divFootersec);
-divFootersec.classList.add("article-info");
-
-var divSpansec = document.createElement("span");
-divSpansec.innerHTML = newstwo.source;
-divFootersec.appendChild(divSpansec);
-
-document.getElementById("news").appendChild(divMain);
-                }
-    
-    });         
-   
-                    
-           
-        </script>-->
+ 
   </body>
 </html>

@@ -26,7 +26,7 @@
   margin: 4% 15% 4% 13%;
   padding: 2%;
   background: #fff6f0;
-  background-image: url(../img/backgroundWhite.png);
+  background-image: url(../images/backgroundWhite.png);
   box-shadow: 0 0 10px #ffcda9, 0 0 2px #ffcda9;
 }
 .about:hover,
@@ -77,7 +77,7 @@ ul#table li > div {
   border:2px solid #ffff; 
 }
 .go:hover{
-  background-color:#ffff;
+
 	border: 2px solid #000000;
 }
 button {
