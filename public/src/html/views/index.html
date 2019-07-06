@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <% 
+      var data = {
+        title: "ProstoPortrait"
+      };
+  %>
+  ${  _.template(require('./../includes/head.html'))(data) }
+  <body>
+    <!--menu-->
+    ${require('./../includes/menu.html')}
+    <!--header-->
+    ${require('./../includes/header.html')}
+    <!--slider-->
+    ${require('./../includes/slider.html')}
+    <!--news-->
+    ${require('./../includes/news.html')}
+    <!--footer-->
+    ${require('./../includes/footer.html')}
+    <!--scripts-->
+    ${require('./../includes/scripts/scripts.html')}
+  </body>
+</html>

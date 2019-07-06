@@ -1,0 +1,157 @@
+/*Head*/
+.logo{
+  background-color: #ffffff;
+  text-align: center;
+  margin:0 5%;
+  border: 3px solid #2e2c2b;
+}
+.prostoportrait_eng{
+  color:#2e2c2b; 
+  font-size: 70px; 
+  font-family:TuesdayNight-Regular;
+  padding-top: 100px;
+  text-align: center;
+}
+.prostoportrait_rus{
+  font-size: 20px; 
+  margin: 0%;
+  color:#2e2c2b;
+  font-family:Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+.about{
+  display: flex;
+  flex-direction: column;
+  width:70%;
+  margin: 3% 15% 4% 15%;
+  background: #fff6f0;
+  background-image: url(../img/background_white.png);
+  box-shadow: 0 0 10px #ffcda9, 0 0 2px #ffcda9;
+}
+.about:hover,
+.about:focus {
+  box-shadow: 0 0 30px #ffcda9, 0 0 20px #ffcda9;
+}
+.triangle{
+  width:100%;
+}
+.table{
+  text-align: left;
+  margin: 0 0 0 0;
+  padding: 0px;
+  width:100%;
+}
+a{
+  color: #2e2c2b;
+}
+ul#table {
+  padding: 0px;
+  margin: 8px;
+}
+ ul#table li{
+  text-align: left;
+  list-style: none;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+}
+ul#table li > div {
+  display: inline-block;
+  vertical-align: top;
+}
+.icon_livicon_shadowed{
+  width: 40px;
+  height: 40px;
+  float:left;
+  margin: 7px 7px 7px 0;
+}
+.go{
+  float: right;
+  font-size: 20px; 
+  padding:10px 40px  0 40px;
+  margin: 0 10% 0 10%;
+  text-align: center;
+  background-color:#ffcda9;
+  border-radius: 5px;
+  border:2px solid #ffff; 
+}
+.go:hover{
+  background-color:#ffff;
+	border: 2px solid #000000;
+}
+button {
+	transform-style: preserve-3d;
+}
+button:after {
+	top: -100%;
+  left: 0;
+	width: 100%;
+	position: absolute;
+  content: 'ПЕРЕЙТИ';
+  font-family: bahnschrift;
+	transform-origin: left bottom;
+	transform: rotateX(90deg);
+}
+button:hover {
+	transform-origin: center bottom;
+	transform: rotateX(-90deg) translateY(100%);
+}
+button{
+  background-color: #fff6f0;
+  border: none;
+  font-size: 18px;
+  font-family: bahnschrift;
+  color: #222222;
+  position: relative;
+  box-sizing: border-box;
+  transition: all 500ms ease; 
+}
+/*Footer*/
+.footer{
+  background-color:#2d525b;
+  margin-top: 80px;
+  width:100%;
+  box-shadow: inset 0 10px 20px #363535;
+  padding: 3%;
+}
+.massagers_white{
+  right: 10px;
+  list-style:none ;
+  text-decoration: none;
+}
+.vk_white,.inst_white,.fb_white {
+  margin: 10px 20px 20px 0;
+  height:52px;
+	width:52px;
+}
+@media screen and (min-width: 1000px) {
+	.about {
+    flex-direction: row;
+  }
+  .triangle{
+    width:50%;
+  }
+  .table{
+    width:50%;
+  }
+  ul#table {
+    margin: 20px;
+  }
+  .go{
+    float: left;
+    font-size: 20px; 
+    height: 40px;
+    margin: 100px 0 0 7%;
+    text-align: center;
+  }
+  .prosto{
+    padding-top: 100px;
+  }
+  .prostoportrait_eng{
+    color:#2e2c2b; 
+    font-size: 70px; 
+    font-family:TuesdayNight-Regular;
+    padding-top: 100px;
+    text-align: center;
+  }
+}
