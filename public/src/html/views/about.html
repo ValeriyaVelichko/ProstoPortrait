@@ -1,155 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
-    <link rel="shortcut icon" href="Favico.ico" type="image/x-icon"> 
-<link href="About/css/body.css" type="text/css" rel="stylesheet">
-<link href="About/css/header.css" type="text/css" rel="stylesheet">
-<link href="About/css/news.css" type="text/css" rel="stylesheet">
-<link href="About/css/main.css" type="text/css" rel="stylesheet">
-<link href="About/css/menu.css" type="text/css" rel="stylesheet">
-<link href="About/css/slider.css" type="text/css" rel="stylesheet">
-<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <% 
+    var data = {
+      title: "ProstoPortrait"
+    };
+%>
+${  _.template(require('./../includes/head.html'))(data) }
+<body>
+  <!--menu-->
+  ${require('./../includes/menu.html')}
+  <!--news-->
+  ${require('./../includes/about.html')}
+  <!--footer-->
+  ${require('./../includes/footer.html')}
+  <!--scripts-->
+  ${require('./../includes/scripts/scripts.html')}
+</body>
 
-    <!-- update the version number as needed-->
-    <script defer src="/__/firebase/5.9.0/firebase-app.js"></script>
-    <script defer src="/__/firebase/5.9.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/5.9.0/firebase-database.js"></script>
-    <script defer src="/__/firebase/5.9.0/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/5.9.0/firebase-storage.js"></script>
-    <script defer src="/__/firebase/5.9.0/firebase-firestore.js"></script>
-    <script defer src="/__/firebase/init.js"></script>
-  </head>
-
-  <body>
-  <!--MENU-->
-    <div class="headerMain">
-        <div class="menu">
-          <nav>
-            <ul class="nav">
-                <li>
-      <div class="dropdown">меню
-        <img class="mainmenubtn" src= "about/images/menu.png">
-        <div class="dropdown-child">
-          <a href="index.html">главная</a>
-          <a href="gallery.html">галерея</a>
-          <a href="about.html">о себе</a>
-          </div>
-      </div>
-      </li>
-                <li>портретная мастерская</li>
-                <li>+375 29 794 64 63 МТС</li>
-            </ul>
-          </nav>
-          
-        </div>
-      </div>
-
-  <!--Content--> 
-      <div class="news">
-        <main class="main columns">
-          <div class="columns">
-            <div class="column nested-column">
-                <a class="article" href="https://say-hi.me/novosti/uchenye-obnaruzhili-sekretnyj-ingredient-rembrandta.html">
-                  <span class="Prostoportrait">
-                      <p class="prostoportrait_eng"> .ProstoLera. </p>
-                  </span>
-                  <div class="article-body">
-                    <h2 class="article-title">
-                      Ученые обнаружили «секретный ингредиент» Рембрандта
-                    </h2>
-                    <p class="article-content">
-                      Можно сказать, что голландский художник Рембрандт Харменс ван Рейн, ныне известный просто как Рембрандт, стал пионером группового селфи. В то время художники-портретисты обычно рисовали своих моделей сидящими или стоящими в отведенных местах. Но в картинах Рембрандта было движение.
-                      Однако не только движение выделяло его шедевры. Команда ученых во главе с Виктором Гонсалесом утверждает, что сумела раскрыть секретный «ингредиент» яркого стиля импасто Рембрандта. В исследовательской работе, опубликованной в научном журнале Angewandte Chemie, исследователи подробно описывают, что они обнаружили редкое вещество под названием плюмбонакрит в работах голландского художника.
-    
-                      До этого момента это соединение было идентифицировано только в произведениях XIX-XX века, включая одно из произведений Винсента ван Гога. Гонсалес говорит, что открытие было неожиданным, потому что оно было «нетипичным для картин старых мастеров».
-                    </p>
-                    <footer class="article-info">
-                      <span> Источник:Сей-Хай - современное интернет издание о творчестве. </span>
-                    </footer>
-                  </div>
-                </a>  
-                 <a class="article" href="https://news.tut.by/society/627585.html">
-              <div class="article-body">
-                <h2 class="article-title">
-                  В Витебске вандалы испортили граффити Марка Шагала
-                </h2>
-                <p class="article-content">
-                  Об этом сообщил в «Фейсбуке» художник, директор Центра современного искусства Андрей Духовников... 
-                </p>
-                <footer class="article-info">
-                  <span>Источник: TUT.BY</span>
-                </footer>
-              </div>
-            </a>
-        
-                   </div> 
-                  
-          <section class="column">
-            <a class="article" href="#">
-              <figure class="article-image is-3by2">
-                <img src="https://pp.userapi.com/c848620/v848620270/16d5c2/xk2_jC9e1Ts.jpg" alt="">
-              </figure>
-                <div class="article-body">
-              
-                      <footer class="article-info">
-                        <span>Источник: © Art News Ukraine.Under the guidance of Sotheby's.</span>
-                      </footer>
-                </div>
-            </a>
-
-
-            <a class="article" href="https://news.tut.by/society/627585.html">
-              <figure class="article-image in">
-                <img src="https://pp.userapi.com/c856124/v856124202/75d26/VOxk-ME6bmk.jpg" alt="">
-              </figure>
-              <div class="article-body">
-            
-               
-                <footer class="article-info">
-                  <span>Источник: TUT.BY</span>
-                </footer>
-              </div>
-            </a>  
-            
-          </section>
-        </div>
-        </main>
-      </div>
-  
- <!-- FOOTER-->
-      <div class="footer">
-        <ul class="massagers_white">
-          <a href= "https://vk.com/v.vyalichka">
-            <tr><img class="vk_white" src="about/images/vk.png" alt=""></tr>
-          </a>
-          <a href= "https://www.instagram.com/vyalichka/">
-            <tr><img class="inst_white" src="about/images/inst.png" alt=""></tr>
-          </a>
-          <a href= "https://www.facebook.com/v.vyalichka">
-            <tr><img class="fb_white" src="about/images/fb.png" alt=""></tr>
-          </a>
-        </ul>
-      </div>
-    
-    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyAt_HqgXnSMl-zSxJW27ge_AIUQDSXc8eg",
-        authDomain: "prostoportrait.firebaseapp.com",
-        databaseURL: "https://prostoportrait.firebaseio.com",
-        projectId: "prostoportrait",
-        storageBucket: "prostoportrait.appspot.com",
-        messagingSenderId: "770788079932"
-      };
-      firebase.initializeApp(config);
-   </script>
-    
-    <script src="about/js/header.js">
-    </script>
- 
-  </body>
 </html>

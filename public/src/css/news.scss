@@ -1,4 +1,5 @@
-.header_news{
+
+ .header_news{
   background-color:#2d525b;
   box-shadow: inset 0 10px 20px #363535;
   font-size: 30px;
@@ -25,38 +26,37 @@ div, h2, p, figure {
 }
 .Prostoportrait {
   color: #2e2c2b;
-  
-  font-family: TuesdayNight-Regular;
   padding-top: 100px;
   text-align: center;
   padding: 50px;}
+ 
   .prostoportrait_eng {
-  font-size: 120px;
+    font-family: TuesdayNight-Regular;
   }
+
 header {
   color: #ffffff;
   padding: 40px 0  20px;
   text-align: center;
-	font-family:MADE_Evolve_Sans_Medium_EVO;
-  font-size: 14px;
+	font-size: 14px;
   font-weight: 400;
   line-height: 18px;
-}
-.header h1 {
+
+.h1 {
   font-size: 40px;
   font-weight: bold;
 }
-.header h2 a {
+.h2 a {
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   color: white;
   font-size: 20px;
 	opacity: 0.5;
 	text-align: center;
 }
-.header h2 a:hover {
+.h2 a:hover {
   border-bottom-color: white;
   opacity: 1;
-}
+}}
 .column {
   flex: 1;
   flex-direction: column;

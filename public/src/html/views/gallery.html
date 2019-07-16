@@ -1,27 +1,13 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
-<head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Галерея</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta charset="utf-8">
-<link rel="shortcut icon" href="Favico.ico" type="image/x-icon"> 
-
-<link href="gallery/css/reset.css" rel="stylesheet">
-<link href="gallery/css/lightbox.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
-<link href="gallery/css/style.css" rel="stylesheet">
-<link href="gallery/css/body.css" type="text/css" rel="stylesheet">
-<link href="gallery/css/header.css" type="text/css" rel="stylesheet">
-<link href="gallery/css/gallery.css" type="text/css" rel="stylesheet">
-
-<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-</head>
+                <% 
+                    var data = {
+                      title: "ProstoPortrait"
+                    };
+                %>
+                ${  _.template(require('./../includes/head.html'))(data) }
 <body>
-
-<!--MENU-->
+<!--MENU
   <div class="headerMain">
     <div class="menu">
       
@@ -45,7 +31,7 @@
     </div>
   </div>
  
-<!--Navigation-->
+Navigation
 <div class="navigation">
   <div class="icons">
     <figure >
@@ -65,10 +51,10 @@
 
 </div>
 
-<!--Content-->
+Content
 <div class="content">
 
-<!--Gallery-->
+Gallery
 <div class="container">
         
  <h1>Gallery</h1>
@@ -212,7 +198,7 @@
 </div>
 </div>
 
-<!--Footer-->
+Footer
 <div class="footer">
   <ul class="massagers_white">
     <a href= "https://vk.com/v.vyalichka">
@@ -228,8 +214,16 @@
 </div>
 
 <script src="gallery/js/header.js"></script>
-<script src="gallery/js/lightbox-plus-jquery.min.js"></script>
-
-
+<script src="gallery/js/lightbox-plus-jquery.min.js"></script>-->
+ <!--menu-->
+ ${require('./../includes/menu.html')}
+ <!--navigation-->
+ ${require('./../includes/navigation.html')}
+ <!--content-->
+ ${require('./../includes/content.html')}
+ <!--footer-->
+ ${require('./../includes/footer.html')}
+ <!--scripts-->
+ ${require('./../includes/scripts/scripts.html')}
 </body>
 </html>

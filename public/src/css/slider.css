@@ -1,4 +1,10 @@
 /*Slider*/
+@font-face{
+  font-family: 'TuesdayNight-Regular';
+  src: url('../Fonts/TuesdayNight-Regular.otf');
+  font-weight: normal;
+  font-style: normal;
+  }
 .articlenews{
   padding: 50px 0px 50px 0px ;
   width:100%;
@@ -34,19 +40,19 @@ just for appearance; change whatever you want*/
     color: #fff;
 }
 .slide:nth-of-type(1){
-    background-image: url(../img/IMG1.jpg);
+    background-image: url(../img/sliderImage1.jpg);
 }
 .slide:nth-of-type(2){
-    background-image: url(../img/IMG2.jpg);
+    background-image: url(../img/sliderImage2.jpg);
 }
 .slide:nth-of-type(3){
-    background-image: url(../img/IMG3.jpg);
+    background-image: url(../img/sliderImage3.jpg);
 }
 .slide:nth-of-type(4){
-    background-image: url(../img/IMG4.jpg);
+    background-image: url(../img/sliderImage4.jpg);
 }
 .slide:nth-of-type(5){
-    background-image: url(../img/IMG5.jpg);
+    background-image: url(../img/sliderImage5.jpg);
 }
 #slides {
     display: block;

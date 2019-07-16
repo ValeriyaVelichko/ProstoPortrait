@@ -1,142 +1,22 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
-<head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Галерея</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta charset="utf-8">
-<link rel="shortcut icon" href="Favico.ico" type="image/x-icon"> 
-
-<link href="gallery/css/reset.css" rel="stylesheet">
-<link href="gallery/css/lightbox.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
-<link href="gallery/css/style.css" rel="stylesheet">
-<link href="gallery/css/body.css" type="text/css" rel="stylesheet">
-<link href="gallery/css/header.css" type="text/css" rel="stylesheet">
-<link href="gallery/css/gallery.css" type="text/css" rel="stylesheet">
-
-<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-</head>
+                <% 
+                    var data = {
+                      title: "ProstoPortrait"
+                    };
+                %>
+                ${  _.template(require('./../includes/head.html'))(data) }
 <body>
-
-
-  <div class="headerMain">
-    <div class="menu">
-      
-       <nav>
-          <ul class="nav">
-            <li>
-  <div class="dropdown">меню
-    <img class="mainmenubtn" src= "gallery/images/menu.png">
-    <div class="dropdown-child">
-      <a href="index.html">главная</a>
-      <a href="gallery.html">галерея</a>
-      <a href="about.html">о себе</a>
-      </div>
-  </div>
-  </li>
-            <li>.ProstoPortrait.</li>
-            <li>+375 29 794 64 63 МТС</li>
-          </ul>
-        </nav>
-      
-    </div>
-  </div>
- 
-
-<div class="navigation">
-  <div class="icons">
-    <figure >
-     <a href="watercolor.html" ><img class="watercolor"src= "gallery/images/watercolor.png" > </a>
-      <figcaption>Акварель</figcaption>
-  </figure></a>
-  <figure>
-    <a href="graphic.html" ><img class="grapfic"src= "gallery/images/graphic.png"></a>
-     <figcaption>Графика</figcaption>
- </figure></a>
- <figure>
-  <a href="computerGraphic.html" ><img class="computerGrapfic"src= "gallery/images/computerGraphic.png" ></a>
-   <figcaption>Компьютерная Графика</figcaption>
-</figure></a>
-  
-  </div>
-   <!--<p class="header_watercolor"> Акварель</p>--> 
-</div>
-
-<div class="content">
-
-<div class="container">
-        
- <h1>Watercolor</h1>
-  <div id="gallery">
-    <figure class="photo">
-      <a href="gallery/images/watercolor/galleryImage1.jpg" data-lightbox="roadtrip"><img src="gallery/images/watercolor/galleryImage1.jpg" ></a>
-      
-  </figure>
-
-  <figure class="photo">
-      <a href="gallery/images/watercolor/galleryImage2.jpg" data-lightbox="roadtrip"><img src="gallery/images/watercolor/galleryImage2.jpg" ></a>
-
-  </figure>
-
-  <figure class="photo">
-      <a href="gallery/images/watercolor/galleryImage3.jpg" data-lightbox="roadtrip"><img src="gallery/images/watercolor/galleryImage3.jpg" ></a>
-     
-  </figure>
-
-  <figure class="photo">
-      <a href="gallery/images/watercolor/galleryImage4.jpg" data-lightbox="roadtrip"><img src="gallery/images/watercolor/galleryImage4.jpg" ></a>
-  
-  </figure>
-
-  <figure class="photo">
-      <a href="gallery/images/watercolor/galleryImage5.jpg"data-lightbox="roadtrip"><img src="gallery/images/watercolor/galleryImage5.jpg" ></a>
-   
-  </figure>
-
-  <figure class="photo">
-      <a href="gallery/images/watercolor/galleryImage6.jpg" data-lightbox="roadtrip"><img src="gallery/images/watercolor/galleryImage6.jpg" ></a>
-
-  </figure>
-
-  <figure class="photo">
-      <a href="gallery/images/watercolor/galleryImage7.jpg" data-lightbox="roadtrip"><img src="gallery/images/watercolor/galleryImage7.jpg" ></a>
-
-  </figure>
-
-  <figure class="photo">
-      <a href="gallery/images/watercolor/galleryImage8.jpg" data-lightbox="roadtrip"><img src="gallery/images/watercolor/galleryImage8.jpg" ></a>
-      
-  </figure>
-
-  <figure class="photo">
-      <a href="gallery/images/watercolor/galleryImage9.jpg" data-lightbox="roadtrip"><img src="gallery/images/watercolor/galleryImage9.jpg" ></a>
-      
-  </figure>
-  </div>
-<p>.</p>
-</div>
-</div>
-
-<div class="footer">
-  <ul class="massagers_white">
-    <a href= "https://vk.com/v.vyalichka">
-      <tr><img class="vk_white" src="MAIN/images/vk.png" alt=""></tr>
-    </a>
-    <a href= "https://www.instagram.com/vyalichka/">
-      <tr><img class="inst_white" src="MAIN/images/inst.png" alt=""></tr>
-    </a>
-    <a href= "https://www.facebook.com/v.vyalichka">
-      <tr><img class="fb_white" src="MAIN/images/fb.png" alt=""></tr>
-    </a>
-  </ul>
-</div>
-
-<script src="gallery/js/header.js"></script>
-<script src="gallery/js/lightbox-plus-jquery.min.js"></script>
-
-
+ <!--menu-->
+ ${require('./../includes/menu.html')}
+ <!--navigation-->
+ ${require('./../includes/navigation.html')}
+ <!--content-->
+ ${require('./../includes/contentWatercolor.html')}
+ <!--footer-->
+ ${require('./../includes/footer.html')}
+ <!--scripts-->
+ ${require('./../includes/scripts/scripts.html')}
 </body>
 </html>
+

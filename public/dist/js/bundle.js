@@ -10696,10 +10696,10 @@ return jQuery;
 
 /***/ }),
 
-/***/ "./src/css/body.css":
-/*!**************************!*\
-  !*** ./src/css/body.css ***!
-  \**************************/
+/***/ "./src/css/body.scss":
+/*!***************************!*\
+  !*** ./src/css/body.scss ***!
+  \***************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -10707,9 +10707,9 @@ return jQuery;
 
 /***/ }),
 
-/***/ "./src/css/gallery.css":
+/***/ "./src/css/footer.scss":
 /*!*****************************!*\
-  !*** ./src/css/gallery.css ***!
+  !*** ./src/css/footer.scss ***!
   \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -10718,10 +10718,10 @@ return jQuery;
 
 /***/ }),
 
-/***/ "./src/css/header.css":
-/*!****************************!*\
-  !*** ./src/css/header.css ***!
-  \****************************/
+/***/ "./src/css/gallery.scss":
+/*!******************************!*\
+  !*** ./src/css/gallery.scss ***!
+  \******************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -10729,10 +10729,10 @@ return jQuery;
 
 /***/ }),
 
-/***/ "./src/css/main.css":
-/*!**************************!*\
-  !*** ./src/css/main.css ***!
-  \**************************/
+/***/ "./src/css/header.scss":
+/*!*****************************!*\
+  !*** ./src/css/header.scss ***!
+  \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -10740,10 +10740,10 @@ return jQuery;
 
 /***/ }),
 
-/***/ "./src/css/menu.css":
-/*!**************************!*\
-  !*** ./src/css/menu.css ***!
-  \**************************/
+/***/ "./src/css/lightbox.min.css":
+/*!**********************************!*\
+  !*** ./src/css/lightbox.min.css ***!
+  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -10751,31 +10751,20 @@ return jQuery;
 
 /***/ }),
 
-/***/ "./src/css/new.css":
-/*!*************************!*\
-  !*** ./src/css/new.css ***!
-  \*************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./src/css/news.css":
-/*!**************************!*\
-  !*** ./src/css/news.css ***!
-  \**************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./src/css/reset.css":
+/***/ "./src/css/main.scss":
 /*!***************************!*\
-  !*** ./src/css/reset.css ***!
+  !*** ./src/css/main.scss ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./src/css/news.scss":
+/*!***************************!*\
+  !*** ./src/css/news.scss ***!
   \***************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -10788,17 +10777,6 @@ return jQuery;
 /*!****************************!*\
   !*** ./src/css/slider.css ***!
   \****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./src/css/style.css":
-/*!***************************!*\
-  !*** ./src/css/style.css ***!
-  \***************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -10833,16 +10811,51 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     messagingSenderId: "770788079932"
   };
   firebase.initializeApp(config);
-  document.addEventListener('DOMContentLoaded', function () {
+  (0, _jquery2.default)(function () {
     try {
       var app = firebase.app();
       var features = ['auth', 'database', 'messaging', 'storage'].filter(function (feature) {
         return typeof app[feature] === 'function';
-      });
-      document.getElementById('load').innerHTML = "Firebase SDK loaded with " + features.join(', ');
+      }); //  document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
     } catch (e) {
       console.error(e);
       document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
+    }
+  });
+  (0, _jquery2.default)(function () {
+    var db = firebase.firestore();
+    var main = (0, _jquery2.default)('<main>').addClass("main columns");
+    db.collection("News").get().then(function (news) {
+      news.forEach(function (doc) {
+        var news = doc.data();
+        addNewOnPage(news);
+      });
+    });
+
+    function addNewOnPage(news) {
+      var section = (0, _jquery2.default)('<section>').addClass("column main-column");
+      (0, _jquery2.default)(main).append((0, _jquery2.default)(section));
+      var link = (0, _jquery2.default)('<a>', {
+        text: 'Я контейнер-ссылка',
+        href: 'http://google.com'
+      });
+      (0, _jquery2.default)(link).addClass("article first-article");
+      (0, _jquery2.default)(link).append(document.createTextNode(''));
+      (0, _jquery2.default)(section).append((0, _jquery2.default)(link));
+      var body = (0, _jquery2.default)('<div>').addClass("article-body");
+      (0, _jquery2.default)(link).append((0, _jquery2.default)(body));
+      var h = (0, _jquery2.default)('<h2>').addClass("article-title");
+      (0, _jquery2.default)(body).append((0, _jquery2.default)(h));
+      (0, _jquery2.default)(h).text(news.header);
+      var p = (0, _jquery2.default)('<p>').addClass("article-content");
+      (0, _jquery2.default)(body).append((0, _jquery2.default)(p));
+      (0, _jquery2.default)(p).text(news.text);
+      var div = (0, _jquery2.default)('<p>').addClass("article-info");
+      (0, _jquery2.default)(body).append((0, _jquery2.default)(div));
+      var span = (0, _jquery2.default)('<span>');
+      (0, _jquery2.default)(span).text(news.source);
+      (0, _jquery2.default)(div).append((0, _jquery2.default)(span));
+      (0, _jquery2.default)('#news').append((0, _jquery2.default)(main));
     }
   });
 });
@@ -10866,7 +10879,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _jquery2.default)(function () {});
-var mywindow = $(window);
+var mywindow = (0, _jquery2.default)(window);
 var mypos = mywindow.scrollTop();
 var up = false;
 var newscroll;
@@ -10874,11 +10887,11 @@ mywindow.scroll(function () {
   newscroll = mywindow.scrollTop();
 
   if (newscroll > mypos && !up) {
-    $('.headerMain').stop().slideToggle();
+    (0, _jquery2.default)('.headerMain').stop().slideToggle();
     up = !up;
     console.log(up);
   } else if (newscroll < mypos && up) {
-    $('.headerMain').stop().slideToggle();
+    (0, _jquery2.default)('.headerMain').stop().slideToggle();
     up = !up;
   }
 
@@ -10905,43 +10918,38 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 (0, _jquery2.default)(function () {
   var db = firebase.firestore();
-  var divMain = document.createElement("main");
-  divMain.classList.add("main", "columns");
-  db.collection("News").get().then(function (objNews) {
-    objNews.forEach(function (doc) {
-      var newsObject = doc.data();
-      addNewsOnPage(newsObject);
+  var main = (0, _jquery2.default)('<main>').addClass("main columns");
+  db.collection("News").get().then(function (news) {
+    news.forEach(function (doc) {
+      var news = doc.data();
+      addNewOnPage(news);
     });
   });
 
-  function addNewsOnPage(newsOne) {
-    var divSection = document.createElement("section");
-    divMain.appendChild(divSection);
-    divSection.classList.add("column", "main-column"); //divLink divP -> link p
-
-    var divLink = document.createElement("a");
-    divLink.href = 'http://google.ru'; //все брать из firebase
-
-    divLink.title = 'это ссылка'; //все брать из firebase
-
-    divLink.appendChild(document.createTextNode(''));
-    divSection.appendChild(divLink);
-    divLink.classList.add("article", "first-article");
-    var divBody = document.createElement("div");
-    divLink.appendChild(divBody);
-    divBody.classList.add("article-body");
-    var divH = document.createElement("h2");
-    divH.innerHTML = newsOne.header;
-    divBody.appendChild(divH);
-    divH.classList.add("article-title");
-    var divP = document.createElement("p");
-    divP.innerHTML = newsOne.text;
-    divBody.appendChild(divP);
-    divP.classList.add("article-content");
-    var divFooter = document.createElement("footer");
-    divFooter.innerHTML = newsOne.source;
-    divBody.appendChild(divFooter);
-    divFooter.classList.add("article-info");
+  function addNewOnPage(news) {
+    var section = (0, _jquery2.default)('<section>').addClass("column main-column");
+    (0, _jquery2.default)(main).append((0, _jquery2.default)(section));
+    var link = (0, _jquery2.default)('<a>', {
+      text: 'Я контейнер-ссылка',
+      href: 'http://google.com'
+    });
+    (0, _jquery2.default)(link).addClass("article first-article");
+    (0, _jquery2.default)(link).append(document.createTextNode(''));
+    (0, _jquery2.default)(section).append((0, _jquery2.default)(link));
+    var body = (0, _jquery2.default)('<div>').addClass("article-body");
+    (0, _jquery2.default)(link).append((0, _jquery2.default)(body));
+    var h = (0, _jquery2.default)('<h2>').addClass("article-title");
+    (0, _jquery2.default)(body).append((0, _jquery2.default)(h));
+    (0, _jquery2.default)(h).text(news.header);
+    var p = (0, _jquery2.default)('<p>').addClass("article-content");
+    (0, _jquery2.default)(body).append((0, _jquery2.default)(p));
+    (0, _jquery2.default)(p).text(news.text);
+    var div = (0, _jquery2.default)('<p>').addClass("article-info");
+    (0, _jquery2.default)(body).append((0, _jquery2.default)(div));
+    var span = (0, _jquery2.default)('<span>');
+    (0, _jquery2.default)(span).text(news.source);
+    (0, _jquery2.default)(div).append((0, _jquery2.default)(span));
+    (0, _jquery2.default)('#news').append((0, _jquery2.default)(main));
   }
 });
 
@@ -10978,9 +10986,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /***/ }),
 
 /***/ 0:
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./src/js/firebase.js ./src/js/header.js ./src/js/news.js ./src/js/slider.js ./src/css/body.css ./src/css/gallery.css ./src/css/header.css ./src/css/main.css ./src/css/menu.css ./src/css/new.css ./src/css/news.css ./src/css/reset.css ./src/css/slider.css ./src/css/style.css ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************/
+/*!************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./src/js/firebase.js ./src/js/header.js ./src/js/news.js ./src/js/slider.js ./src/css/header.scss ./src/css/body.scss ./src/css/main.scss ./src/css/gallery.scss ./src/css/footer.scss ./src/css/news.scss ./src/css/lightbox.min.css ./src/css/slider.css ***!
+  \************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10988,16 +10996,14 @@ __webpack_require__(/*! ./src/js/firebase.js */"./src/js/firebase.js");
 __webpack_require__(/*! ./src/js/header.js */"./src/js/header.js");
 __webpack_require__(/*! ./src/js/news.js */"./src/js/news.js");
 __webpack_require__(/*! ./src/js/slider.js */"./src/js/slider.js");
-__webpack_require__(/*! ./src/css/body.css */"./src/css/body.css");
-__webpack_require__(/*! ./src/css/gallery.css */"./src/css/gallery.css");
-__webpack_require__(/*! ./src/css/header.css */"./src/css/header.css");
-__webpack_require__(/*! ./src/css/main.css */"./src/css/main.css");
-__webpack_require__(/*! ./src/css/menu.css */"./src/css/menu.css");
-__webpack_require__(/*! ./src/css/new.css */"./src/css/new.css");
-__webpack_require__(/*! ./src/css/news.css */"./src/css/news.css");
-__webpack_require__(/*! ./src/css/reset.css */"./src/css/reset.css");
-__webpack_require__(/*! ./src/css/slider.css */"./src/css/slider.css");
-module.exports = __webpack_require__(/*! ./src/css/style.css */"./src/css/style.css");
+__webpack_require__(/*! ./src/css/header.scss */"./src/css/header.scss");
+__webpack_require__(/*! ./src/css/body.scss */"./src/css/body.scss");
+__webpack_require__(/*! ./src/css/main.scss */"./src/css/main.scss");
+__webpack_require__(/*! ./src/css/gallery.scss */"./src/css/gallery.scss");
+__webpack_require__(/*! ./src/css/footer.scss */"./src/css/footer.scss");
+__webpack_require__(/*! ./src/css/news.scss */"./src/css/news.scss");
+__webpack_require__(/*! ./src/css/lightbox.min.css */"./src/css/lightbox.min.css");
+module.exports = __webpack_require__(/*! ./src/css/slider.css */"./src/css/slider.css");
 
 
 /***/ })

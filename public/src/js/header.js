@@ -1,6 +1,6 @@
-import jQuery from 'jquery';
+import $ from 'jquery';
 
-jQuery(function() {
+$(function() {
   
 });
 

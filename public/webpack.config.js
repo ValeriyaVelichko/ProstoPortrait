@@ -27,17 +27,17 @@ module.exports = {
     './src/js/news.js',
     './src/js/slider.js',
     
-    //css
-    './src/css/body.css',
-    './src/css/gallery.css',
-    './src/css/header.css',
-    './src/css/main.css',
-    './src/css/menu.css',
-    './src/css/new.css',
-    './src/css/news.css',
-    './src/css/reset.css',
-    './src/css/slider.css',
-    './src/css/style.css'
+    //scss 
+    './src/css/header.scss',
+    './src/css/body.scss',
+    './src/css/main.scss',
+    './src/css/gallery.scss',
+    './src/css/footer.scss',
+    './src/css/news.scss',
+
+    './src/css/lightbox.min.css',
+    './src/css/slider.css'
+ 
   ],
   output: {
     filename: './js/bundle.js'
@@ -45,7 +45,7 @@ module.exports = {
   devtool: "source-map",
   plugins: [
     new ExtractTextPlugin( {
-      filename: './css/styles.css',
+      filename: './css/style.bundle.css',
     }),
     new CopyWebpackPlugin([{
       from: './src/fonts',
@@ -75,6 +75,7 @@ module.exports = {
               publicPath: 'img/',
             }
           }
+          
         ]
       },
       {
@@ -89,6 +90,14 @@ module.exports = {
         }
       },
       {
+        test: /\.(sass|scss)$/,
+        include: path.resolve(__dirname, 'src/css'),
+        use: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader!sass-loader' }) 
+      }, 
+
+    
+        
+      {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
             loader: 'css-loader',
@@ -98,7 +107,11 @@ module.exports = {
               //TODO throw error
               //minimize: true,
             },
-        }),
+        })
+      },
+      {    
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        loader: "file-loader"
       },
       {
         test: /\.html$/,
@@ -109,7 +122,7 @@ module.exports = {
             interpolate: true
           }
         }
-      },
+      }
     ]
-  },
+  }
 };
