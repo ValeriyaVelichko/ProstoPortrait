@@ -10718,6 +10718,17 @@ return jQuery;
 
 /***/ }),
 
+/***/ "./src/css/form.css":
+/*!**************************!*\
+  !*** ./src/css/form.css ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./src/css/gallery.scss":
 /*!******************************!*\
   !*** ./src/css/gallery.scss ***!
@@ -10823,25 +10834,61 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     }
   });
   (0, _jquery2.default)(function () {
-    var db = firebase.firestore();
-    var main = (0, _jquery2.default)('<main>').addClass("main columns");
-    db.collection("News").get().then(function (news) {
-      news.forEach(function (doc) {
-        var news = doc.data();
+    var collection = firebase.database().ref('News');
+    var post = collection.once('value').then(function (news) {
+      news.forEach(function (post) {
+        var news = post.val();
         addNewOnPage(news);
       });
     });
+    /*   var db = firebase.firestore();
+     
+      
+             db.collection("News").get()
+           .then(function (news) {
+               news.forEach(function (doc) {
+                   var news = doc.data();
+                   addNewOnPage(news);
+               });
+           })
+    var news = firebase.database().ref('News');
+    news.on('value', function(snapshot) {
+    pr(snapshot.val());
+    });
+    */
+
+    var main = (0, _jquery2.default)('<ul>').addClass("column  main-column");
+    /*var sec = $('<section>').addClass( "column main column" );
+    $( sec ).append( $( li ) );
+    $(main).append( $( sec ) );
+    var so = $('<span>').addClass( "column main-column" );
+    $(main).append( $( so ) );
+    $(so).append( $($('#odd').val()) );*/
+
+    (0, _jquery2.default)('#news').append((0, _jquery2.default)(main));
 
     function addNewOnPage(news) {
-      var section = (0, _jquery2.default)('<section>').addClass("column main-column");
-      (0, _jquery2.default)(main).append((0, _jquery2.default)(section));
+      /*
+      var ev = $('#even').val();
+      var od = $('#odd').val();
+      
+      var a= $('<section>')
+      $( main ).append( $( a ) );
+      $( a ).append( $( ev ) );
+      
+      var b = $('<section>').addClass( "column main-column" );
+      $( main ).append( $( b ) );
+      $( b ).append( $( od ) );
+      
+      .prev().attr('id', 'odd')
+      */
       var link = (0, _jquery2.default)('<a>', {
         text: 'Я контейнер-ссылка',
         href: 'http://google.com'
       });
       (0, _jquery2.default)(link).addClass("article first-article");
       (0, _jquery2.default)(link).append(document.createTextNode(''));
-      (0, _jquery2.default)(section).append((0, _jquery2.default)(link));
+      (0, _jquery2.default)(main).append((0, _jquery2.default)(link));
       var body = (0, _jquery2.default)('<div>').addClass("article-body");
       (0, _jquery2.default)(link).append((0, _jquery2.default)(body));
       var h = (0, _jquery2.default)('<h2>').addClass("article-title");
@@ -10855,8 +10902,158 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
       var span = (0, _jquery2.default)('<span>');
       (0, _jquery2.default)(span).text(news.source);
       (0, _jquery2.default)(div).append((0, _jquery2.default)(span));
-      (0, _jquery2.default)('#news').append((0, _jquery2.default)(main));
     }
+    /*
+    
+    
+      
+    var oddcolumn= $('<section>').addClass( "column main-column" );
+    $( main ).append( $( oddcolumn ) );
+    
+    var od = $('.odd').val();
+    $( oddcolumn ).append( $( od ) );
+    */
+
+  });
+  (0, _jquery2.default)(function () {
+    var collectionmin = firebase.database().ref('Newsmin');
+    var postmin = collectionmin.once('value').then(function (newsmin) {
+      newsmin.forEach(function (postmin) {
+        var newsmin = postmin.val();
+        addMinNewOnPage(newsmin);
+      });
+    });
+    /*   var db = firebase.firestore();
+     
+      
+           db.collection("News").get()
+           .then(function (news) {
+               news.forEach(function (doc) {
+                   var news = doc.data();
+                   addNewOnPage(news);
+               });
+           })
+    var news = firebase.database().ref('News');
+    news.on('value', function(snapshot) {
+    pr(snapshot.val());
+    });
+    */
+
+    var mainmin = (0, _jquery2.default)('<ul>').addClass("column");
+    /*var sec = $('<section>').addClass( "column main column" );
+    $( sec ).append( $( li ) );
+    $(main).append( $( sec ) );
+    var so = $('<span>').addClass( "column main-column" );
+    $(main).append( $( so ) );
+    $(so).append( $($('#odd').val()) );*/
+
+    (0, _jquery2.default)('#news').append((0, _jquery2.default)(mainmin));
+
+    function addMinNewOnPage(newsmin) {
+      /*
+      var ev = $('#even').val();
+      var od = $('#odd').val();
+      
+      var a= $('<section>')
+      $( main ).append( $( a ) );
+      $( a ).append( $( ev ) );
+      
+      var b = $('<section>').addClass( "column main-column" );
+      $( main ).append( $( b ) );
+      $( b ).append( $( od ) );
+      
+      .prev().attr('id', 'odd')
+      */
+      var link = (0, _jquery2.default)('<a>', {
+        text: 'Я контейнер-ссылка',
+        href: 'http://google.com'
+      });
+      (0, _jquery2.default)(link).addClass("article first-article");
+      (0, _jquery2.default)(mainmin).append((0, _jquery2.default)(link));
+      var body = (0, _jquery2.default)('<div>').addClass("article-body");
+      (0, _jquery2.default)(link).append((0, _jquery2.default)(body));
+      var h = (0, _jquery2.default)('<h2>').addClass("article-title");
+      (0, _jquery2.default)(body).append((0, _jquery2.default)(h));
+      (0, _jquery2.default)(h).text(newsmin.header);
+      var p = (0, _jquery2.default)('<p>').addClass("article-content");
+      (0, _jquery2.default)(body).append((0, _jquery2.default)(p));
+      (0, _jquery2.default)(p).text(newsmin.text);
+      var div = (0, _jquery2.default)('<p>').addClass("article-info");
+      (0, _jquery2.default)(body).append((0, _jquery2.default)(div));
+    }
+    /*
+    
+    
+    
+    var oddcolumn= $('<section>').addClass( "column main-column" );
+    $( main ).append( $( oddcolumn ) );
+    
+    var od = $('.odd').val();
+    $( oddcolumn ).append( $( od ) );
+    */
+
+  });
+});
+
+/***/ }),
+
+/***/ "./src/js/form.js":
+/*!************************!*\
+  !*** ./src/js/form.js ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _jquery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// this is the id of the form
+(0, _jquery2.default)("#contactForm").submit(function (e) {
+  e.preventDefault(); // avoid to execute the actual submit of the form.
+
+  (0, _jquery2.default)(function writeNewPost(a, b, c, d) {
+    // A post entry.
+    var img = (0, _jquery2.default)('#image').val();
+    var h = (0, _jquery2.default)('#header').val();
+    var txt = (0, _jquery2.default)('#text').val();
+    var a = (0, _jquery2.default)('#source').val();
+    var postData = {
+      image: img,
+      header: h,
+      text: txt,
+      source: a
+    }; // Get a key for a new Post.
+
+    var newPostKey = firebase.database().ref().child('News').push().key; // Write the new post's data simultaneously in the posts list and the user's post list.
+
+    var updates = {};
+    updates['/News/' + newPostKey] = postData;
+    return firebase.database().ref().update(updates);
+  });
+});
+(0, _jquery2.default)("#contactFormmini").submit(function (e) {
+  e.preventDefault(); // avoid to execute the actual submit of the form.
+
+  (0, _jquery2.default)(function writeNewPostmini(a, b, c, d) {
+    // A post entry.
+    var hm = (0, _jquery2.default)('#headerm').val();
+    var txtm = (0, _jquery2.default)('#textm').val();
+    var postDatamin = {
+      header: hm,
+      text: txtm
+    }; // Get a key for a new Post.
+
+    var newPostKeymin = firebase.database().ref().child('Newsmin').push().key; // Write the new post's data simultaneously in the posts list and the user's post list.
+
+    var updatesm = {};
+    updatesm['/Newsmin/' + newPostKeymin] = postDatamin;
+    return firebase.database().ref().update(updatesm);
   });
 });
 
@@ -10955,53 +11152,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /***/ }),
 
-/***/ "./src/js/slider.js":
-/*!**************************!*\
-  !*** ./src/js/slider.js ***!
-  \**************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _jquery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-(0, _jquery2.default)(function () {
-  var slides = document.querySelectorAll('#slides .slide');
-  var currentSlide = 0;
-  var slideInterval = setInterval(nextSlide, 5000);
-
-  function nextSlide() {
-    slides[currentSlide].className = 'slide';
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].className = 'slide showing';
-  }
-});
-
-/***/ }),
-
 /***/ 0:
-/*!************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./src/js/firebase.js ./src/js/header.js ./src/js/news.js ./src/js/slider.js ./src/css/header.scss ./src/css/body.scss ./src/css/main.scss ./src/css/gallery.scss ./src/css/footer.scss ./src/css/news.scss ./src/css/lightbox.min.css ./src/css/slider.css ***!
-  \************************************************************************************************************************************************************************************************************************************************************************/
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./src/js/firebase.js ./src/js/header.js ./src/js/news.js ./src/js/form.js ./src/css/header.scss ./src/css/body.scss ./src/css/main.scss ./src/css/gallery.scss ./src/css/footer.scss ./src/css/news.scss ./src/css/form.css ./src/css/lightbox.min.css ./src/css/slider.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ./src/js/firebase.js */"./src/js/firebase.js");
 __webpack_require__(/*! ./src/js/header.js */"./src/js/header.js");
 __webpack_require__(/*! ./src/js/news.js */"./src/js/news.js");
-__webpack_require__(/*! ./src/js/slider.js */"./src/js/slider.js");
+__webpack_require__(/*! ./src/js/form.js */"./src/js/form.js");
 __webpack_require__(/*! ./src/css/header.scss */"./src/css/header.scss");
 __webpack_require__(/*! ./src/css/body.scss */"./src/css/body.scss");
 __webpack_require__(/*! ./src/css/main.scss */"./src/css/main.scss");
 __webpack_require__(/*! ./src/css/gallery.scss */"./src/css/gallery.scss");
 __webpack_require__(/*! ./src/css/footer.scss */"./src/css/footer.scss");
 __webpack_require__(/*! ./src/css/news.scss */"./src/css/news.scss");
+__webpack_require__(/*! ./src/css/form.css */"./src/css/form.css");
 __webpack_require__(/*! ./src/css/lightbox.min.css */"./src/css/lightbox.min.css");
 module.exports = __webpack_require__(/*! ./src/css/slider.css */"./src/css/slider.css");
 

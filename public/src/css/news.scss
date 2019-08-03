@@ -8,7 +8,7 @@
   text-align: center;
   padding:70px 0 70px 0;
 }
-.news{
+#news{
 	background-color: #fff8ea; 
   page-break-after: auto;
   padding: 5%;
@@ -161,7 +161,20 @@ header {
   top: 0;
   width: 100%;
 }
-@media screen and (min-width: 800px) {
+.add{
+  width: 15vw;
+  text-align: center;
+  color: #2e2c2b;
+  
+  padding: 10px;
+  background-color: #ffcda9;
+  border-radius: 20px;
+}
+.addNew{
+  padding: 2% 0 0 5%;
+  background-color: #fff8ea;
+}
+@media screen and (min-width: 500px) {
 .main-article {
 	  flex-direction: row;
 }

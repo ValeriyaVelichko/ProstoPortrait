@@ -25,7 +25,9 @@ module.exports = {
     './src/js/firebase.js',
     './src/js/header.js',
     './src/js/news.js',
-    './src/js/slider.js',
+    //.'./src/js/slider.js',
+    './src/js/form.js',
+    //'./src/js/admin.js',
     
     //scss 
     './src/css/header.scss',
@@ -35,6 +37,8 @@ module.exports = {
     './src/css/footer.scss',
     './src/css/news.scss',
 
+
+    './src/css/form.css',
     './src/css/lightbox.min.css',
     './src/css/slider.css'
  
@@ -109,6 +113,7 @@ module.exports = {
             },
         })
       },
+
       {    
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         loader: "file-loader"
@@ -125,4 +130,5 @@ module.exports = {
       }
     ]
   }
+  
 };

@@ -26,9 +26,23 @@ $(function() {
   });
 
   $(function(){
-            var db = firebase.firestore();
+     
 
-            var main = $('<main>').addClass( "main columns" );
+    var collection = firebase.database().ref('News');
+     var post = collection.once('value')
+    .then (function (news) {
+      news.forEach (function (post) {
+          var news = post.val();
+          addNewOnPage(news);
+          
+          
+      });
+     
+  })  
+       
+         /*   var db = firebase.firestore();
+
+        
            
   
 
@@ -40,19 +54,60 @@ $(function() {
                     });
                 })
 
+var news = firebase.database().ref('News');
+news.on('value', function(snapshot) {
+  pr(snapshot.val());
+});
+
+*/
+
+
+
+
+
+var main = $('<ul>').addClass( "column  main-column" );
+
+
+/*var sec = $('<section>').addClass( "column main column" );
+$( sec ).append( $( li ) );
+$(main).append( $( sec ) );
+var so = $('<span>').addClass( "column main-column" );
+$(main).append( $( so ) );
+$(so).append( $($('#odd').val()) );*/
+$('#news').append( $( main ) );
+
     function addNewOnPage(news) {
     
 
-var section = $('<section>').addClass( "column main-column" );
-$(main).append( $( section ) );
+
+
+/*
+var ev = $('#even').val();
+var od = $('#odd').val();
+
+var a= $('<section>')
+$( main ).append( $( a ) );
+$( a ).append( $( ev ) );
+
+var b = $('<section>').addClass( "column main-column" );
+$( main ).append( $( b ) );
+$( b ).append( $( od ) );
+
+.prev().attr('id', 'odd')
+*/
+
+
+
+
 
 var link =$('<a>', {
     text: 'Я контейнер-ссылка',
     href: 'http://google.com',
 } );
+
 $(link).addClass( "article first-article" );
 $(link).append(document.createTextNode(''));
-$( section ).append( $( link ) );
+$(main).append( $( link ) );
 
 var body = $('<div>').addClass( "article-body" );
 $(link).append( $( body ) );
@@ -72,8 +127,146 @@ var span = $('<span>');
 $(span).text(news.source);
 $( div ).append( $( span ) );
 
-$('#news').append( $( main ) );   
-}   
-});   
 
+
+}
+
+
+
+
+
+/*
+
+
+  
+var oddcolumn= $('<section>').addClass( "column main-column" );
+$( main ).append( $( oddcolumn ) );
+
+var od = $('.odd').val();
+$( oddcolumn ).append( $( od ) );
+*/
+
+
+});
+
+
+$(function(){
+     
+
+  var collectionmin = firebase.database().ref('Newsmin');
+   var postmin = collectionmin.once('value')
+  .then (function (newsmin) {
+    newsmin.forEach (function (postmin) {
+        var newsmin = postmin.val();
+        addMinNewOnPage(newsmin);
+        
+        
+    });
+   
+})  
+     
+       /*   var db = firebase.firestore();
+
+      
+         
+
+
+          db.collection("News").get()
+              .then(function (news) {
+                  news.forEach(function (doc) {
+                      var news = doc.data();
+                      addNewOnPage(news);
+                  });
+              })
+
+var news = firebase.database().ref('News');
+news.on('value', function(snapshot) {
+pr(snapshot.val());
+});
+
+*/
+
+
+
+
+
+
+var mainmin = $('<ul>').addClass( "column" );
+
+
+/*var sec = $('<section>').addClass( "column main column" );
+$( sec ).append( $( li ) );
+$(main).append( $( sec ) );
+var so = $('<span>').addClass( "column main-column" );
+$(main).append( $( so ) );
+$(so).append( $($('#odd').val()) );*/
+$('#news').append( $( mainmin ) );
+
+  function addMinNewOnPage(newsmin) {
+  
+
+
+
+/*
+var ev = $('#even').val();
+var od = $('#odd').val();
+
+var a= $('<section>')
+$( main ).append( $( a ) );
+$( a ).append( $( ev ) );
+
+var b = $('<section>').addClass( "column main-column" );
+$( main ).append( $( b ) );
+$( b ).append( $( od ) );
+
+.prev().attr('id', 'odd')
+*/
+
+
+var link =$('<a>', {
+  text: 'Я контейнер-ссылка',
+  href: 'http://google.com',
+} );
+
+$(link).addClass( "article first-article" );
+
+$(mainmin).append( $( link ) );
+
+
+var body = $('<div>').addClass( "article-body" );
+$(link).append( $( body ) );
+
+var h = $('<h2>').addClass( "article-title" );
+$( body ).append( $( h ) );
+$(h).text(newsmin.header);
+
+var p = $('<p>').addClass( "article-content" );
+$( body ).append( $( p ) );
+$(p).text(newsmin.text);
+
+var div = $('<p>').addClass( "article-info" );
+$( body ).append( $( div ) );
+
+
+
+
+}
+
+
+
+
+
+/*
+
+
+
+var oddcolumn= $('<section>').addClass( "column main-column" );
+$( main ).append( $( oddcolumn ) );
+
+var od = $('.odd').val();
+$( oddcolumn ).append( $( od ) );
+*/
+
+
+});
 });
