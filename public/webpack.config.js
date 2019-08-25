@@ -24,23 +24,29 @@ module.exports = {
     //js
     './src/js/firebase.js',
     './src/js/header.js',
-    './src/js/news.js',
-    //.'./src/js/slider.js',
+    './src/js/sliderr.js',
     './src/js/form.js',
-    //'./src/js/admin.js',
-    
+    './src/js/admin.js',
+    './src/js/toTheTop.js',
+    './src/js/jquery.fancybox.pack.js',
+    './src/js/jquery.fancybox.js',
+    './src/js/jquery.fancybox.cjs.js',
+    //'./src/js/fancy.js',
+    //'./src/js/fancybox.js',
     //scss 
+    './src/css/jquery.fancybox.css',
+    './src/css/auth.scss',
+    './src/css/about.scss',
     './src/css/header.scss',
     './src/css/body.scss',
     './src/css/main.scss',
     './src/css/gallery.scss',
     './src/css/footer.scss',
     './src/css/news.scss',
-
-
-    './src/css/form.css',
-    './src/css/lightbox.min.css',
-    './src/css/slider.css'
+    './src/css/form.scss',
+    './src/css/slider2.css',
+    './src/css/ToTheTop.css'
+    
  
   ],
   output: {
@@ -63,6 +69,7 @@ module.exports = {
       from: './src/img',
       to: './img'
     }
+    
   ]),
   
   ].concat(htmlPlugins),

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <% 
+    var data = {
+      title: "ProstoPortrait"
+    };
+%>
+${  _.template(require('./../includes/head.html'))(data) }
+<body>
+  <!--menu-->
+  ${require('./../includes/auth.html')}
+
+  <!--scripts-->
+  ${require('./../includes/scripts/scripts.html')}
+</body>
+
+</html>

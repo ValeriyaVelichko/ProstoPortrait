@@ -1,7 +1,10 @@
 .navigation {
 display: flex;
-padding:100px 20% 100px 31%;
-
+padding:100px 0 100px 0;
+justify-content:center;
+    figcaption{
+    font-size: 20px;    
+    }
     .icons{
     display: flex;
     flex-direction: column;
@@ -10,25 +13,25 @@ padding:100px 20% 100px 31%;
         .grapfic:hover,.computerGrapfic:hover,.watercolor:hover{
         margin: 20px;
 	    height: 120px;
-        background-color: #ffcda9;
+        background-color: #ffeba9;
         border-radius: 15px;
-        box-shadow: 0 0 10px #ffcda9, 0 0 20px #fff6f0;
+        box-shadow: 0 0 20px #ffd986, 0 0 10px #ffe8a8;
         }
         .grapfic,.computerGrapfic,.watercolor{
         margin: 30px;
         height: 100px; 
         background-color: #ffffff;
         border-radius: 15px;
-        box-shadow: 0 0 10px #ffcda9, 0 0 20px #fff6f0;
+        box-shadow: 0 0 20px #ffd986, 0 0 10px #ffe8a8;
         }
 }
-.content{
-background-color: #fff6f0;
+.galleryContent{
+background-color: #fff8e8;;
 text-align: center;
-padding: 80px 0 50px 0;
+padding: 50px 0 50px 0;
 margin: 0px;
-box-shadow: 0 0 30px #ffcda9, 0 0 20px #ffcda9;
-    .container { 
+box-shadow: 0 0 20px #4d4c4b;
+    .imagesContainer { 
     background-color: #ffffff;
     width: 100%; 
     max-width: 960px; 
@@ -36,10 +39,13 @@ box-shadow: 0 0 30px #ffcda9, 0 0 20px #ffcda9;
         h1{
         color:#2e2c2b; 
         font-size: 50px; 
-        font-family:TuesdayNight-Regular;
-        padding-top: 100px;
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         text-align: center;
-        padding: 50px;
+        padding: 20px;
+        }
+        
+        .markerYellow{
+        color:#ffdb8e;    
         }
         #gallery{
         background-color: #ffffff;
@@ -82,5 +88,6 @@ box-shadow: 0 0 30px #ffcda9, 0 0 20px #ffcda9;
   @media screen and (min-width: 800px) {
     .navigation .icons {
     flex-direction: row;
+    justify-content:center;
     }
 }

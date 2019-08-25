@@ -1,9 +1,6 @@
 import $ from 'jquery';
-
 $(function() {
-  
 });
-
 var mywindow = $(window);
 var mypos = mywindow.scrollTop();
 var up = false;

@@ -20,15 +20,18 @@
           <li>
             <div class="dropdown">меню
               <img class="mainmenubtn" src="img/menu.png" />
-             <div class="dropdown-child">
-              <a href="index.html">главная</a>
-              <a href="gallery.html">галерея</a>
-              <a href="about.html">о себе</a>
+              <div class="dropdown-child">
+                <a href="index.html">главная</a>
+                <a href="gallery.html">галерея</a>
+                <a href="about.html">о себе</a>
               </div>
             </div>
-         </li>
+          </li>
           <li>портретная мастерская</li>
-          <li>+375 29 794 64 63 МТС</li>
+          <li>
+            <span class="logoMain">P<span class="marker">o</span>sto.
+            P<span class="marker">o</span>rtrait.</span> 
+          </li>
       </ul>
     </nav>
   </div>
@@ -42,10 +45,9 @@
     </div>
     <p class="prostoportrait_rus"> простопортрет </p>
   </div>
-  <div class="info">
-    <div class="about"> 
-      <span class="triangle">  
-        <p class="go"> <a href="gallery.html"><button>ГАЛЕРЕЯ</button> </a></p>
+  <div class="info about">
+        <p class="go triangle"> <a href="gallery.html"><button>ГАЛЕРЕЯ</button> </a></p>
+        <div class="triangle">
         <ul id="table">
           <a href= "watercolor.html">
             <li><div class="txtr"> 
@@ -63,68 +65,66 @@
             </li>
           </a>
         </ul> 
-    
-      </span>
-       <div class="line">  <img class="line" src= "img/mainImage.jpg"></div> 
-    </div>   
-   
+        </div>
+        <img class="mainImage" src= "img/mainImage.jpg">
   </div>
 </div>
 
     <!--slider-->
-      <!--Slider
-  <div class="articlenews">
-    <section class="column main-column">
-      <a class="article first-article" href="">
-        <figure class="article-image in">
-          <ul id="slides">
-            <li class="slide showing"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-          </ul> 
-        </figure>
-    
-      </a>
-    </section>
-  </div>-->
- 
-    <!--news-->
-    
-<script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-database.js"></script>
-<!--Slider-->
-  <div class="articlenews">
-    <section class="column main-column">
-      <a class="article first-article" href="">
-        <figure class="article-image in">
-         <!-- <ul id="slides">
-            <li class="slide showing"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-          </ul> -->
+    <div class="articlenews">
+  <section class="column slider-column">
+      <a class="art slider-article" href="">
+        <figure class="main-image">
+          <div id="slideshow">
+            <div id="slidesContainer">
+              <div class="slide">
+                <div class="post_otzivy">
+                  <img src="img/sliderImage1.jpg" >
+                </div>
+              </div>
+              <div class="slide">
+                <div class="post_otzivy">
+                  <img src="img/sliderImage2.jpg" >
+                </div>
+              </div>
+              <div class="slide">
+                <div class="post_otzivy">
+        <img src="img/sliderImage3.jpg" >
+                </div>
+              </div>
+              <div class="slide">
+                <div class="post_otzivy">
+                  <img src="img/sliderImage4.jpg" >
+                </div>
+              </div>
+              <div class="slide">
+                <div class="post_otzivy">
+                  <img src="img/sliderImage5.jpg" >
+                </div>
+              </div>
+            </div>
+          </div>
         </figure>
         <div class="article-body">
           <span class="article-title">
-          
           </span>
           <span class="article-content ">
-            <p class="prostoportrait_rus"> более 5 лет опыта(что-то в этом роде)</p>
+            <p class="sliderText"> <span class="prostoportrait">ProstoPortrait</span> - это портреты сделанные с душой!<br> На Ваш выбор предоставляется три техники выполнения работ: акварель, графика и компьютерная графика.<br> Вне зависимости от выбранной техники мастерская <span class="prostoportrait">ProstoPortrait</span> гарантирует быстроту выполнения и качество наших работ.  </p>
           </span>
         </div>
       </a>
     </section>
-  </div>
- <!--News--> 
-  <div class="header_news">
-      <p>Новости искусства</p>
-  </div>
-  <div class="addNew" ><div class="add"><a href="">Добавить новость</a></div></div>
-  <div id="news" class="main columns">
-  </div>
+</div>
+ 
+  
+    <!--news-->
+    <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-database.js"></script>
+<div class="header_news">
+  <p>Новости искусства</p>
+</div>
+<div id="news" class="main columns">
+</div>
      
     <!--footer-->
     <div class="footer">
@@ -140,6 +140,9 @@
       </a>
     </ul>
 </div>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<a id="scrollup"></a>
     <!--scripts-->
     
 <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>

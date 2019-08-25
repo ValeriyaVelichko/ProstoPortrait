@@ -16,7 +16,7 @@ padding: 0;
     }
     .nav li {
 	float: left;
-	width:31.3%;
+	width:33.33333%;
 	display: block;
 	position: relative;
     text-decoration: none;
@@ -27,11 +27,16 @@ padding: 0;
     }
     .nav li:nth-child(3){
 	font-size: 14px;
-    }
+	}
+	.logoMain{
+	font-size: 18px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+	}
     .mark {
 	font-weight: 400;
-    }
-    .dropdown {
+	}
+	.dropdown {
 	position: relative;
 	display: inline-block;
     }
@@ -56,6 +61,6 @@ padding: 0;
 	    display: block;
         }
         .dropdown-child a:hover {
-        background-color:#ffcda9;
+        background-color:#ffdb8e;
         }
 }

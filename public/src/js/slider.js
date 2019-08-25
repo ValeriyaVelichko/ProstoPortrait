@@ -1,5 +1,4 @@
 import jQuery from 'jquery';
-
 jQuery(function() {
     var slides = document.querySelectorAll('#slides .slide');
     var currentSlide = 0;
