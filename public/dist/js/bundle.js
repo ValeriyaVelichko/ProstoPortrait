@@ -10696,17 +10696,6 @@ return jQuery;
 
 /***/ }),
 
-/***/ "./src/css/ToTheTop.css":
-/*!******************************!*\
-  !*** ./src/css/ToTheTop.css ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "./src/css/about.scss":
 /*!****************************!*\
   !*** ./src/css/about.scss ***!
@@ -10817,10 +10806,21 @@ return jQuery;
 
 /***/ }),
 
-/***/ "./src/css/slider2.css":
+/***/ "./src/css/slider.scss":
 /*!*****************************!*\
-  !*** ./src/css/slider2.css ***!
+  !*** ./src/css/slider.scss ***!
   \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./src/css/topButton.scss":
+/*!********************************!*\
+  !*** ./src/css/topButton.scss ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -10844,40 +10844,23 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _jquery2.default)(function () {
-  (0, _jquery2.default)("#quickstart-sign-in").submit(function (e) {
-    e.preventDefault();
-    (0, _jquery2.default)(function () {
-      var a = (0, _jquery2.default)('#loginField').val();
-      var b = (0, _jquery2.default)('#passwordField').val();
-      var login = a;
-      var password = b; //Sign In User with Email and Password
-
-      firebase.auth().signInWithEmailAndPassword(login, password).catch(function (error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
-        window.location.href = 'index.html';
-      });
+(0, _jquery2.default)("#sign-in").submit(function (e) {
+  e.preventDefault();
+  (0, _jquery2.default)(function () {
+    var loginField = (0, _jquery2.default)('#loginField').val();
+    var passwordField = (0, _jquery2.default)('#passwordField').val();
+    var login = loginField;
+    var password = passwordField;
+    firebase.auth().signInWithEmailAndPassword(login, password).then(function () {
       var user = firebase.auth().currentUser;
-      var name, email, photoUrl, uid, emailVerified;
-
-      if (user != null) {
-        name = user.displayName;
-        email = user.email;
-        uid = user.uid;
-      } // The user's ID, unique to the Firebase project. Do NOT use
-      // this value to authenticate with your backend server, if
-      // you have one. Use User.getToken() instead.
-
 
       if (user.email == login) {
-        window.location.href = 'contactForm.html';
-      } else if (user !== login) {
-        window.location.href = 'index.html';
+        window.location.href = 'addNew.html';
       }
+    }).catch(function (aa) {
+      var aa = (0, _jquery2.default)('<p>').addClass("error");
+      (0, _jquery2.default)('#sign-in').append((0, _jquery2.default)(aa));
+      (0, _jquery2.default)(aa).text('Неверный логин и/или пароль. Пожалуйста, попробуйте еще раз');
     });
   });
 });
@@ -10901,7 +10884,6 @@ var _jquery2 = _interopRequireDefault(_jquery);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _jquery2.default)(function () {
-  // Initialize Firebase
   var config = {
     apiKey: "AIzaSyAt_HqgXnSMl-zSxJW27ge_AIUQDSXc8eg",
     authDomain: "prostoportrait.firebaseapp.com",
@@ -10916,90 +10898,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
       var app = firebase.app();
       var features = ['auth', 'database', 'messaging', 'storage'].filter(function (feature) {
         return typeof app[feature] === 'function';
-      }); //  document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
+      });
     } catch (e) {
       console.error(e);
       document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-    }
-  });
-  (0, _jquery2.default)(function () {
-    var collection = firebase.database().ref('News');
-    var post = collection.once('value').then(function (news) {
-      news.forEach(function (post) {
-        var news = post.val();
-        addNewOnPage(news);
-      });
-    });
-    var main = (0, _jquery2.default)('<ul>').addClass("column  main-column");
-    (0, _jquery2.default)('#news').append((0, _jquery2.default)(main));
-
-    function addNewOnPage(news) {
-      var link = (0, _jquery2.default)('<a>', {
-        href: span
-      });
-      var span = (0, _jquery2.default)('<span>');
-      (0, _jquery2.default)(span).text(news.source);
-      (0, _jquery2.default)(link).addClass("article first-article");
-      (0, _jquery2.default)(link).append(document.createTextNode(''));
-      (0, _jquery2.default)(main).append((0, _jquery2.default)(link));
-      var figure = (0, _jquery2.default)('<figure>').addClass("article-image is-16by9");
-      (0, _jquery2.default)(link).append(figure);
-      var img = (0, _jquery2.default)('<img>');
-      var setSrc = news.image;
-      img.attr('src', setSrc);
-      (0, _jquery2.default)(figure).append((0, _jquery2.default)(img));
-      var body = (0, _jquery2.default)('<div>').addClass("article-body");
-      (0, _jquery2.default)(link).append((0, _jquery2.default)(body));
-      var h = (0, _jquery2.default)('<h2>').addClass("article-title");
-      (0, _jquery2.default)(body).append((0, _jquery2.default)(h));
-      (0, _jquery2.default)(h).text(news.header);
-      var p = (0, _jquery2.default)('<p>').addClass("article-content");
-      (0, _jquery2.default)(body).append((0, _jquery2.default)(p));
-      (0, _jquery2.default)(p).text(news.text);
-      var div = (0, _jquery2.default)('<a>').addClass("article-info");
-      var setSrcLink = news.source;
-      div.attr('href', setSrcLink);
-      (0, _jquery2.default)(body).append((0, _jquery2.default)(div));
-      var span = (0, _jquery2.default)('<span>');
-      (0, _jquery2.default)(span).text(news.sourceName);
-      (0, _jquery2.default)(div).append((0, _jquery2.default)(span));
-    }
-  });
-  (0, _jquery2.default)(function () {
-    var collectionmin = firebase.database().ref('Newsmin');
-    var postmin = collectionmin.once('value').then(function (newsmin) {
-      newsmin.forEach(function (postmin) {
-        var newsmin = postmin.val();
-        addMinNewOnPage(newsmin);
-      });
-    });
-    var mainmin = (0, _jquery2.default)('<ul>').addClass("column");
-    (0, _jquery2.default)('#news').append((0, _jquery2.default)(mainmin));
-
-    function addMinNewOnPage(newsmin) {
-      var link = (0, _jquery2.default)('<a>', {
-        href: span
-      });
-      var span = (0, _jquery2.default)('<span>');
-      (0, _jquery2.default)(span).text(newsmin.source);
-      (0, _jquery2.default)(div).append((0, _jquery2.default)(span));
-      (0, _jquery2.default)(link).addClass("article first-article");
-      (0, _jquery2.default)(mainmin).append((0, _jquery2.default)(link));
-      var body = (0, _jquery2.default)('<div>').addClass("article-body");
-      (0, _jquery2.default)(link).append((0, _jquery2.default)(body));
-      var h = (0, _jquery2.default)('<h2>').addClass("article-title");
-      (0, _jquery2.default)(body).append((0, _jquery2.default)(h));
-      (0, _jquery2.default)(h).text(newsmin.header);
-      var p = (0, _jquery2.default)('<p>').addClass("article-content");
-      (0, _jquery2.default)(body).append((0, _jquery2.default)(p));
-      (0, _jquery2.default)(p).text(newsmin.text);
-      var div = (0, _jquery2.default)('<a>').addClass("article-info");
-      var setSrcLink = newsmin.source;
-      div.attr('href', setSrcLink);
-      (0, _jquery2.default)(body).append((0, _jquery2.default)(div));
-      var span = (0, _jquery2.default)('<span>');
-      (0, _jquery2.default)(span).text(newsmin.sourceName);
-      (0, _jquery2.default)(div).append((0, _jquery2.default)(span));
     }
   });
 });
@@ -11022,50 +10924,41 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// this is the id of the form
 (0, _jquery2.default)("#contactForm").submit(function (e) {
-  e.preventDefault(); // avoid to execute the actual submit of the form.
-
-  (0, _jquery2.default)(function writeNewPost(img, h, txt, a) {
-    // A post entry.
-    var img = (0, _jquery2.default)('#image').val();
-    var h = (0, _jquery2.default)('#header').val();
-    var txt = (0, _jquery2.default)('#text').val();
-    var a = (0, _jquery2.default)('#source').val();
-    var span = (0, _jquery2.default)('#sourceName').val();
+  e.preventDefault();
+  (0, _jquery2.default)(function writeNewPost(newsImage, newsHeader, newsContent, newsSourse, newsSourseName) {
+    var newsImage = (0, _jquery2.default)('#image').val();
+    var newsHeader = (0, _jquery2.default)('#header').val();
+    var newsContent = (0, _jquery2.default)('#text').val();
+    var newsSourse = (0, _jquery2.default)('#source').val();
+    var newsSourseName = (0, _jquery2.default)('#sourceName').val();
     var postData = {
-      image: img,
-      header: h,
-      text: txt,
-      source: a,
-      sourceName: span
-    }; // Get a key for a new Post.
-
-    var newPostKey = firebase.database().ref().child('News').push().key; // Write the new post's data simultaneously in the posts list and the user's post list.
-
+      image: newsImage,
+      header: newsHeader,
+      text: newsContent,
+      source: newsSourse,
+      sourceName: newsSourseName
+    };
+    var newPostKey = firebase.database().ref().child('News').push().key;
     var updates = {};
     updates['/News/' + newPostKey] = postData;
     return firebase.database().ref().update(updates);
   });
 });
 (0, _jquery2.default)("#contactFormmini").submit(function (e) {
-  e.preventDefault(); // avoid to execute the actual submit of the form.
-
-  (0, _jquery2.default)(function writeNewPostmini(a, b, c, d) {
-    // A post entry.
-    var hmin = (0, _jquery2.default)('#headermin').val();
-    var txtmin = (0, _jquery2.default)('#textmin').val();
-    var amin = (0, _jquery2.default)('#sourcemin').val();
-    var spanmin = (0, _jquery2.default)('#sourceNamemin').val();
+  e.preventDefault();
+  (0, _jquery2.default)(function writeNewPostmini(newsHeaderMin, newsContentMin, newsSourseMin, newsSourseNameMin) {
+    var newsHeaderMin = (0, _jquery2.default)('#headermin').val();
+    var newsContentMin = (0, _jquery2.default)('#textmin').val();
+    var newsSourseMin = (0, _jquery2.default)('#sourcemin').val();
+    var newsSourseNameMin = (0, _jquery2.default)('#sourceNamemin').val();
     var postDatamin = {
-      header: hmin,
-      text: txtmin,
-      source: amin,
-      sourceName: spanmin
-    }; // Get a key for a new Post.
-
-    var newPostKeymin = firebase.database().ref().child('Newsmin').push().key; // Write the new post's data simultaneously in the posts list and the user's post list.
-
+      header: newsHeaderMin,
+      text: newsContentMin,
+      source: newsSourseMin,
+      sourceName: newsSourseNameMin
+    };
+    var newPostKeymin = firebase.database().ref().child('Newsmin').push().key;
     var updatesmin = {};
     updatesmin['/Newsmin/' + newPostKeymin] = postDatamin;
     return firebase.database().ref().update(updatesmin);
@@ -11090,24 +10983,25 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _jquery2.default)(function () {});
-var mywindow = (0, _jquery2.default)(window);
-var mypos = mywindow.scrollTop();
-var up = false;
-var newscroll;
-mywindow.scroll(function () {
-  newscroll = mywindow.scrollTop();
+(0, _jquery2.default)(function () {
+  var mywindow = (0, _jquery2.default)(window);
+  var mypos = mywindow.scrollTop();
+  var up = false;
+  var newscroll;
+  mywindow.scroll(function () {
+    newscroll = mywindow.scrollTop();
 
-  if (newscroll > mypos && !up) {
-    (0, _jquery2.default)('.headerMain').stop().slideToggle();
-    up = !up;
-    console.log(up);
-  } else if (newscroll < mypos && up) {
-    (0, _jquery2.default)('.headerMain').stop().slideToggle();
-    up = !up;
-  }
+    if (newscroll > mypos && !up) {
+      (0, _jquery2.default)('.headerMain').stop().slideToggle();
+      up = !up;
+      console.log(up);
+    } else if (newscroll < mypos && up) {
+      (0, _jquery2.default)('.headerMain').stop().slideToggle();
+      up = !up;
+    }
 
-  mypos = newscroll;
+    mypos = newscroll;
+  });
 });
 
 /***/ }),
@@ -15738,10 +15632,109 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /***/ }),
 
-/***/ "./src/js/sliderr.js":
-/*!***************************!*\
-  !*** ./src/js/sliderr.js ***!
-  \***************************/
+/***/ "./src/js/news.js":
+/*!************************!*\
+  !*** ./src/js/news.js ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _jquery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _jquery2.default)(function () {
+  var collection = firebase.database().ref('News');
+  var post = collection.once('value').then(function (news) {
+    news.forEach(function (post) {
+      var news = post.val();
+      addNewOnPage(news);
+    });
+  });
+  var main = (0, _jquery2.default)('<ul>').addClass("column  main-column");
+  (0, _jquery2.default)('#news').append((0, _jquery2.default)(main));
+
+  function addNewOnPage(news) {
+    var link = (0, _jquery2.default)('<a>', {
+      href: source
+    });
+    var source = (0, _jquery2.default)('<span>');
+    (0, _jquery2.default)(source).text(news.source);
+    (0, _jquery2.default)(link).addClass("article first-article");
+    (0, _jquery2.default)(link).append(document.createTextNode(''));
+    (0, _jquery2.default)(main).append((0, _jquery2.default)(link));
+    var image = (0, _jquery2.default)('<figure>').addClass("article-image is-16by9");
+    (0, _jquery2.default)(link).append(image);
+    var img = (0, _jquery2.default)('<img>');
+    var setSrc = news.image;
+    img.attr('src', setSrc);
+    (0, _jquery2.default)(image).append((0, _jquery2.default)(img));
+    var body = (0, _jquery2.default)('<div>').addClass("article-body");
+    (0, _jquery2.default)(link).append((0, _jquery2.default)(body));
+    var header = (0, _jquery2.default)('<h2>').addClass("article-title");
+    (0, _jquery2.default)(body).append((0, _jquery2.default)(header));
+    (0, _jquery2.default)(header).text(news.header);
+    var content = (0, _jquery2.default)('<p>').addClass("article-content");
+    (0, _jquery2.default)(body).append((0, _jquery2.default)(content));
+    (0, _jquery2.default)(content).text(news.text);
+    var info = (0, _jquery2.default)('<a>').addClass("article-info");
+    var setSrcLink = news.source;
+    info.attr('href', setSrcLink);
+    (0, _jquery2.default)(body).append((0, _jquery2.default)(info));
+    var source = (0, _jquery2.default)('<span>');
+    (0, _jquery2.default)(source).text(news.sourceName);
+    (0, _jquery2.default)(info).append((0, _jquery2.default)(source));
+  }
+});
+(0, _jquery2.default)(function () {
+  var collectionmin = firebase.database().ref('Newsmin');
+  var postmin = collectionmin.once('value').then(function (newsmin) {
+    newsmin.forEach(function (postmin) {
+      var newsmin = postmin.val();
+      addMinNewOnPage(newsmin);
+    });
+  });
+  var mainmin = (0, _jquery2.default)('<ul>').addClass("column");
+  (0, _jquery2.default)('#news').append((0, _jquery2.default)(mainmin));
+
+  function addMinNewOnPage(newsmin) {
+    var link = (0, _jquery2.default)('<a>', {
+      href: sourse
+    });
+    var sourse = (0, _jquery2.default)('<span>');
+    (0, _jquery2.default)(sourse).text(newsmin.source);
+    (0, _jquery2.default)(info).append((0, _jquery2.default)(sourse));
+    (0, _jquery2.default)(link).addClass("article first-article");
+    (0, _jquery2.default)(mainmin).append((0, _jquery2.default)(link));
+    var body = (0, _jquery2.default)('<div>').addClass("article-body");
+    (0, _jquery2.default)(link).append((0, _jquery2.default)(body));
+    var header = (0, _jquery2.default)('<h2>').addClass("article-title");
+    (0, _jquery2.default)(body).append((0, _jquery2.default)(header));
+    (0, _jquery2.default)(header).text(newsmin.header);
+    var content = (0, _jquery2.default)('<p>').addClass("article-content");
+    (0, _jquery2.default)(body).append((0, _jquery2.default)(content));
+    (0, _jquery2.default)(content).text(newsmin.text);
+    var info = (0, _jquery2.default)('<a>').addClass("article-info");
+    var setSrcLink = newsmin.source;
+    info.attr('href', setSrcLink);
+    (0, _jquery2.default)(body).append((0, _jquery2.default)(info));
+    var source = (0, _jquery2.default)('<span>');
+    (0, _jquery2.default)(source).text(newsmin.sourceName);
+    (0, _jquery2.default)(info).append((0, _jquery2.default)(sourse));
+  }
+});
+
+/***/ }),
+
+/***/ "./src/js/slider.js":
+/*!**************************!*\
+  !*** ./src/js/slider.js ***!
+  \**************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15758,31 +15751,21 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   var currentPosition = 0;
   var slideWidth = 560;
   var slides = (0, _jquery2.default)('.slide');
-  var numberOfSlides = slides.length; // Убираем прокрутку
-
-  (0, _jquery2.default)('#slidesContainer').css('overflow', 'hidden'); // Вставляем все .slides в блок #slideInner
-
-  slides.wrapAll('<div id="slideInner"></div>') // Float left to display horizontally, readjust .slides width
-  .css({
+  var numberOfSlides = slides.length;
+  (0, _jquery2.default)('#slidesContainer').css('overflow', 'hidden');
+  slides.wrapAll('<div id="slideInner"></div>').css({
     'float': 'left',
     'width': slideWidth
-  }); // Устанавливаем ширину #slideInner, равную ширине всех слайдов
-
-  (0, _jquery2.default)('#slideInner').css('width', slideWidth * numberOfSlides); // Прячем правую стрелку при загрузке скрипта
-
-  manageControls(currentPosition); // Отлавливаем клик на класс .controls
-
+  });
+  (0, _jquery2.default)('#slideInner').css('width', slideWidth * numberOfSlides);
+  manageControls(currentPosition);
   (0, _jquery2.default)('.control').bind('click', function () {
-    // Определение новой позиции
-    currentPosition = (0, _jquery2.default)(this).attr('id') == 'rightControl' ? currentPosition + 1 : currentPosition - 1; // Прячет / показывает элементы контроля
-
-    manageControls(currentPosition); // Move slideInner using margin-left
-
+    currentPosition = (0, _jquery2.default)(this).attr('id') == 'rightControl' ? currentPosition + 1 : currentPosition - 1;
+    manageControls(currentPosition);
     (0, _jquery2.default)('#slideInner').animate({
       'marginLeft': slideWidth * -currentPosition
     });
-  }); // Автопрокрутка, если не нужна, то просто удалите код ниже
-
+  });
   var mycolslide = 1;
   setInterval(function () {
     if (mycolslide < 5) {
@@ -15792,26 +15775,20 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     } else {
       currentPosition = 0;
       mycolslide = 1;
-    } // Прячет / показывает элементы контроля
+    }
 
-
-    manageControls(currentPosition); // Move slideInner using margin-left
-
+    manageControls(currentPosition);
     (0, _jquery2.default)('#slideInner').animate({
       'marginLeft': slideWidth * -currentPosition
     });
-  }, 5000); // каждые 2 секунды будет меняться слайд
-  // Конец автопрокрутки
-  // manageControls: показывает или скрывает стрелки в зависимости от значения currentPosition
+  }, 5000);
 
   function manageControls(position) {
-    // Спрятать левую стрелку, если это левый слайд
     if (position == 0) {
       (0, _jquery2.default)('#leftControl').hide();
     } else {
       (0, _jquery2.default)('#leftControl').show();
-    } // Спрятать правую стрелку, если это последний слайд
-
+    }
 
     if (position == numberOfSlides - 1) {
       (0, _jquery2.default)('#rightControl').hide();
@@ -15857,15 +15834,16 @@ btn.on('click', function (e) {
 /***/ }),
 
 /***/ 0:
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./src/js/firebase.js ./src/js/header.js ./src/js/sliderr.js ./src/js/form.js ./src/js/admin.js ./src/js/toTheTop.js ./src/js/jquery.fancybox.pack.js ./src/js/jquery.fancybox.js ./src/js/jquery.fancybox.cjs.js ./src/css/jquery.fancybox.css ./src/css/auth.scss ./src/css/about.scss ./src/css/header.scss ./src/css/body.scss ./src/css/main.scss ./src/css/gallery.scss ./src/css/footer.scss ./src/css/news.scss ./src/css/form.scss ./src/css/slider2.css ./src/css/ToTheTop.css ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./src/js/firebase.js ./src/js/news.js ./src/js/header.js ./src/js/slider.js ./src/js/form.js ./src/js/admin.js ./src/js/toTheTop.js ./src/js/jquery.fancybox.pack.js ./src/js/jquery.fancybox.js ./src/js/jquery.fancybox.cjs.js ./src/css/jquery.fancybox.css ./src/css/auth.scss ./src/css/about.scss ./src/css/header.scss ./src/css/body.scss ./src/css/main.scss ./src/css/gallery.scss ./src/css/footer.scss ./src/css/news.scss ./src/css/form.scss ./src/css/slider.scss ./src/css/topButton.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ./src/js/firebase.js */"./src/js/firebase.js");
+__webpack_require__(/*! ./src/js/news.js */"./src/js/news.js");
 __webpack_require__(/*! ./src/js/header.js */"./src/js/header.js");
-__webpack_require__(/*! ./src/js/sliderr.js */"./src/js/sliderr.js");
+__webpack_require__(/*! ./src/js/slider.js */"./src/js/slider.js");
 __webpack_require__(/*! ./src/js/form.js */"./src/js/form.js");
 __webpack_require__(/*! ./src/js/admin.js */"./src/js/admin.js");
 __webpack_require__(/*! ./src/js/toTheTop.js */"./src/js/toTheTop.js");
@@ -15882,8 +15860,8 @@ __webpack_require__(/*! ./src/css/gallery.scss */"./src/css/gallery.scss");
 __webpack_require__(/*! ./src/css/footer.scss */"./src/css/footer.scss");
 __webpack_require__(/*! ./src/css/news.scss */"./src/css/news.scss");
 __webpack_require__(/*! ./src/css/form.scss */"./src/css/form.scss");
-__webpack_require__(/*! ./src/css/slider2.css */"./src/css/slider2.css");
-module.exports = __webpack_require__(/*! ./src/css/ToTheTop.css */"./src/css/ToTheTop.css");
+__webpack_require__(/*! ./src/css/slider.scss */"./src/css/slider.scss");
+module.exports = __webpack_require__(/*! ./src/css/topButton.scss */"./src/css/topButton.scss");
 
 
 /***/ })

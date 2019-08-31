@@ -23,16 +23,16 @@ module.exports = {
   entry: [
     //js
     './src/js/firebase.js',
+    './src/js/news.js',
     './src/js/header.js',
-    './src/js/sliderr.js',
+    './src/js/slider.js',
     './src/js/form.js',
     './src/js/admin.js',
     './src/js/toTheTop.js',
     './src/js/jquery.fancybox.pack.js',
     './src/js/jquery.fancybox.js',
     './src/js/jquery.fancybox.cjs.js',
-    //'./src/js/fancy.js',
-    //'./src/js/fancybox.js',
+    
     //scss 
     './src/css/jquery.fancybox.css',
     './src/css/auth.scss',
@@ -44,8 +44,8 @@ module.exports = {
     './src/css/footer.scss',
     './src/css/news.scss',
     './src/css/form.scss',
-    './src/css/slider2.css',
-    './src/css/ToTheTop.css'
+    './src/css/slider.scss',
+    './src/css/topButton.scss'
     
  
   ],
@@ -115,8 +115,6 @@ module.exports = {
             options: {
               sourceMap: true,
               url: false
-              //TODO throw error
-              //minimize: true,
             },
         })
       },
