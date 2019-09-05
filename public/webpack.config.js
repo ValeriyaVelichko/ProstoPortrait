@@ -22,6 +22,7 @@ const htmlPlugins = generateHtmlPlugins('./src/html/views')
 module.exports = {
   entry: [
     //js
+    './src/js/preview.js',
     './src/js/firebase.js',
     './src/js/news.js',
     './src/js/header.js',

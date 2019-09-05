@@ -10806,6 +10806,17 @@ return jQuery;
 
 /***/ }),
 
+/***/ "./src/css/preview.scss":
+/*!******************************!*\
+  !*** ./src/css/preview.scss ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./src/css/slider.scss":
 /*!*****************************!*\
   !*** ./src/css/slider.scss ***!
@@ -10924,44 +10935,42 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _jquery2.default)("#contactForm").submit(function (e) {
-  e.preventDefault();
-  (0, _jquery2.default)(function writeNewPost(newsImage, newsHeader, newsContent, newsSourse, newsSourseName) {
-    var newsImage = (0, _jquery2.default)('#image').val();
-    var newsHeader = (0, _jquery2.default)('#header').val();
-    var newsContent = (0, _jquery2.default)('#text').val();
-    var newsSourse = (0, _jquery2.default)('#source').val();
-    var newsSourseName = (0, _jquery2.default)('#sourceName').val();
-    var postData = {
-      image: newsImage,
-      header: newsHeader,
-      text: newsContent,
-      source: newsSourse,
-      sourceName: newsSourseName
-    };
+(0, _jquery2.default)(function () {
+  var postData = {
+    image: null,
+    header: null,
+    text: null,
+    source: null,
+    sourceName: null
+  };
+  (0, _jquery2.default)("#contactForm").submit(function (e) {
+    e.preventDefault();
+    fillPostData();
     var newPostKey = firebase.database().ref().child('News').push().key;
     var updates = {};
     updates['/News/' + newPostKey] = postData;
     return firebase.database().ref().update(updates);
   });
-});
-(0, _jquery2.default)("#contactFormmini").submit(function (e) {
-  e.preventDefault();
-  (0, _jquery2.default)(function writeNewPostmini(newsHeaderMin, newsContentMin, newsSourseMin, newsSourseNameMin) {
-    var newsHeaderMin = (0, _jquery2.default)('#headermin').val();
-    var newsContentMin = (0, _jquery2.default)('#textmin').val();
-    var newsSourseMin = (0, _jquery2.default)('#sourcemin').val();
-    var newsSourseNameMin = (0, _jquery2.default)('#sourceNamemin').val();
-    var postDatamin = {
-      header: newsHeaderMin,
-      text: newsContentMin,
-      source: newsSourseMin,
-      sourceName: newsSourseNameMin
+
+  function fillPostData() {
+    postData.header = (0, _jquery2.default)('#header').val();
+    postData.text = (0, _jquery2.default)('#text').val();
+    postData.source = (0, _jquery2.default)('#source').val();
+    postData.sourceName = (0, _jquery2.default)('#sourceName').val();
+  }
+
+  (0, _jquery2.default)("#image").change(function () {
+    var file = this.files != null ? this.files[0] : null;
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+
+    reader.onload = function () {
+      postData.image = reader.result;
     };
-    var newPostKeymin = firebase.database().ref().child('Newsmin').push().key;
-    var updatesmin = {};
-    updatesmin['/Newsmin/' + newPostKeymin] = postDatamin;
-    return firebase.database().ref().update(updatesmin);
+
+    reader.onerror = function (error) {
+      console.log('Error: ', error);
+    };
   });
 });
 
@@ -15731,6 +15740,44 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /***/ }),
 
+/***/ "./src/js/preview.js":
+/*!***************************!*\
+  !*** ./src/js/preview.js ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function handleFileSelect(evt) {
+  var file = evt.target.files; // FileList object
+
+  var f = file[0]; // Only process image files.
+
+  if (!f.type.match('image.*')) {
+    alert("Image only please....");
+  }
+
+  var reader = new FileReader(); // Closure to capture the file information.
+
+  reader.onload = function (theFile) {
+    return function (e) {
+      // Render thumbnail.
+      var span = document.createElement('span');
+      span.innerHTML = ['<img class="thumb" title="', escape(theFile.name), '" src="', e.target.result, '" />'].join('');
+      document.getElementById('output').insertBefore(span, null);
+    };
+  }(f); // Read in the image file as a data URL.
+
+
+  reader.readAsDataURL(f);
+}
+
+document.getElementById('image').addEventListener('change', handleFileSelect, false);
+
+/***/ }),
+
 /***/ "./src/js/slider.js":
 /*!**************************!*\
   !*** ./src/js/slider.js ***!
@@ -15834,12 +15881,13 @@ btn.on('click', function (e) {
 /***/ }),
 
 /***/ 0:
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./src/js/firebase.js ./src/js/news.js ./src/js/header.js ./src/js/slider.js ./src/js/form.js ./src/js/admin.js ./src/js/toTheTop.js ./src/js/jquery.fancybox.pack.js ./src/js/jquery.fancybox.js ./src/js/jquery.fancybox.cjs.js ./src/css/jquery.fancybox.css ./src/css/auth.scss ./src/css/about.scss ./src/css/header.scss ./src/css/body.scss ./src/css/main.scss ./src/css/gallery.scss ./src/css/footer.scss ./src/css/news.scss ./src/css/form.scss ./src/css/slider.scss ./src/css/topButton.scss ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./src/js/preview.js ./src/js/firebase.js ./src/js/news.js ./src/js/header.js ./src/js/slider.js ./src/js/form.js ./src/js/admin.js ./src/js/toTheTop.js ./src/js/jquery.fancybox.pack.js ./src/js/jquery.fancybox.js ./src/js/jquery.fancybox.cjs.js ./src/css/preview.scss ./src/css/jquery.fancybox.css ./src/css/auth.scss ./src/css/about.scss ./src/css/header.scss ./src/css/body.scss ./src/css/main.scss ./src/css/gallery.scss ./src/css/footer.scss ./src/css/news.scss ./src/css/form.scss ./src/css/slider.scss ./src/css/topButton.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+__webpack_require__(/*! ./src/js/preview.js */"./src/js/preview.js");
 __webpack_require__(/*! ./src/js/firebase.js */"./src/js/firebase.js");
 __webpack_require__(/*! ./src/js/news.js */"./src/js/news.js");
 __webpack_require__(/*! ./src/js/header.js */"./src/js/header.js");
@@ -15850,6 +15898,7 @@ __webpack_require__(/*! ./src/js/toTheTop.js */"./src/js/toTheTop.js");
 __webpack_require__(/*! ./src/js/jquery.fancybox.pack.js */"./src/js/jquery.fancybox.pack.js");
 __webpack_require__(/*! ./src/js/jquery.fancybox.js */"./src/js/jquery.fancybox.js");
 __webpack_require__(/*! ./src/js/jquery.fancybox.cjs.js */"./src/js/jquery.fancybox.cjs.js");
+__webpack_require__(/*! ./src/css/preview.scss */"./src/css/preview.scss");
 __webpack_require__(/*! ./src/css/jquery.fancybox.css */"./src/css/jquery.fancybox.css");
 __webpack_require__(/*! ./src/css/auth.scss */"./src/css/auth.scss");
 __webpack_require__(/*! ./src/css/about.scss */"./src/css/about.scss");
