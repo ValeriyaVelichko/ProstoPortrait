@@ -16,26 +16,32 @@ $(function () {
     var updates = {};
     updates['/News/' + newPostKey] = postData;
     return firebase.database().ref().update(updates);
-  
+    
   }); 
+
 
   function fillPostData() {
     postData.header = $('#header').val();
     postData.text = $('#text').val();
     postData.source = $('#source').val();
     postData.sourceName = $('#sourceName').val();
-  }
-
-$("#image").change(function() {
-  var file = this.files != null ? this.files[0] : null;
-  var reader = new FileReader();
-  reader.readAsDataURL(file);
-  reader.onload = function () {
-    postData.image = reader.result;
   };
-  reader.onerror = function (error) {
-    console.log('Error: ', error);
-  };
-});  
 
-})
+  $("#image").change(function() {
+    var file = this.files != null ? this.files[0] : null;
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function () {
+      postData.image = reader.result;
+      var img = $("#output"); 
+      var setSrc = postData.image;
+      img.attr('src', setSrc); 
+    };
+    reader.onerror = function (error) {
+      console.log('Error: ', error);
+    }; 
+  });  
+$("#button").click(function() {
+  $("#contactForm")[0].reset();
+});
+})  

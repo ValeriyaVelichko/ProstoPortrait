@@ -1,4 +1,5 @@
 import $ from 'jquery';
+
 $(function(){
     var collection = firebase.database().ref('News');
     var post = collection.once('value')
@@ -12,15 +13,15 @@ $(function(){
     $('#news').append( $( main ) );
     
     function addNewOnPage(news) {
-
         var link =$('<a>', {
-        href: source
-        } );
+            href: source
+        });
+
         var source = $('<span>');
         $(source).text(news.source);
         $(link).addClass( "article first-article" );
         $(link).append(document.createTextNode(''));
-        $(main).append( $( link ) );
+        $(main).append($( link ));
 
         var image = $('<figure>').addClass( "article-image is-16by9" );
         $(link).append(image);
@@ -29,27 +30,28 @@ $(function(){
         var setSrc = news.image;
         img.attr('src', setSrc); 
 
-        $( image ).append( $( img ) );
-        var body = $('<div>').addClass( "article-body" );
-        $(link).append( $( body ) );
+        $( image ).append($(img ));
+        var body = $('<div>').addClass("article-body");
+        $(link).append($( body ));
 
-        var header = $('<h2>').addClass( "article-title" );
-        $( body ).append( $( header ) );
+        var header = $('<h2>').addClass("article-title");
+        $( body ).append($(header ));
         $(header).text(news.header);
 
-        var content = $('<p>').addClass( "article-content" );
-        $( body ).append( $( content ) );
+        var content = $('<p>').addClass("article-content");
+        $( body ).append($(content));
         $(content).text(news.text);
 
-        var info = $('<a>').addClass( "article-info" );
+        var info = $('<a>').addClass("article-info");
         var setSrcLink = news.source;
         info.attr('href', setSrcLink);
-        $( body ).append( $( info ) );
+        $( body ).append($( info ));
 
         var source = $('<span>');
         $(source).text(news.sourceName);
-        $( info ).append( $( source ) );
+        $(info).append($( source ));
     }
+
 });
 
 $(function(){
@@ -63,37 +65,38 @@ $(function(){
     })  
 
     var mainmin = $('<ul>').addClass( "column" );
-    $('#news').append( $( mainmin ) );
+    $('#news').append($(mainmin));
     
     function addMinNewOnPage(newsmin) {
-
         var link =$('<a>', {
         href: sourse
-        } );
+        });
+
         var sourse = $('<span>');
         $(sourse).text(newsmin.source);
-        $(info).append( $( sourse ) );
-        $(link).addClass( "article first-article" );
-        $(mainmin).append( $( link ) );
+        $(info).append($(sourse));
+        $(link).addClass("article first-article");
+        $(mainmin).append($(link));
 
-        var body = $('<div>').addClass( "article-body" );
-        $(link).append( $( body ) );
+        var body = $('<div>').addClass("article-body");
+        $(link).append($(body));
 
-        var header = $('<h2>').addClass( "article-title" );
-        $( body ).append( $( header ) );
+        var header = $('<h2>').addClass("article-title");
+        $( body ).append($(header));
         $(header).text(newsmin.header);
 
-        var content = $('<p>').addClass( "article-content" );
-        $( body ).append( $( content ) );
+        var content = $('<p>').addClass("article-content");
+        $( body ).append($( content));
         $(content).text(newsmin.text);
 
         var info = $('<a>').addClass( "article-info" );
         var setSrcLink = newsmin.source;
         info.attr('href', setSrcLink);
-        $( body ).append( $( info ) );
+        $(body).append($(info));
   
         var source = $('<span>');
         $(source).text(newsmin.sourceName);
-        $( info ).append( $( sourse ) );
+        $(info).append($(sourse));
     }
+
 });

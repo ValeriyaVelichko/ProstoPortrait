@@ -22,38 +22,37 @@ const htmlPlugins = generateHtmlPlugins('./src/html/views')
 module.exports = {
   entry: [
     //js
-    './src/js/preview.js',
-    './src/js/firebase.js',
-    './src/js/news.js',
     './src/js/header.js',
     './src/js/slider.js',
+    './src/js/toTheTop.js',
+    './src/js/firebase.js',
+    './src/js/news.js',
     './src/js/form.js',
     './src/js/admin.js',
-    './src/js/toTheTop.js',
     './src/js/jquery.fancybox.pack.js',
     './src/js/jquery.fancybox.js',
     './src/js/jquery.fancybox.cjs.js',
     
     //scss 
-    './src/css/jquery.fancybox.css',
-    './src/css/auth.scss',
-    './src/css/about.scss',
     './src/css/header.scss',
     './src/css/body.scss',
     './src/css/main.scss',
-    './src/css/gallery.scss',
-    './src/css/footer.scss',
+    './src/css/slider.scss',
+    './src/css/topButton.scss',
     './src/css/news.scss',
     './src/css/form.scss',
-    './src/css/slider.scss',
-    './src/css/topButton.scss'
-    
- 
+    './src/css/auth.scss',
+    './src/css/about.scss',
+    './src/css/gallery.scss',
+    './src/css/footer.scss',
+    './src/css/jquery.fancybox.css',
   ],
   output: {
     filename: './js/bundle.js'
   },
+
   devtool: "source-map",
+
   plugins: [
     new ExtractTextPlugin( {
       filename: './css/style.bundle.css',
@@ -72,8 +71,9 @@ module.exports = {
     }
     
   ]),
-  
-  ].concat(htmlPlugins),
+ ]
+ 
+  .concat(htmlPlugins),
   module: {
     rules: [
       { 
@@ -106,9 +106,6 @@ module.exports = {
         include: path.resolve(__dirname, 'src/css'),
         use: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader!sass-loader' }) 
       }, 
-
-    
-        
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
@@ -119,7 +116,6 @@ module.exports = {
             },
         })
       },
-
       {    
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         loader: "file-loader"

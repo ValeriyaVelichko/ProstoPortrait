@@ -1,66 +1,66 @@
 .headerMain {
-position:fixed;
-width:100%;
-background-color: #ffffff;
-z-index: 4;
-opacity: 0.9;
-text-align: center;
-margin: 0;
-padding: 0;
-    .nav {
-	list-style: none;
-	margin: 0 ;
+	position:fixed;
+	width:100%;
+	background-color: #ffffff;
+	z-index: 4;
+	opacity: 0.9;
+	text-align: center;
+	margin: 0;
 	padding: 0;
-	position: relative;
-    width:100%;
+    .nav {
+		list-style: none;
+		margin: 0 ;
+		padding: 0;
+		position: relative;
+    	width:100%;
     }
     .nav li {
-	float: left;
-	width:33.33333%;
-	display: block;
-	position: relative;
-    text-decoration: none;
-    color: #000000;
-	padding: 1%;
-	font-size: 18px;
-	text-align: center;
+		float: left;
+		width:33.33333%;
+		display: block;
+		position: relative;
+    	text-decoration: none;
+    	color: #000000;
+		padding: 1%;
+		font-size: 18px;
+		text-align: center;
     }
     .nav li:nth-child(3){
-	font-size: 14px;
+		font-size: 14px;
 	}
 	.logoMain{
-	font-size: 18px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    text-align: center;
+		font-size: 18px;
+    	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    	text-align: center;
 	}
     .mark {
-	font-weight: 400;
+		font-weight: 400;
 	}
 	.dropdown {
-	position: relative;
-	display: inline-block;
+		position: relative;
+		display: inline-block;
     }
-        .mainmenubtn {
+    .mainmenubtn {
 	    width: 20px;
 	    color: white;
 	    border: none;
 	    cursor: pointer;
-        }
-        .dropdown-child {
+    }
+    .dropdown-child {
 	    display: none;
 	    background-color: #ffffff;
 	    min-width: 100px;
-        }
-        .dropdown-child a {
+    }
+    .dropdown-child a {
 	    color: #000000;
 	    padding:20px;
 	    text-decoration: none;
 	    display: block;
-        }
-        .dropdown:hover .dropdown-child {
+    }
+    .dropdown:hover .dropdown-child {
 	    display: block;
-        }
-        .dropdown-child a:hover {
+    }
+    .dropdown-child a:hover {
         background-color:#ffdb8e;
-        }
+    }
 }

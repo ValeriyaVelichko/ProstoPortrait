@@ -3,20 +3,14 @@
 	margin: 0;
 	box-sizing: border-box;
 }
-.authContainer {
-	max-width: 400px;
-	margin: 20% auto;
-	padding: 20px;
-	border-radius: 4px;
-	background-color: #ebebeb;
-	box-shadow: 0 1px 3px #ffcda9, 0 1px 2px #ffcda9;
-}
 .form {
 	font-family: Arial, sans-serif;
 	font-size: 16px;
-	background-color: #fff8ea;
-
-
+	background-color: #fff8ea;        
+	.container:hover,
+    .container:active {
+		box-shadow: 0 14px 28px #ffcda9, 0 10px 10px #ffcda9;
+	}
     .container {
 	    max-width: 500px;
 	    margin: 2% auto;
@@ -24,26 +18,17 @@
 	    border-radius: 4px;
 	    background-color: #ebebeb;
 	    box-shadow: 0 1px 3px #ffcda9, 0 1px 2px #ffcda9;
-
-        .container:hover,
-        .container:active {
-        box-shadow: 0 14px 28px #ffcda9, 0 10px 10px #ffcda9;
-        }
-
         h2, .field-block {
 	        margin-bottom: 20px;
         }
-
         .field-block label, .field-block .field {
-	display: block;
-	width: 100%;
-        }
-
-        .field-block label {
+			display: block;
+			width: 100%;
+		}
+		.field-block label {
 	        margin-bottom: 8px;
 	        font-weight: bold;
         }
-
         .field-block .field {
 	        font-size: 16px;
 	        padding: 8px 12px;
@@ -53,22 +38,18 @@
 	        box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
 	        transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
         }
-
         .field-block .field:focus {
             border-color: #2d525b;;
             outline: 0;
             box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px #2d525b;;
         }
-
         .field-block textarea {
 	        resize: vertical;
         }
-
         .check-text {
 	        font-size: 14px;
 	        vertical-align: top;
         }
-
         .button  {
 	        cursor: pointer;
 	        font-size: 16px;
@@ -82,10 +63,10 @@
 	        margin-bottom: 5px;
         }
         #loader {
-	    display: none;
-        }
-	}
-	.thumb{
-		width: 100%;
+	    	display: none;
+		}
+		#output{
+		width: 60%
+		}
 	}
 }

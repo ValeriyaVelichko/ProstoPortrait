@@ -13,14 +13,14 @@ $("#sign-in").submit(function(e) {
       .then(function(){
         var user = firebase.auth().currentUser;
         if (user.email == login ) {
-        window.location.href = 'addNew.html';
+          window.location.href = 'addNew.html';
         }
       })
       .catch(function(aa) {
-      var aa = $('<p>').addClass( "error" ); 
-      $('#sign-in').append( $( aa ) );
-      $(aa).text('Неверный логин и/или пароль. Пожалуйста, попробуйте еще раз') ;
-    });
+        var aa = $('<p>').addClass( "error" ); 
+        $('#sign-in').append( $( aa ) );
+        $(aa).text('Неверный логин и/или пароль. Пожалуйста, попробуйте еще раз') ;
+      });
   });
 });
 
