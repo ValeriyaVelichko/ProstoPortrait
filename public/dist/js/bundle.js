@@ -10740,17 +10740,6 @@ return jQuery;
 
 /***/ }),
 
-/***/ "./src/css/form.scss":
-/*!***************************!*\
-  !*** ./src/css/form.scss ***!
-  \***************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "./src/css/gallery.scss":
 /*!******************************!*\
   !*** ./src/css/gallery.scss ***!
@@ -10799,6 +10788,17 @@ return jQuery;
 /*!***************************!*\
   !*** ./src/css/news.scss ***!
   \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./src/css/newsForm.scss":
+/*!*******************************!*\
+  !*** ./src/css/newsForm.scss ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -10867,154 +10867,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /***/ }),
 
-/***/ "./src/js/firebase.js":
-/*!****************************!*\
-  !*** ./src/js/firebase.js ***!
-  \****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _jquery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-(0, _jquery2.default)(function () {
-  var config = {
-    apiKey: "AIzaSyAt_HqgXnSMl-zSxJW27ge_AIUQDSXc8eg",
-    authDomain: "prostoportrait.firebaseapp.com",
-    databaseURL: "https://prostoportrait.firebaseio.com",
-    projectId: "prostoportrait",
-    storageBucket: "prostoportrait.appspot.com",
-    messagingSenderId: "770788079932"
-  };
-  firebase.initializeApp(config);
-  (0, _jquery2.default)(function () {
-    try {
-      var app = firebase.app();
-      var features = ['auth', 'database', 'messaging', 'storage'].filter(function (feature) {
-        return typeof app[feature] === 'function';
-      });
-    } catch (e) {
-      console.error(e);
-      document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-    }
-  });
-});
-
-/***/ }),
-
-/***/ "./src/js/form.js":
-/*!************************!*\
-  !*** ./src/js/form.js ***!
-  \************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _jquery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-(0, _jquery2.default)(function () {
-  var postData = {
-    image: null,
-    header: null,
-    text: null,
-    source: null,
-    sourceName: null
-  };
-  (0, _jquery2.default)("#contactForm").submit(function (e) {
-    e.preventDefault();
-    fillPostData();
-    var newPostKey = firebase.database().ref().child('News').push().key;
-    var updates = {};
-    updates['/News/' + newPostKey] = postData;
-    return firebase.database().ref().update(updates);
-  });
-
-  function fillPostData() {
-    postData.header = (0, _jquery2.default)('#header').val();
-    postData.text = (0, _jquery2.default)('#text').val();
-    postData.source = (0, _jquery2.default)('#source').val();
-    postData.sourceName = (0, _jquery2.default)('#sourceName').val();
-  }
-
-  ;
-  (0, _jquery2.default)("#image").change(function () {
-    var file = this.files != null ? this.files[0] : null;
-    var reader = new FileReader();
-    reader.readAsDataURL(file);
-
-    reader.onload = function () {
-      postData.image = reader.result;
-      var img = (0, _jquery2.default)("#output");
-      var setSrc = postData.image;
-      img.attr('src', setSrc);
-    };
-
-    reader.onerror = function (error) {
-      console.log('Error: ', error);
-    };
-  });
-  (0, _jquery2.default)("#button").click(function () {
-    (0, _jquery2.default)("#contactForm")[0].reset();
-  });
-});
-
-/***/ }),
-
-/***/ "./src/js/header.js":
-/*!**************************!*\
-  !*** ./src/js/header.js ***!
-  \**************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _jquery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-(0, _jquery2.default)(function () {
-  var mywindow = (0, _jquery2.default)(window);
-  var mypos = mywindow.scrollTop();
-  var up = false;
-  var newscroll;
-  mywindow.scroll(function () {
-    newscroll = mywindow.scrollTop();
-
-    if (newscroll > mypos && !up) {
-      (0, _jquery2.default)('.headerMain').stop().slideToggle();
-      up = !up;
-      console.log(up);
-    } else if (newscroll < mypos && up) {
-      (0, _jquery2.default)('.headerMain').stop().slideToggle();
-      up = !up;
-    }
-
-    mypos = newscroll;
-  });
-});
-
-/***/ }),
-
-/***/ "./src/js/jquery.fancybox.cjs.js":
-/*!***************************************!*\
-  !*** ./src/js/jquery.fancybox.cjs.js ***!
-  \***************************************/
+/***/ "./src/js/fancybox/jquery.fancybox.cjs.js":
+/*!************************************************!*\
+  !*** ./src/js/fancybox/jquery.fancybox.cjs.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12857,10 +12713,10 @@ module.exports = function (jQuery) {
 
 /***/ }),
 
-/***/ "./src/js/jquery.fancybox.js":
-/*!***********************************!*\
-  !*** ./src/js/jquery.fancybox.js ***!
-  \***********************************/
+/***/ "./src/js/fancybox/jquery.fancybox.js":
+/*!********************************************!*\
+  !*** ./src/js/fancybox/jquery.fancybox.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14709,10 +14565,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /***/ }),
 
-/***/ "./src/js/jquery.fancybox.pack.js":
-/*!****************************************!*\
-  !*** ./src/js/jquery.fancybox.pack.js ***!
-  \****************************************/
+/***/ "./src/js/fancybox/jquery.fancybox.pack.js":
+/*!*************************************************!*\
+  !*** ./src/js/fancybox/jquery.fancybox.pack.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15613,6 +15469,86 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /***/ }),
 
+/***/ "./src/js/firebase.js":
+/*!****************************!*\
+  !*** ./src/js/firebase.js ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _jquery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _jquery2.default)(function () {
+  var config = {
+    apiKey: "AIzaSyAt_HqgXnSMl-zSxJW27ge_AIUQDSXc8eg",
+    authDomain: "prostoportrait.firebaseapp.com",
+    databaseURL: "https://prostoportrait.firebaseio.com",
+    projectId: "prostoportrait",
+    storageBucket: "prostoportrait.appspot.com",
+    messagingSenderId: "770788079932"
+  };
+  firebase.initializeApp(config);
+  (0, _jquery2.default)(function () {
+    try {
+      var app = firebase.app();
+      var features = ['auth', 'database', 'messaging', 'storage'].filter(function (feature) {
+        return typeof app[feature] === 'function';
+      });
+    } catch (e) {
+      console.error(e);
+      document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
+    }
+  });
+});
+
+/***/ }),
+
+/***/ "./src/js/header.js":
+/*!**************************!*\
+  !*** ./src/js/header.js ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _jquery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _jquery2.default)(function () {
+  var mywindow = (0, _jquery2.default)(window);
+  var mypos = mywindow.scrollTop();
+  var up = false;
+  var newscroll;
+  mywindow.scroll(function () {
+    newscroll = mywindow.scrollTop();
+
+    if (newscroll > mypos && !up) {
+      (0, _jquery2.default)('.headerMain').stop().slideToggle();
+      up = !up;
+      console.log(up);
+    } else if (newscroll < mypos && up) {
+      (0, _jquery2.default)('.headerMain').stop().slideToggle();
+      up = !up;
+    }
+
+    mypos = newscroll;
+  });
+});
+
+/***/ }),
+
 /***/ "./src/js/news.js":
 /*!************************!*\
   !*** ./src/js/news.js ***!
@@ -15673,22 +15609,22 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   }
 });
 (0, _jquery2.default)(function () {
-  var collectionmin = firebase.database().ref('Newsmin');
-  var postmin = collectionmin.once('value').then(function (newsmin) {
-    newsmin.forEach(function (postmin) {
-      var newsmin = postmin.val();
-      addMinNewOnPage(newsmin);
+  var collectionMin = firebase.database().ref('Newsmin');
+  var postMin = collectionMin.once('value').then(function (newsMin) {
+    newsMin.forEach(function (postMin) {
+      var newsMin = postMin.val();
+      addMinNewOnPage(newsMin);
     });
   });
   var mainmin = (0, _jquery2.default)('<ul>').addClass("column");
   (0, _jquery2.default)('#news').append((0, _jquery2.default)(mainmin));
 
-  function addMinNewOnPage(newsmin) {
+  function addMinNewOnPage(newsMin) {
     var link = (0, _jquery2.default)('<a>', {
       href: sourse
     });
     var sourse = (0, _jquery2.default)('<span>');
-    (0, _jquery2.default)(sourse).text(newsmin.source);
+    (0, _jquery2.default)(sourse).text(newsMin.source);
     (0, _jquery2.default)(info).append((0, _jquery2.default)(sourse));
     (0, _jquery2.default)(link).addClass("article first-article");
     (0, _jquery2.default)(mainmin).append((0, _jquery2.default)(link));
@@ -15696,18 +15632,105 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     (0, _jquery2.default)(link).append((0, _jquery2.default)(body));
     var header = (0, _jquery2.default)('<h2>').addClass("article-title");
     (0, _jquery2.default)(body).append((0, _jquery2.default)(header));
-    (0, _jquery2.default)(header).text(newsmin.header);
+    (0, _jquery2.default)(header).text(newsMin.header);
     var content = (0, _jquery2.default)('<p>').addClass("article-content");
     (0, _jquery2.default)(body).append((0, _jquery2.default)(content));
-    (0, _jquery2.default)(content).text(newsmin.text);
+    (0, _jquery2.default)(content).text(newsMin.text);
     var info = (0, _jquery2.default)('<a>').addClass("article-info");
-    var setSrcLink = newsmin.source;
+    var setSrcLink = newsMin.source;
     info.attr('href', setSrcLink);
     (0, _jquery2.default)(body).append((0, _jquery2.default)(info));
     var source = (0, _jquery2.default)('<span>');
-    (0, _jquery2.default)(source).text(newsmin.sourceName);
+    (0, _jquery2.default)(source).text(newsMin.sourceName);
     (0, _jquery2.default)(info).append((0, _jquery2.default)(sourse));
   }
+});
+
+/***/ }),
+
+/***/ "./src/js/newsForm.js":
+/*!****************************!*\
+  !*** ./src/js/newsForm.js ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _jquery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _jquery2.default)(function () {
+  var postData = {
+    image: null,
+    header: null,
+    text: null,
+    source: null,
+    sourceName: null
+  };
+  (0, _jquery2.default)("#newsForm").submit(function (e) {
+    e.preventDefault();
+    fillPostData();
+    var newPostKey = firebase.database().ref().child('News').push().key;
+    var updates = {};
+    updates['/News/' + newPostKey] = postData;
+    return firebase.database().ref().update(updates);
+  });
+
+  function fillPostData() {
+    postData.header = (0, _jquery2.default)('#header').val();
+    postData.text = (0, _jquery2.default)('#text').val();
+    postData.source = (0, _jquery2.default)('#source').val();
+    postData.sourceName = (0, _jquery2.default)('#sourceName').val();
+  }
+
+  ;
+  (0, _jquery2.default)("#image").change(function () {
+    var file = this.files != null ? this.files[0] : null;
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+
+    reader.onload = function () {
+      postData.image = reader.result;
+      var img = (0, _jquery2.default)("#output");
+      var setSrc = postData.image;
+      img.attr('src', setSrc);
+    };
+
+    reader.onerror = function (error) {
+      console.log('Error: ', error);
+    };
+  });
+});
+(0, _jquery2.default)(function () {
+  var postData = {
+    image: null,
+    header: null,
+    text: null,
+    source: null,
+    sourceName: null
+  };
+  (0, _jquery2.default)("#newsFormMin").submit(function (e) {
+    e.preventDefault();
+    fillPostData();
+    var newPostKey = firebase.database().ref().child('Newsmin').push().key;
+    var updates = {};
+    updates['/Newsmin/' + newPostKey] = postData;
+    return firebase.database().ref().update(updates);
+  });
+
+  function fillPostData() {
+    postData.header = (0, _jquery2.default)('#headerMin').val();
+    postData.text = (0, _jquery2.default)('#textMin').val();
+    postData.source = (0, _jquery2.default)('#sourceMin').val();
+    postData.sourceName = (0, _jquery2.default)('#sourceNameMin').val();
+  }
+
+  ;
 });
 
 /***/ }),
@@ -15814,9 +15837,9 @@ btn.on('click', function (e) {
 /***/ }),
 
 /***/ 0:
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./src/js/header.js ./src/js/slider.js ./src/js/toTheTop.js ./src/js/firebase.js ./src/js/news.js ./src/js/form.js ./src/js/admin.js ./src/js/jquery.fancybox.pack.js ./src/js/jquery.fancybox.js ./src/js/jquery.fancybox.cjs.js ./src/css/header.scss ./src/css/body.scss ./src/css/main.scss ./src/css/slider.scss ./src/css/topButton.scss ./src/css/news.scss ./src/css/form.scss ./src/css/auth.scss ./src/css/about.scss ./src/css/gallery.scss ./src/css/footer.scss ./src/css/jquery.fancybox.css ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./src/js/header.js ./src/js/slider.js ./src/js/toTheTop.js ./src/js/firebase.js ./src/js/news.js ./src/js/newsForm.js ./src/js/admin.js ./src/js/fancybox/jquery.fancybox.pack.js ./src/js/fancybox/jquery.fancybox.js ./src/js/fancybox/jquery.fancybox.cjs.js ./src/css/header.scss ./src/css/body.scss ./src/css/main.scss ./src/css/slider.scss ./src/css/topButton.scss ./src/css/news.scss ./src/css/newsForm.scss ./src/css/auth.scss ./src/css/about.scss ./src/css/gallery.scss ./src/css/footer.scss ./src/css/jquery.fancybox.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15825,18 +15848,18 @@ __webpack_require__(/*! ./src/js/slider.js */"./src/js/slider.js");
 __webpack_require__(/*! ./src/js/toTheTop.js */"./src/js/toTheTop.js");
 __webpack_require__(/*! ./src/js/firebase.js */"./src/js/firebase.js");
 __webpack_require__(/*! ./src/js/news.js */"./src/js/news.js");
-__webpack_require__(/*! ./src/js/form.js */"./src/js/form.js");
+__webpack_require__(/*! ./src/js/newsForm.js */"./src/js/newsForm.js");
 __webpack_require__(/*! ./src/js/admin.js */"./src/js/admin.js");
-__webpack_require__(/*! ./src/js/jquery.fancybox.pack.js */"./src/js/jquery.fancybox.pack.js");
-__webpack_require__(/*! ./src/js/jquery.fancybox.js */"./src/js/jquery.fancybox.js");
-__webpack_require__(/*! ./src/js/jquery.fancybox.cjs.js */"./src/js/jquery.fancybox.cjs.js");
+__webpack_require__(/*! ./src/js/fancybox/jquery.fancybox.pack.js */"./src/js/fancybox/jquery.fancybox.pack.js");
+__webpack_require__(/*! ./src/js/fancybox/jquery.fancybox.js */"./src/js/fancybox/jquery.fancybox.js");
+__webpack_require__(/*! ./src/js/fancybox/jquery.fancybox.cjs.js */"./src/js/fancybox/jquery.fancybox.cjs.js");
 __webpack_require__(/*! ./src/css/header.scss */"./src/css/header.scss");
 __webpack_require__(/*! ./src/css/body.scss */"./src/css/body.scss");
 __webpack_require__(/*! ./src/css/main.scss */"./src/css/main.scss");
 __webpack_require__(/*! ./src/css/slider.scss */"./src/css/slider.scss");
 __webpack_require__(/*! ./src/css/topButton.scss */"./src/css/topButton.scss");
 __webpack_require__(/*! ./src/css/news.scss */"./src/css/news.scss");
-__webpack_require__(/*! ./src/css/form.scss */"./src/css/form.scss");
+__webpack_require__(/*! ./src/css/newsForm.scss */"./src/css/newsForm.scss");
 __webpack_require__(/*! ./src/css/auth.scss */"./src/css/auth.scss");
 __webpack_require__(/*! ./src/css/about.scss */"./src/css/about.scss");
 __webpack_require__(/*! ./src/css/gallery.scss */"./src/css/gallery.scss");

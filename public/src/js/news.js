@@ -55,25 +55,25 @@ $(function(){
 });
 
 $(function(){
-    var collectionmin = firebase.database().ref('Newsmin');
-    var postmin = collectionmin.once('value')
-    .then (function (newsmin) {
-        newsmin.forEach (function (postmin) {
-            var newsmin = postmin.val();
-            addMinNewOnPage(newsmin);
+    var collectionMin = firebase.database().ref('Newsmin');
+    var postMin = collectionMin.once('value')
+    .then (function (newsMin) {
+        newsMin.forEach (function (postMin) {
+            var newsMin = postMin.val();
+            addMinNewOnPage(newsMin);
         });
     })  
 
     var mainmin = $('<ul>').addClass( "column" );
     $('#news').append($(mainmin));
     
-    function addMinNewOnPage(newsmin) {
+    function addMinNewOnPage(newsMin) {
         var link =$('<a>', {
         href: sourse
         });
 
         var sourse = $('<span>');
-        $(sourse).text(newsmin.source);
+        $(sourse).text(newsMin.source);
         $(info).append($(sourse));
         $(link).addClass("article first-article");
         $(mainmin).append($(link));
@@ -83,19 +83,19 @@ $(function(){
 
         var header = $('<h2>').addClass("article-title");
         $( body ).append($(header));
-        $(header).text(newsmin.header);
+        $(header).text(newsMin.header);
 
         var content = $('<p>').addClass("article-content");
         $( body ).append($( content));
-        $(content).text(newsmin.text);
+        $(content).text(newsMin.text);
 
         var info = $('<a>').addClass( "article-info" );
-        var setSrcLink = newsmin.source;
+        var setSrcLink = newsMin.source;
         info.attr('href', setSrcLink);
         $(body).append($(info));
   
         var source = $('<span>');
-        $(source).text(newsmin.sourceName);
+        $(source).text(newsMin.sourceName);
         $(info).append($(sourse));
     }
 

@@ -357,60 +357,28 @@ header {
     background-image: url("../img/fancybox_loading@2x.gif");
     background-size: 24px 24px;
     /*The size of the normal image, half the size of the hi-res image*/ } }
-.headerMain {
-  position: fixed;
-  width: 100%;
-  background-color: #ffffff;
-  z-index: 4;
-  opacity: 0.9;
-  text-align: center;
-  margin: 0;
-  padding: 0; }
-  .headerMain .nav {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    width: 100%; }
-  .headerMain .nav li {
-    float: left;
-    width: 33.33333%;
-    display: block;
-    position: relative;
-    text-decoration: none;
-    color: #000000;
-    padding: 1%;
-    font-size: 18px;
-    text-align: center; }
-  .headerMain .nav li:nth-child(3) {
-    font-size: 14px; }
-  .headerMain .logoMain {
-    font-size: 18px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    text-align: center; }
-  .headerMain .mark {
-    font-weight: 400; }
-  .headerMain .dropdown {
-    position: relative;
-    display: inline-block; }
-  .headerMain .mainmenubtn {
-    width: 20px;
-    color: white;
-    border: none;
-    cursor: pointer; }
-  .headerMain .dropdown-child {
-    display: none;
+@font-face {
+  font-family: 'bahnschrift';
+  src: url(b3483ec650bba4a4416d39c4d6030a99.ttf);
+  font-weight: normal;
+  font-style: normal; }
+
+html {
+  font-size: 14px;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  min-width: 300px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  text-rendering: optimizeLegibility;
+  font: "bahnschrift"; }
+  html body {
+    font: 1rem "bahnschrift";
+    line-height: 1.4;
     background-color: #ffffff;
-    min-width: 100px; }
-  .headerMain .dropdown-child a {
-    color: #000000;
-    padding: 20px;
-    text-decoration: none;
-    display: block; }
-  .headerMain .dropdown:hover .dropdown-child {
-    display: block; }
-  .headerMain .dropdown-child a:hover {
-    background-color: #ffdb8e; }
+    padding: 0;
+    margin: 0;
+    height: 100%; }
 @charset "UTF-8";
 .preview {
   display: flex;
@@ -676,28 +644,60 @@ img.icon_livicon_shadowed:hover {
 .content h3 {
   font-style: italic;
   color: #96a2a7; }
-@font-face {
-  font-family: 'bahnschrift';
-  src: url(b3483ec650bba4a4416d39c4d6030a99.ttf);
-  font-weight: normal;
-  font-style: normal; }
-
-html {
-  font-size: 14px;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  min-width: 300px;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  text-rendering: optimizeLegibility;
-  font: "bahnschrift"; }
-  html body {
-    font: 1rem "bahnschrift";
-    line-height: 1.4;
-    background-color: #ffffff;
-    padding: 0;
+.headerMain {
+  position: fixed;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 4;
+  opacity: 0.9;
+  text-align: center;
+  margin: 0;
+  padding: 0; }
+  .headerMain .nav {
+    list-style: none;
     margin: 0;
-    height: 100%; }
+    padding: 0;
+    position: relative;
+    width: 100%; }
+  .headerMain .nav li {
+    float: left;
+    width: 33.33333%;
+    display: block;
+    position: relative;
+    text-decoration: none;
+    color: #000000;
+    padding: 1%;
+    font-size: 18px;
+    text-align: center; }
+  .headerMain .nav li:nth-child(3) {
+    font-size: 14px; }
+  .headerMain .logoMain {
+    font-size: 18px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center; }
+  .headerMain .mark {
+    font-weight: 400; }
+  .headerMain .dropdown {
+    position: relative;
+    display: inline-block; }
+  .headerMain .mainmenubtn {
+    width: 20px;
+    color: white;
+    border: none;
+    cursor: pointer; }
+  .headerMain .dropdown-child {
+    display: none;
+    background-color: #ffffff;
+    min-width: 100px; }
+  .headerMain .dropdown-child a {
+    color: #000000;
+    padding: 20px;
+    text-decoration: none;
+    display: block; }
+  .headerMain .dropdown:hover .dropdown-child {
+    display: block; }
+  .headerMain .dropdown-child a:hover {
+    background-color: #ffdb8e; }
 * {
   padding: 0;
   margin: 0;

@@ -9,7 +9,7 @@ $(function () {
     sourceName: null
   };
 
-  $("#contactForm").submit(function(e) {
+  $("#newsForm").submit(function(e) {
     e.preventDefault(); 
     fillPostData();
     var newPostKey = firebase.database().ref().child('News').push().key;
@@ -41,7 +41,31 @@ $(function () {
       console.log('Error: ', error);
     }; 
   });  
-$("#button").click(function() {
-  $("#contactForm")[0].reset();
-});
-})  
+});  
+
+$(function () {
+
+  var postData = {
+    image: null,
+    header: null,
+    text: null,
+    source: null,
+    sourceName: null
+  };
+
+  $("#newsFormMin").submit(function(e) {
+    e.preventDefault(); 
+    fillPostData();
+    var newPostKey = firebase.database().ref().child('Newsmin').push().key;
+    var updates = {};
+    updates['/Newsmin/' + newPostKey] = postData;
+    return firebase.database().ref().update(updates);
+  }); 
+
+  function fillPostData() {
+    postData.header = $('#headerMin').val();
+    postData.text = $('#textMin').val();
+    postData.source = $('#sourceMin').val();
+    postData.sourceName = $('#sourceNameMin').val();
+  };
+}) 
