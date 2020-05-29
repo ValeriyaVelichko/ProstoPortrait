@@ -3,6 +3,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const fs = require('fs')
 const CopyWebpackPlugin= require('copy-webpack-plugin');
+const webpack = require("webpack");
 
 function generateHtmlPlugins(templateDir) {
   const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
@@ -22,6 +23,7 @@ const htmlPlugins = generateHtmlPlugins('./src/html/views')
 module.exports = {
   entry: [
     //js
+    './src/js/menu.js',
     './src/js/header.js',
     './src/js/slider.js',
     './src/js/toTheTop.js',
@@ -29,14 +31,14 @@ module.exports = {
     './src/js/news.js',
     './src/js/newsForm.js',
     './src/js/admin.js',
-    './src/js/fancybox/jquery.fancybox.pack.js',
+    './src/js/fancybox.js',
     './src/js/fancybox/jquery.fancybox.js',
     './src/js/fancybox/jquery.fancybox.cjs.js',
-    
     //scss 
     './src/css/header.scss',
     './src/css/body.scss',
-    './src/css/main.scss',
+    './src/css/main.scss',    
+    './src/css/infoColumns.scss',
     './src/css/slider.scss',
     './src/css/topButton.scss',
     './src/css/news.scss',
@@ -53,11 +55,20 @@ module.exports = {
 
   devtool: "source-map",
 
-  plugins: [
-    new ExtractTextPlugin( {
+  plugins: [ 
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+    '$': 'jquery',
+    jquery: 'jquery',
+    jQuery: 'jquery',
+    'window.jquery': 'jquery',
+    'window.jQuery': 'jquery',
+    }),
+      new ExtractTextPlugin( {
       filename: './css/style.bundle.css',
     }),
-    new CopyWebpackPlugin([{
+    new CopyWebpackPlugin([
+    {
       from: './src/fonts',
       to: './fonts'
     },
@@ -69,9 +80,8 @@ module.exports = {
       from: './src/img',
       to: './img'
     }
-    
-  ]),
- ]
+    ]),
+  ]
  
   .concat(htmlPlugins),
   module: {

@@ -1,36 +1,119 @@
+.menu-triger {
+	display: block;
+	width: 25px;
+	height: 17px;	
+	position: absolute;
+	left: 15px;
+}	
+.menu-close {
+	display: block;
+	width: 28px;
+	height: 28px;	
+	background: url(https://snipp.ru/demo/449/close.png) 0 0 repeat;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	z-index: 100;
+}
+.menu-popup {
+	display: none;	
+	background: #efefefe7;
+	z-index: 300000;
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	top: 0;
+	padding: 30px;
+	box-shadow:  0px 15px 3px 0px rgba(0, 0, 0, 0.2);
+}
+.menu-popup ul {
+	margin: 0;
+	padding: 0;
+}
+.menu-popup li {
+	list-style: none;
+	margin: 10px 0;
+	padding: 0;
+}
+.menu-popup li a {
+	font-size: 18px;
+	font-family: "Arial";
+	color: rgb(255, 255, 255);
+	line-height: 1.4;	
+	text-decoration: none;
+}
+.body_pointer * {
+	cursor: pointer;
+}
+.menu {
+	width:100%;
+	z-index: 100;
+	list-style: none;
+	display: flex;
+	text-decoration: none;
+	background-color: #efefef96;
+	
+	li{
+		width: 60%;
+		text-align: center;
+		color: #000000;
+		padding: 12px 0;
+		text-align: center;
+		font-family: Arial, Helvetica, sans-serif;
+		text-transform: uppercase;
+		font-size: 12px;
+		font-weight: bold;
+		border-bottom: 1px solid #fdc075;
+		a{
+			color: #353030
+		}
+	}
+}
+#descNav {
+	display: none;
+}
+#mobNav {
+	display: inline;
+	width: 20%;
+}
 .headerMain {
 	position:fixed;
 	width:100%;
-	background-color: #ffffff;
-	z-index: 4;
-	opacity: 0.9;
+	z-index: 100;
+	background-color: #efefefce;
 	text-align: center;
 	margin: 0;
 	padding: 0;
+
     .nav {
 		list-style: none;
 		margin: 0 ;
 		padding: 0;
 		position: relative;
-    	width:100%;
+    width:100%;
     }
     .nav li {
 		float: left;
-		width:33.33333%;
+		width:60%;
 		display: block;
 		position: relative;
-    	text-decoration: none;
-    	color: #000000;
-		padding: 1%;
-		font-size: 18px;
+		text-decoration: none;
+		color: #000000;
+		padding: 12px 0;
 		text-align: center;
-    }
-    .nav li:nth-child(3){
-		font-size: 14px;
-	}
+		font-family: Arial, Helvetica, sans-serif;
+		text-transform: uppercase;
+		font-size: 12px;
+		font-weight: bold;
+		border-bottom: 1px solid #fdc075;
+			a{
+				color: #000000;
+			}
+		}
+
 	.logoMain{
 		font-size: 18px;
-    	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    	font-family: Arial, Helvetica, sans-serif;
     	text-align: center;
 	}
     .mark {
@@ -41,7 +124,7 @@
 		display: inline-block;
     }
     .mainmenubtn {
-	    width: 20px;
+	    width: 15px;
 	    color: white;
 	    border: none;
 	    cursor: pointer;
@@ -52,7 +135,7 @@
 	    min-width: 100px;
     }
     .dropdown-child a {
-	    color: #000000;
+	    color: #353030;
 	    padding:20px;
 	    text-decoration: none;
 	    display: block;
@@ -63,4 +146,19 @@
     .dropdown-child a:hover {
         background-color:#ffdb8e;
     }
+}
+@media (min-width: 700px) {
+
+		#descNav {
+			display: inline;
+		}
+		#mobNav {
+			display: none;
+		}
+		.menu{
+			li {
+			width: 18%;
+			}
+		}
+	
 }

@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html>
-                <% 
+<% 
                     var data = {
                       title: "ProstoPortrait"
                     };
                 %>
-                ${  _.template(require('./../includes/head.html'))(data) }
-<body>
- <!--menu-->
- ${require('./../includes/menu.html')}
- <!--navigation-->
- ${require('./../includes/navigation.html')}
- <!--content-->
- ${require('./../includes/contentWatercolor.html')}
- <!--footer-->
- ${require('./../includes/footer.html')}
- <!--scripts-->
- ${require('./../includes/scripts/scripts.html')}
-</body>
-</html>
+${ _.template(require('./../includes/head.html'))(data) }
 
+<body>
+  <!--menu-->
+  ${require('./../includes/menu.html')}
+  <!--navigation-->
+  ${require('./../includes/navigation.html')}
+  <!--content-->
+  ${require('./../includes/contentWatercolor.html')}
+  <!--OrderForm-->
+  ${require('./../includes/orderForm.html')}
+  <!--footer-->
+  ${require('./../includes/footer.html')}
+  <!--scripts-->
+  ${require('./../includes/scripts/scripts.html')}
+</body>
+
+</html>

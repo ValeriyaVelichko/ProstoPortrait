@@ -13,110 +13,161 @@
 </head>
   <body>
     <!--menu-->
-    <div class="headerMain">
-  <div class="menu">
-    <nav>
-      <ul class="nav">
-          <li>
-            <div class="dropdown">меню
-              <img class="mainmenubtn" src="img/menu.png" />
-              <div class="dropdown-child">
-                <a href="index.html">главная</a>
-                <a href="gallery.html">галерея</a>
-                <a href="about.html">о себе</a>
-              </div>
-            </div>
-          </li>
-          <li>портретная мастерская</li>
-          <li>
-            <span class="logoMain">P<span class="marker">o</span>sto.
-            P<span class="marker">o</span>rtrait.</span> 
-          </li>
-      </ul>
-    </nav>
-  </div>
-</div>
-    <!--header-->
-    <div class="preview">   
-  <div class="logo">     
-    <div class="prostoportrait_eng">
-      <p> .Pr<span class="marker">o</span>sto. </p>
-      <p> .P<span class="marker">o</span>rtrait. </p>
-    </div>
-    <p class="prostoportrait_rus"> простопортрет </p>
-  </div>
-  <div class="info about">
-        <p class="go triangle"> <a href="gallery.html"><button>ГАЛЕРЕЯ</button> </a></p>
-        <div class="triangle">
-        <ul id="table">
-          <a href= "watercolor.html">
-            <li><div class="txtr"> 
-              <img class="icon_livicon_shadowed" src= "img/watercolor.png"></div>
-            </li>
-          </a>
-          <a href= "grapfic.html">
-            <li><div class="txtr">
-              <img class="icon_livicon_shadowed" src= "img/graphic.png"></div>
-            </li>
-          </a>
-          <a href= "computerGrapfic.html">
-            <li class="li3"><div class="txtr">
-              <img class="icon_livicon_shadowed" src= "img/computerGraphic.png"></div>
-            </li>
-          </a>
-        </ul> 
-        </div>
-        <img class="logImage" src= "img/mainImage.jpg">
-  </div>
+    
+<div class="headerMain">
+  <nav class="menu">
+    <li id="mobNav">
+      <a class="menu-triger" href="#"><img class="mainmenubtn" src="img/menu.png" /></a>
+      <div class="menu-popup">
+        <a class="menu-close" href="#"></a>
+        <ul>
+          <li><a href="index.html">главная</a></li>
+          <li><a href="gallery.html">галерея</a></li>		
+          <li><a href="about.html">о себе</a></li>
+        </ul>						
+      </div>
+    </li>
+    <li id="descNav"><a href="gallery.html">галерея</a></li>
+    <li><a href="index.html">портретная мастерская</a></li>
+    <li id="descNav"><a href="about.html">о себе</a></li>
+  </nav>
 </div>
 
-    <!--slider-->
-    <div class="articlenews">
-  <section class="column slider-column">
-      <a class="art slider-article" href="">
-        <figure class="main-image">
-          <div id="slideshow">
-            <div id="slidesContainer">
-              <div class="slide">
-                <div>
-                  <img src="img/sliderImage1.jpg" >
-                </div>
-              </div>
-              <div class="slide">
-                <div>
-                  <img src="img/sliderImage2.jpg" >
-                </div>
-              </div>
-              <div class="slide">
-                <div>
-        <img src="img/sliderImage3.jpg" >
-                </div>
-              </div>
-              <div class="slide">
-                <div>
-                  <img src="img/sliderImage4.jpg" >
-                </div>
-              </div>
-              <div class="slide">
-                <div>
-                  <img src="img/sliderImage5.jpg" >
-                </div>
-              </div>
-            </div>
-          </div>
-        </figure>
-        <div class="article-body">
-          <span class="article-title">
-          </span>
-          <span class="article-content ">
-            <p class="sliderText"> <span class="prostoportrait">ProstoPortrait - это портреты сделанные с душой!</span></p>
-          </span>
-        </div>
-      </a>
-    </section>
-</div>
- 
+    <!--header-->
+    <div class="preview">
+  <div class="logo">
+    <div class="prostoportrait_eng">
+      <p> .Prost<span class="marker">o</span>. </p>
+      <p> .P<span class="marker">o</span>rtrait. </p>
+      <p class="prostoportrait_rus"> простопортрет </p>
+    </div>
+  </div>   
+
+  <div class="visPart">
+    <div class="mainPhoto">
+      <img class="" src="img/mainPortraits.jpg">
+    </div>
   
+    <div class="info about">
+      <div class="triangle">
+        <a class="triangleLink" href="computerGraphic.html">
+          <img class="iconGallery" src="img/computerGraphic.png">
+          <p>Компьютерная<br> графика</p>
+        </a>
+        <a class="triangleLink" href="graphic.html">
+          <img class="iconGallery" src="img/graphic.png">
+          <p>Графика</p>
+        </a>
+        <a class="triangleLink" href="watercolor.html">
+          <img class="iconGallery" src="img/watercolor.png">
+          <p>Акварель</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>  
+<div class="triangleBlock">
+</div>
+
+    <!--info-->
+    <div class="infoBlockWrapper">
+    <div class="infoBlockItem">
+        <div class="infoBlockImg">
+            <img src="img/InfoComputerGraphic.jpg">
+        </div>
+        <div class="infoBlockTxt">
+            <p class="infoBlockTxtHeader"><a href="computerGraphic.html">Компьютерная графика</a></p>
+            <p>Работы выполнены в технике Digital Art</p>
+        </div>
+    </div>
+    <div class="infoBlockItem">
+        <div class="infoBlockImg">
+            <img src="img/InfoGraphic.jpg">
+        </div>
+        <div class="infoBlockTxt">
+            <p class="infoBlockTxtHeader"><a href="graphic.html">Графика</a></p>
+            <p>Работы выполнены простыми карандашами</p>
+        </div>
+    </div>
+    <div class="infoBlockItem">
+        <div class="infoBlockImg">
+            <img src="img/InfoWatercolor.jpg">
+        </div>
+        <div class="infoBlockTxt">
+                <p class="infoBlockTxtHeader"><a href="watercolor.html">Акварель</a></p>
+            <p>Работы выполнены акварельными красками на аварельной бумаге</p>
+        </div>
+    </div>
+</div>
+<div class="advBlockWrapper">
+    <div class="advBlockImgTxt">
+        <div class="advBlockImg">
+            <img class="advImgPhoto" src="img/advImgPhoto.jpg">
+        </div>
+        <div class="advBlockTxt">
+            <p class="advBlockHeader">Советы для успешного сотрудничества</p>
+            <p class="advOne">Повседневная практика показывает, что консультация с широким активом способствует подготовки и реализации системы обучения кадров, соответствует насущным потребностям. Равным образом консультация.</p>
+            <p class="advTwo">Повседневная практика показывает, что консультация с широким активом способствует подготовки и реализации системы обучения кадров, соответствует насущным потребностям. Равным образом консультация с широким активом обеспечивает широкому кругу (специалистов) участие в .</p>
+            <p class="advThree">Повседневная практика показывает, что консультация с широким активом способствует подготовки и реализации системы обучения кадров, соответствует насущным потребностям. Равным образом консультация с широким активом обеспечивает широкому кругу (специалистов).</p>
+        </div>
+    </div>
+    <div class="advBlockImg">
+        <img class="advImgTime" src="img/advImgTime.jpg">
+        <img class="advImgIdea" src="img/advImgIdea.jpg">
+    </div>
+</div>
+    <!--OrderForm-->
+    <div class="orderForm">
+    <div class="form">
+        <div class="container">
+            <form id="orderForm">
+                <div class="fieldFormColumns">
+                    <div class="fieldFormLeftColumn">
+                        <div class="field-block">
+                            <label for="name">Имя:</label>
+                            <textarea id="nameOrd" class="field" required name="name" rows="1"></textarea>
+                        </div>     
+                        <div class="field-block">
+                            <label for="login">e-mail для обратной свзи</label>
+                            <input id="loginFieldOrd"  class="field" type="text" name="login">
+                        </div>                 
+                        <div class="field-block">
+                            <label for="comments">Дополнения к заказу:</label>
+                            <textarea id="wishOrd" class="field" required name="comments" rows="5"></textarea>
+                        </div>	
+                    </div>
+                    <div class="fieldFormRightColumn">
+                        <div class="field-block">
+                            <label for="format">Формат листа:</label>
+                            <select name="format"  id="formatOrd" class="field" required>
+                                <option>Акварель</option>
+                                <option>Графика</option>
+                                <option>Компьютерная графика</option>
+                            </select>
+                        </div>
+
+                        <div class="field-block">
+                            <label for="teh">Техника выполнения заказа:</label>
+                            <select name="teh"  id="tehOrd" class="field" required>
+                                <option>А4</option>
+                                <option>А3</option>
+                                <option>Свой вариант(в дополнениях к задаче)</option>
+                            </select>
+                        </div>
+
+                        <div class="field-block">
+                            <label for="date">Дата выполнения заказа:</label>
+                            <input name="date" id="timeOrd" required type="date" class="field" min="1920-01-01" max="2030-01-01">
+                        </div>
+                        <button id="buttonMin" class="button" type="submit">Отправить</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="orderFormHeader"><p>Сделайте заказ <span class="marker">o</span>nl<span class="marker">i</span>ne!</p></div>
+</div>
+
     <!--news-->
     <div class="header_news">
   <p>Новости искусства</p>
@@ -126,15 +177,18 @@
      
     <!--footer-->
     <div class="footer">
-    <ul class="massagers_white">
+    <div class="massagers_white">
       <a href= "https://vk.com/v.vyalichka">
-        <tr><img class="vk_white" src="img/vk.png" alt=""></tr>
+        <img class="socialImg" src="img/vk.png" alt="">
       </a>
       <a href= "https://www.instagram.com/vyalichka/">
-        <tr><img class="inst_white" src="img/inst.png" alt=""></tr>
+        <img class="socialImg" src="img/inst.png" alt="">
       </a>
       <a href= "https://www.facebook.com/v.vyalichka">
-        <tr><img class="fb_white" src="img/fb.png" alt=""></tr>
+        <img class="socialImg" src="img/fb.png" alt="">
+      </a>
+      <a href= "https://www.linkedin.com/in/valeriya-velichko/">
+        <img class="socialImg" src="img/linkedIn.png" alt="">
       </a>
     </ul>
 </div>

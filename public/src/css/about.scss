@@ -24,3 +24,310 @@
         background-color: #ffffff;
     }
 }
+.previewAbout{
+    display: flex;
+    flex-direction: column-reverse;
+    background-color:#ffffff; 
+    height: 85vh;
+    .logo{
+      text-align: center;
+      height: 80%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .prostoportrait_eng{
+        color: #181614;
+        font-size: 52px;
+        font-family: Arial, Geneva, Helvetica, sans-serif;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: right;
+        line-height: 42px;
+  
+      }
+      .prostoportrait_rus{
+        font-size: 30px; 
+        color:#ea856a;
+        font-family:Arial, Helvetica, sans-serif;
+      }
+    } 
+  
+    .info{
+      float: left;
+      width: 100vw;
+      z-index: 500;
+      background: #ea856a;
+      position: relative;   
+    }
+    .about{
+      margin: 0;
+    }
+    .visPart {
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
+      height: 20%;
+      position: relative;
+    }
+    .mainPhoto{
+      display: none;
+      img{
+        display: none;
+      }
+    }
+    
+    .logImage{
+      margin: 0;
+      width: 100%;
+      height: auto;
+    }
+  } 
+
+#reviews{
+  .column{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #efefef;;
+    div{
+      display: flex;
+      flex-direction: column; 
+      justify-content: space-between;
+      width: 100%;
+      padding: 25px;
+      margin: 15px 0;
+      background: white;
+      box-shadow: 5px 5px 2px 0px rgba(0, 0, 0, 0.2);
+      color: #666;
+      .reviewContent {
+        padding: 10px;
+      }
+        .reviewName {
+          font-style: italic;
+          text-align: right;      
+
+      }
+    } 
+  }
+}
+.reviewForm{
+  display: flex;
+  flex-direction: column-reverse;
+  background-color: #efefef;
+  padding: 20px;
+  .form{
+    width: 100%;
+  }
+}
+.orderFormHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  padding: 20px 0 40px 0;
+  text-transform: uppercase;
+  font-size: 45px;
+  font-weight: 700;
+  line-height: 46px;
+}
+
+.socialBlockWr {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px;
+  .socialItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+  img:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+  }
+  img{
+    max-width: 200px;
+    border-radius: 50%;
+  }
+  p{
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding-top: 20px; 
+  }    
+  a{
+    color: #181614;
+  }
+}
+
+  @media all and (min-width: 800px) {
+    .previewAbout{
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      .visPart {
+        height: auto;
+      } 
+      .info{
+        width: 40%;
+        height: 100vh;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 42px;
+        .about {
+          flex-direction: column;
+          margin: 0;
+          .table{
+            width:80%;
+            padding: 40px;
+          }
+          .go{
+            text-align: center;
+          }
+        }
+      } 
+      .aboutMainText{
+          position: absolute;
+          bottom: 30px;
+          background-color: #ffffffbd;
+          color: #666;
+          padding: 20px;
+          right: -185px;
+          width: 300px;
+      }
+      .mainPhoto{
+        display: block;
+        z-index: 1000;
+        left: 12vw;
+        top: 13vh;
+        position: absolute;
+        img{
+          max-width: 400px;
+          display: inline;
+        }
+      }
+      .logo{
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      
+        .prostoportrait_eng{
+          font-size: 75px;
+          line-height: 65px;
+         }
+      }
+  
+    }
+    .triangle{
+      flex-direction: column;
+      align-items: flex-end;
+      position: fixed;
+      top: 20vh;
+      right: 0px;
+      text-align: right;
+      padding-bottom: 120px;
+      font-size: 10px;
+      .triangleLink{
+          padding: 25px 10px 20px 0;
+          margin: 0 25px;
+          border-right: 1px solid #3332328f;
+          width: auto;
+        a{
+          text-align: right;
+        }
+      }
+    }
+    .logImage{
+      margin-top: 20%;
+      height: 50vh;
+      width: auto;
+    } 
+    .triangleBlock{	
+      background: linear-gradient(170deg, rgba(239,239,239,1) 0%, rgba(239,239,239,1) 50%, rgba(239,239,239,0) 50%, rgba(239,239,239,1) 50%, rgba(239,239,239,0) 50%);
+      width: 90%;
+      height: 135px;
+    } 
+    #reviews{
+      .column{
+        padding: 30px 120px 60px 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        background-color: #efefef;;
+        div{
+          display: flex;
+          flex-direction: column; 
+          justify-content: space-between;
+          width: 30%;
+          padding: 25px;
+          margin: 0 15px;
+          background: white;
+          box-shadow: 5px 5px 2px 0px rgba(0, 0, 0, 0.2);
+          color: #666;
+          .reviewContent {
+            padding: 10px;
+          }
+            .reviewName {
+              font-style: italic;
+              text-align: right;      
+    
+          }
+        } 
+      }
+    }
+    .reviewForm{
+      display: flex;
+      flex-direction: row;
+      background-color: #efefef;
+      padding: 20px;
+      .form{
+        padding: 20px;
+        width: 40%;
+      }
+    }
+    .orderFormHeader {
+        display: flex;
+        align-items: center;
+        text-align: right;
+        text-transform: uppercase;
+        font-size: 50px;
+        font-weight: 700;
+        padding: 20px 120px 20px 0px;
+        width: 60%;
+        line-height: 50px;
+    }
+    
+    .socialBlockWr {
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 100px 50px 50px 50px;
+      img:hover {
+        transform: scale(1.1);
+        transition: 0.3s;
+      }
+      img{
+        max-width: 200px;
+        border-radius: 50%;
+      }
+      p{
+        text-align: center;
+        font-size: 20px;
+        text-transform: uppercase;
+        font-weight: 600;
+        padding-top: 20px; 
+      }    
+      a{
+        color: #181614;
+      }
+    }
+  } 

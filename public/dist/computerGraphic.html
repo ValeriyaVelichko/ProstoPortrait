@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-                
-                <head>
+
+<head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>
@@ -11,62 +11,51 @@
   <link rel="stylesheet" href="css/style.bundle.css">
   
 </head>
+
 <body>
- <!--menu-->
- <div class="headerMain">
-  <div class="menu">
-    <nav>
-      <ul class="nav">
-          <li>
-            <div class="dropdown">меню
-              <img class="mainmenubtn" src="img/menu.png" />
-              <div class="dropdown-child">
-                <a href="index.html">главная</a>
-                <a href="gallery.html">галерея</a>
-                <a href="about.html">о себе</a>
-              </div>
-            </div>
-          </li>
-          <li>портретная мастерская</li>
-          <li>
-            <span class="logoMain">P<span class="marker">o</span>sto.
-            P<span class="marker">o</span>rtrait.</span> 
-          </li>
-      </ul>
-    </nav>
-  </div>
-</div>
- <!--navigation-->
- <div class="navigation">
-  <div class="icons">
-    <figure >
-      <a href="watercolor.html" >
-        <img class="watercolor"src= "img/watercolor.png" > 
-      </a>
-      <figcaption>Акварель</figcaption>
-    </figure>
-    <figure>
-      <a href="graphic.html" >
-        <img class="grapfic"src= "img/graphic.png">
-      </a>
-      <figcaption>Графика</figcaption>
-    </figure>
-    <figure>
-      <a href="computerGraphic.html" >
-        <img class="computerGrapfic"src= "img/computerGraphic.png" >
-      </a>
-      <figcaption>Компьютерная <br> Графика</figcaption>
-    </figure>
-  </div>
+  <!--menu-->
+  
+<div class="headerMain">
+  <nav class="menu">
+    <li id="mobNav">
+      <a class="menu-triger" href="#"><img class="mainmenubtn" src="img/menu.png" /></a>
+      <div class="menu-popup">
+        <a class="menu-close" href="#"></a>
+        <ul>
+          <li><a href="index.html">главная</a></li>
+          <li><a href="gallery.html">галерея</a></li>		
+          <li><a href="about.html">о себе</a></li>
+        </ul>						
+      </div>
+    </li>
+    <li id="descNav"><a href="gallery.html">галерея</a></li>
+    <li><a href="index.html">портретная мастерская</a></li>
+    <li id="descNav"><a href="about.html">о себе</a></li>
+  </nav>
 </div>
 
- <!--content-->
- <div class="galleryContent">
+  <!--navigation-->
+  <div class="navigationBlock">
+  <div class="triangle">
+    <a class="triangleLink" href="computerGraphic.html">
+      <img class="iconGallery" src="img/computerGraphic.png">
+      <p>Компьютерная<br> графика</p>
+    </a>
+    <a class="triangleLink" href="graphic.html">
+      <img class="iconGallery" src="img/graphic.png">
+      <p>Графика</p>
+    </a>
+    <a class="triangleLink" href="watercolor.html">
+      <img class="iconGallery" src="img/watercolor.png">
+      <p>Акварель</p>
+    </a>
+  </div>
+</div>
+  <!--content-->
+  <div class="galleryContent">
     <div class="imagesContainer">    
-        <h1><span class="markerYellow">.</span>КОМПЬ<span class="markerYellow">Ю</span>ТЕРНАЯ<span class="markerYellow">.</span><br>
-            <span class="markerYellow">.</span>ГРА<span class="markerYellow">Ф</span>ИКА<span class="markerYellow">.</span>
-        </h1>
         <div id="gallery">
+            <p class="galleryItemTxt"><span>Компьютерная графика</span></p>
             <div class="gallery">
                 <figure class="photo">
                     <a href="img/computerGraphic/galleryImage1.jpg" data-fancybox="images">
@@ -118,26 +107,81 @@
         <p>.</p>
     </div>
 </div>
-    
- <!--footer-->
- <div class="footer">
-    <ul class="massagers_white">
+
+  <!--OrderForm-->
+  <div class="orderForm">
+    <div class="form">
+        <div class="container">
+            <form id="orderForm">
+                <div class="fieldFormColumns">
+                    <div class="fieldFormLeftColumn">
+                        <div class="field-block">
+                            <label for="name">Имя:</label>
+                            <textarea id="nameOrd" class="field" required name="name" rows="1"></textarea>
+                        </div>     
+                        <div class="field-block">
+                            <label for="login">e-mail для обратной свзи</label>
+                            <input id="loginFieldOrd"  class="field" type="text" name="login">
+                        </div>                 
+                        <div class="field-block">
+                            <label for="comments">Дополнения к заказу:</label>
+                            <textarea id="wishOrd" class="field" required name="comments" rows="5"></textarea>
+                        </div>	
+                    </div>
+                    <div class="fieldFormRightColumn">
+                        <div class="field-block">
+                            <label for="format">Формат листа:</label>
+                            <select name="format"  id="formatOrd" class="field" required>
+                                <option>Акварель</option>
+                                <option>Графика</option>
+                                <option>Компьютерная графика</option>
+                            </select>
+                        </div>
+
+                        <div class="field-block">
+                            <label for="teh">Техника выполнения заказа:</label>
+                            <select name="teh"  id="tehOrd" class="field" required>
+                                <option>А4</option>
+                                <option>А3</option>
+                                <option>Свой вариант(в дополнениях к задаче)</option>
+                            </select>
+                        </div>
+
+                        <div class="field-block">
+                            <label for="date">Дата выполнения заказа:</label>
+                            <input name="date" id="timeOrd" required type="date" class="field" min="1920-01-01" max="2030-01-01">
+                        </div>
+                        <button id="buttonMin" class="button" type="submit">Отправить</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="orderFormHeader"><p>Сделайте заказ <span class="marker">o</span>nl<span class="marker">i</span>ne!</p></div>
+</div>
+
+  <!--footer-->
+  <div class="footer">
+    <div class="massagers_white">
       <a href= "https://vk.com/v.vyalichka">
-        <tr><img class="vk_white" src="img/vk.png" alt=""></tr>
+        <img class="socialImg" src="img/vk.png" alt="">
       </a>
       <a href= "https://www.instagram.com/vyalichka/">
-        <tr><img class="inst_white" src="img/inst.png" alt=""></tr>
+        <img class="socialImg" src="img/inst.png" alt="">
       </a>
       <a href= "https://www.facebook.com/v.vyalichka">
-        <tr><img class="fb_white" src="img/fb.png" alt=""></tr>
+        <img class="socialImg" src="img/fb.png" alt="">
+      </a>
+      <a href= "https://www.linkedin.com/in/valeriya-velichko/">
+        <img class="socialImg" src="img/linkedIn.png" alt="">
       </a>
     </ul>
 </div>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <a id="scrollup"></a>
- <!--scripts-->
- 
+  <!--scripts-->
+  
 <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-firestore.js"></script>
 
@@ -145,4 +189,5 @@
 <script src="js/bundle.js"></script>
 
 </body>
+
 </html>

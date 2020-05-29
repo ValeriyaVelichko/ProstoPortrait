@@ -1,113 +1,116 @@
 .preview{
   display: flex;
   flex-direction: column;
+  background-color:#efefef; 
+  height: 85vh;
   .logo{
     text-align: center;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     .prostoportrait_eng{
-      color:#181614; 
-      font-size:80px; 
-      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-      padding-top: 100px;
-      text-align: center;  
-      padding:18% 10% 0% 10%;
-      .marker{
-        color: #ffcda9;
-      }
+      color: #181614;
+      font-size: 52px;
+      font-family: Arial, Geneva, Helvetica, sans-serif;
+      text-transform: uppercase;
+      font-weight: bold;
+      text-align: left;
+      line-height: 42px;
+
     }
     .prostoportrait_rus{
       font-size: 30px; 
-      padding:5% 10% 18% 10%;
-      color:#2e2c2b;
+      color:#ea856a;
       font-family:Arial, Helvetica, sans-serif;
-      text-align: center;
     }
   } 
-  .info:hover,
-  .info:focus {
-    box-shadow:0 0 20px #ffd986, 0 0 10px #ffe8a8;
-  } 
+
   .info{
     float: left;
     width: 100vw;
-    background: #ffe0cf;    
-    box-shadow: 0 0 20px #4d4c4b;
+    z-index: 500;
+    background: #ea856a;
+    position: relative;   
   }
   .about{
     margin: 0;
   }
-  .triangle{
-    width:100%;
-    text-align: center;
-    .table{
-      text-align: center;
-      width:100%;
-    }   
-    ul#table {
-      padding:0;
-      margin: 0 0 0 19%;
-    }
-    ul#table li{
-      display: inmainImage;
-      list-style: none;
-      vertical-align: top;
-    }
-    ul#table li > div {
-      display: inmainImage;
-      vertical-align: top;
-    }
-    a{
-      color: #2e2c2b;
-        .icon_livicon_shadowed{
-          width: 18%;
-          height: 18%;
-          float:left;
-          margin: 5%;
-        }
-    }
-    .go{
-    margin: 50px 10% 5% 10%;
-    text-align: center;
-    background-color:#ffe0cf;    
-    }
-    button {
-      margin: 20% 0 5% 0;
-      background: #ffe0cf;    
-      border: none;
-      font-size: 60px;
-      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-      color: #ffdb8e;
-      position: relative;
-      box-sizing: border-box;
-      transform-style: preserve-3d;  
-      transition: all 500ms ease; 
-    }
-    button:after {
-	    top: -100%;
-      left: 0;
-	    width: 100%;
-	    position: absolute;
-      content: 'ПЕРЕЙТИ';
-	    transform-origin: left bottom;
-	    transform: rotateX(90deg);
-    }
-    button:hover {
-	    transform-origin: center bottom;
-	    transform: rotateX(-90deg) translateY(100%);
+  .visPart {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 20%;
+  }
+  .mainPhoto{
+    display: none;
+    img{
+      display: none;
     }
   }
+  
   .logImage{
     margin: 0;
     width: 100%;
     height: auto;
   }
 } 
-@media screen and (min-width: 800px) {
+.triangle{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  padding-bottom: 0px;
+  text-transform: uppercase;
+  font-size: 10px;
+  .triangleLink{
+    padding: 20px 0;
+    margin: 0 20px;
+    border-right: none;
+    font-weight: bold;
+    width: 20%;
+    a{
+      text-align: right;
+    }
+  }
+ 
+  a{
+    color: #2e2c2b;
+  }
+  .iconGallery{
+    width: 35px;
+    margin: 0 0 10% 0;
+  }
+  .iconGallery:hover {
+    width: 40px;
+    margin: 0 0 5% 0;
+  }
+}
+.triangleBlock{	
+  background: linear-gradient(170deg, rgba(234, 133, 106, 1) 0%, rgba(234, 133, 106, 1) 50%, rgba(234, 133, 106, 0) 50%, rgba(234, 133, 106, 1) 50%, rgba(234, 133, 106, 0) 50%);
+  width: 100%;
+  background-position: center;
+  height: 20vh;
+  background-size: contain;
+}
+.marker{
+  color: #ea856a;
+}
+@media all and (min-width: 800px) {
   .preview{
     display: flex;
     flex-direction: row;
+    height: 100vh;
+    .visPart {
+      height: auto;
+    } 
     .info{
-      width: 35%;
-      height: fit-content;
+      width: 28%;
+      height: 100vh;
+      display: flex;
+      justify-content: flex-end;
       .about {
         flex-direction: column;
         margin: 0;
@@ -120,29 +123,66 @@
         }
       }
     } 
+ 
+    .mainPhoto{
+      display: block;
+      z-index: 1000;
+      right: 12%;
+      position: absolute;
+      background-color: #fdc075ea;
+      padding: 0 40px 80px 40px;
+      box-shadow: 10px 30px 3px -1px rgba(0,0,0,0.23);
+      img{
+        max-width: 400px;
+        display: inline;
+      }
+    }
+    .logo{
+      width: 100%;
+      height: auto;
+      flex-direction: column;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    
+      .prostoportrait_eng{
+        font-size: 92px;
+        line-height: 82px;
+       }
+    }
+
   }
-  .logo{
-    width: 65%;
-    .prostoportrait_eng{
-      color:#2e2c2b; 
-      font-size: 100px; 
-      padding-top: 100px;
-      text-align: center;
-     }
+  .triangle{
+    flex-direction: column;
+    align-items: flex-end;
+    position: fixed;
+    top: 20vh;
+    right: 0px;
+    text-align: right;
+    padding-bottom: 120px;
+    font-size: 10px;
+    .triangleLink{
+        padding: 25px 10px 20px 0;
+        margin: 0 25px;
+        border-right: 1px solid #3332328f;
+        width: auto;
+      a{
+        text-align: right;
+      }
+    }
   }
   .logImage{
     margin-top: 20%;
     height: 50vh;
     width: auto;
-  }
+  } 
+  .triangleBlock{	
+    background: linear-gradient(170deg, rgba(239,239,239,1) 0%, rgba(239,239,239,1) 50%, rgba(239,239,239,0) 50%, rgba(239,239,239,1) 50%, rgba(239,239,239,0) 50%);
+    width: 90%;
+    height: 135px;
+  } 
 } 
 
-img.icon_livicon_shadowed:hover {
-  animation: 5s mainImagear 0s normal none infinite running rot;
-  -webkit-animation: 5s mainImagear 0s normal none infinite running rot;
-  width: 22%;
-  margin: 2%;
-}
 @keyframes rot {
   0% {
     transform: rotate(0deg);

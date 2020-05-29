@@ -13,88 +13,123 @@
 </head>
 <body>
   <!--menu-->
-  <div class="headerMain">
-  <div class="menu">
-    <nav>
-      <ul class="nav">
-          <li>
-            <div class="dropdown">меню
-              <img class="mainmenubtn" src="img/menu.png" />
-              <div class="dropdown-child">
-                <a href="index.html">главная</a>
-                <a href="gallery.html">галерея</a>
-                <a href="about.html">о себе</a>
-              </div>
-            </div>
-          </li>
-          <li>портретная мастерская</li>
-          <li>
-            <span class="logoMain">P<span class="marker">o</span>sto.
-            P<span class="marker">o</span>rtrait.</span> 
-          </li>
-      </ul>
-    </nav>
+  
+<div class="headerMain">
+  <nav class="menu">
+    <li id="mobNav">
+      <a class="menu-triger" href="#"><img class="mainmenubtn" src="img/menu.png" /></a>
+      <div class="menu-popup">
+        <a class="menu-close" href="#"></a>
+        <ul>
+          <li><a href="index.html">главная</a></li>
+          <li><a href="gallery.html">галерея</a></li>		
+          <li><a href="about.html">о себе</a></li>
+        </ul>						
+      </div>
+    </li>
+    <li id="descNav"><a href="gallery.html">галерея</a></li>
+    <li><a href="index.html">портретная мастерская</a></li>
+    <li id="descNav"><a href="about.html">о себе</a></li>
+  </nav>
+</div>
+
+  <!--navigation-->
+  <div class="navigationBlock">
+  <div class="triangle">
+    <a class="triangleLink" href="computerGraphic.html">
+      <img class="iconGallery" src="img/computerGraphic.png">
+      <p>Компьютерная<br> графика</p>
+    </a>
+    <a class="triangleLink" href="graphic.html">
+      <img class="iconGallery" src="img/graphic.png">
+      <p>Графика</p>
+    </a>
+    <a class="triangleLink" href="watercolor.html">
+      <img class="iconGallery" src="img/watercolor.png">
+      <p>Акварель</p>
+    </a>
   </div>
 </div>
-  <!--news-->
-  <div id="about">
-  <main class="main columns">
-    <div class="columns">
-      <div class="column nested-column">
-      
-          <div class="Prosto">
-            <p> .PR<span class="markerYellow">O</span>ST<span class="markerYellow">O</span><br>ЛЕРА. </p>
-          </div>
-          <div class="article-body">
-            <h2 class="article-title">
-            </h2>
-            <p class="article-content">
-              Меня зовут Лера и я обожаю рисовать людей. Почему? Потому, что ничто так не отражает внутренний мир человека, как его лицо. Более 10 лет я занималась изучением изобразительного искусства в таких его проявлениях, как скульптура, живопись, композиция и рисунок. И после многочисленных поисков своей техники работы, мой выбор остановился на портретах. Немного позже я решила создать свою портретную мастерскую для того, чтобы показывать людям насколько прекрасны их лица. Я люблю то, что создаю, поэтому работа идёт быстро и просто — отсюда и название мастерской ProstoPortrait.
-            </p>
-          </div>
-         
-      </div> 
-                  
-      <section class="column">
-        <div class="article">
-          <figure class="article-image is">
-            <img src="img/myPhoto.jpg" alt="">
-          </figure>
-          <div class="article-body">
-            <footer class="article-info">
-            <a href="https://vk.com/v.vyalichka">
-              <span>vk.com: Валерыя Вялiчка</span>
-            </a>
-            </footer>
-          </div>
-        </div>
-        <div class="article">
-          <figure class="article-image is">
-            <img src="img/myInsta.jpg" alt="">
-          </figure>
-          <div class="article-body">
-            <footer class="article-info">
-              <a href="https://www.instagram.com/vyalichka/">
-                <span>instagram.com: vyalichka</span>
-              </a>  
-            </footer>
-          </div>
-        </div>  
-      </section>
+  <!--view-->
+  <div class="previewAbout">
+  <div class="visPart">
+    <div class="mainPhoto">
+      <img class="" src="img/AboutMainPhoto.jpg">
+      <p class="aboutMainText">Меня зовут Лера и я обожаю рисовать людей. Потому, что ничто так не отражает внутренний мир человека, как его
+        лицо. Я люблю то, что создаю, поэтому работа идёт быстро и просто —ProstoPortrait.</p>
     </div>
-  </main>
+
+    <div class="info about">
+
+    </div>
+  </div>
+  <div class="logo">
+    <div class="prostoportrait_eng">
+      <p> .Prost<span class="marker">o</span>. </p>
+      <p> .L<span class="marker">e</span>ra. </p>
+    </div>
+  </div>
 </div>
+  
+  <!--social-->
+  <div class="socialBlockWr">
+    <div class="socialItem">
+        <a href="https://www.instagram.com/vyalichka/">
+            <img src="/img/AboutSocialInst.jpg">
+            <p>Instagram</p>
+        </a>
+    </div>
+    <div class="socialItem">
+        <a href="https://vk.com/v.vyalichka">
+            <img src="/img/AboutSocialVK.jpg">
+            <p>Вконтакте</p>
+        </a>
+    </div>
+    <div class="socialItem">
+        <a href="https://www.linkedin.com/in/valeriya-velichko/">
+            <img src="/img/AboutSocialLinked.jpg">
+            <p>LinkedIn</p>
+        </a>
+    </div>
+</div>    
+  <!--reviewsForm-->
+  <div class="reviewForm">
+    <div class="form">
+        <div class="container">
+            <form id="reviewForm">
+                <div class="field-block">
+                    <label for="message">Отзыв:</label>
+                    <textarea id="containerRew" class="field" required name="message" rows="5"></textarea>
+                </div>		
+                <div class="field-block">
+                    <label for="message">Имя:</label>
+                    <textarea id="nameRew" class="field" required name="message" rows="1"></textarea>
+                </div>
+                <button id="buttonMin" class="button" type="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+    <div class="orderFormHeader"><p>Поделитесь <span class="marker">Вашим</span> вмнением o <span class="marker">моей</span> работе!</p></div>
+</div>
+
+  <!--reviewsForm-->
+  <div id="reviews">
+</div>
+    
   <!--footer-->
   <div class="footer">
-    <ul class="massagers_white">
+    <div class="massagers_white">
       <a href= "https://vk.com/v.vyalichka">
-        <tr><img class="vk_white" src="img/vk.png" alt=""></tr>
+        <img class="socialImg" src="img/vk.png" alt="">
       </a>
       <a href= "https://www.instagram.com/vyalichka/">
-        <tr><img class="inst_white" src="img/inst.png" alt=""></tr>
+        <img class="socialImg" src="img/inst.png" alt="">
       </a>
       <a href= "https://www.facebook.com/v.vyalichka">
-        <tr><img class="fb_white" src="img/fb.png" alt=""></tr>
+        <img class="socialImg" src="img/fb.png" alt="">
+      </a>
+      <a href= "https://www.linkedin.com/in/valeriya-velichko/">
+        <img class="socialImg" src="img/linkedIn.png" alt="">
       </a>
     </ul>
 </div>

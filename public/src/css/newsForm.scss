@@ -6,18 +6,24 @@
 .form {
 	font-family: Arial, sans-serif;
 	font-size: 16px;
-	background-color: #fff8ea;        
+	background-color: #efefef;     
+	padding: 0px;   
+
 	.container:hover,
     .container:active {
-		box-shadow: 0 14px 28px #ffcda9, 0 10px 10px #ffcda9;
+		box-shadow: 10px 10px 4px 0px rgba(0,0,0,0.13);  
 	}
     .container {
-	    max-width: 500px;
-	    margin: 2% auto;
+	    max-width: 400px;
 	    padding: 20px;
 	    border-radius: 4px;
-	    background-color: #ebebeb;
-	    box-shadow: 0 1px 3px #ffcda9, 0 1px 2px #ffcda9;
+	    background-color: #ffffff;
+		box-shadow: 5px 5px 2px 0px rgba(0, 0, 0, 0.2);
+		transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+
+		.field{
+			background-color: #c4c4c4;
+		}
         h2, .field-block {
 	        margin-bottom: 20px;
         }
@@ -27,21 +33,19 @@
 		}
 		.field-block label {
 	        margin-bottom: 8px;
-	        font-weight: bold;
+			font-size: 14px;
         }
         .field-block .field {
-	        font-size: 16px;
+	        font-size: 14px;
 	        padding: 8px 12px;
-	        line-height: 1.5;
 	        border-radius: 4px;
 	        border: 1px solid #ccc;
 	        box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
 	        transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
         }
         .field-block .field:focus {
-            border-color: #2d525b;;
+			border: solid 1px #ea856a;  
             outline: 0;
-            box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px #2d525b;;
         }
         .field-block textarea {
 	        resize: vertical;
@@ -52,13 +56,18 @@
         }
         .button  {
 	        cursor: pointer;
-	        font-size: 16px;
+	        font-size: 14px;
 	        padding: 6px 12px;
-	        margin-bottom: 5px;
+			margin-bottom: 5px;
+			width: 100%;
+			background-color: #ea856a;
+			color: #ffffff;
+			border-radius: 4px;
+			border: none;
         }
         #enter   {
 	        cursor: pointer;
-	        font-size: 16px;
+	        font-size: 14px;
 	        padding: 6px 12px;
 	        margin-bottom: 5px;
         }
@@ -68,5 +77,71 @@
 		#output{
 		width: 60%
 		}
+	}
+}
+
+.orderForm{
+	 display: flex;	
+	 flex-direction: column-reverse;
+	 background-color: #efefef; 
+	 padding: 20px;
+
+	.orderFormHeader{
+		width: 100%;
+		display: flex;
+		align-items: center;
+		text-align: right;
+		padding: 20px 0 40px 0;
+		text-transform: uppercase;
+		font-size: 50px;
+		font-weight: 700;		
+		line-height: 46px;
+		
+	}
+	.container{
+		width: 100%;
+		max-width: none;
+	}
+	.fieldFormColumns {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	.fieldFormLeftColumn {
+		width: 100%;
+	}
+	.fieldFormRightColumn {
+		width: 100%;
+		.field{
+			background-color: #ffffff;
+		}
+		option{
+	        font-size: 14px;
+			padding: 8px 12px;
+			border: solid 1px #ada9a7;
+		}
+	}
+}
+
+@media screen and (min-width: 700px) {
+	.orderForm {
+		.orderFormHeader{
+			padding: 20px 120px 20px 50px;
+			width: 50%;
+			line-height: 50px;
+		}
+		flex-direction: row;
+		.fieldFormColumns {
+			flex-direction: row;
+		}
+		.fieldFormLeftColumn {
+			width: 40%;
+		}
+		.fieldFormRightColumn {
+			width: 55%;
+		}
+	}
+	.form {
+		padding: 20px;
 	}
 }

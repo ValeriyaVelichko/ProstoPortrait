@@ -1,0 +1,50 @@
+<div class="orderForm">
+    <div class="form">
+        <div class="container">
+            <form id="orderForm">
+                <div class="fieldFormColumns">
+                    <div class="fieldFormLeftColumn">
+                        <div class="field-block">
+                            <label for="name">Имя:</label>
+                            <textarea id="nameOrd" class="field" required name="name" rows="1"></textarea>
+                        </div>     
+                        <div class="field-block">
+                            <label for="login">e-mail для обратной свзи</label>
+                            <input id="loginFieldOrd"  class="field" type="text" name="login">
+                        </div>                 
+                        <div class="field-block">
+                            <label for="comments">Дополнения к заказу:</label>
+                            <textarea id="wishOrd" class="field" required name="comments" rows="5"></textarea>
+                        </div>	
+                    </div>
+                    <div class="fieldFormRightColumn">
+                        <div class="field-block">
+                            <label for="format">Формат листа:</label>
+                            <select name="format"  id="formatOrd" class="field" required>
+                                <option>Акварель</option>
+                                <option>Графика</option>
+                                <option>Компьютерная графика</option>
+                            </select>
+                        </div>
+
+                        <div class="field-block">
+                            <label for="teh">Техника выполнения заказа:</label>
+                            <select name="teh"  id="tehOrd" class="field" required>
+                                <option>А4</option>
+                                <option>А3</option>
+                                <option>Свой вариант(в дополнениях к задаче)</option>
+                            </select>
+                        </div>
+
+                        <div class="field-block">
+                            <label for="date">Дата выполнения заказа:</label>
+                            <input name="date" id="timeOrd" required type="date" class="field" min="1920-01-01" max="2030-01-01">
+                        </div>
+                        <button id="buttonMin" class="button" type="submit">Отправить</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="orderFormHeader"><p>Сделайте заказ <span class="marker">o</span>nl<span class="marker">i</span>ne!</p></div>
+</div>

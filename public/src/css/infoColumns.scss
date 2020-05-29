@@ -1,0 +1,151 @@
+.infoBlockWrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 30px;
+    width: 100%;
+    .infoBlockItem{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+        .infoBlockImg{
+            img{
+                max-width: 200px;
+                display: block;
+                border-radius: 50%;
+            }
+        }
+        .infoBlockTxt{
+            text-align: center;
+            margin-top: 20px;
+            .infoBlockTxtHeader{
+                padding-bottom: 10px;
+                a{
+                    color: black;
+                    font-size: 16px;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                }
+            }  
+        }
+    }
+}
+
+.advBlockWrapper{
+    padding: 20px;
+.advBlockImgTxt {
+    display: flex;
+    flex-direction: column-reverse;
+    .advBlockTxt {
+        .advBlockHeader {
+            text-align: left;
+            font-size: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 0 0 30px 30px;
+        }
+        .advOne, .advTwo, .advThree{
+            position: relative;
+            padding: 0 0 20px 50px;
+        }
+        .advThree {
+            margin-bottom: 0px;
+        }
+        .advOne::before, .advTwo::before, .advThree::before{
+            position: absolute;
+            color: #272727;
+            left: 0px;
+            top: -10px;
+            font-size: 60px;
+        }
+        .advOne::before{
+            content: '1';
+        }
+        .advTwo::before{
+            content: '2';
+        }
+        .advThree::before{
+            content: '3';
+        }
+    }
+}
+.advBlockImg {
+    .advImgPhoto, .advImgTime, .advImgIdea{
+        max-width: 335px;
+        margin: 20px;
+        position: relative;
+        display: block;
+    }
+    
+    .advImgPhoto::before, .advImgTime::before, .advImgIdea::before{
+        position: absolute;
+    }
+    .advImgPhoto::before{
+        content: '';
+        position: absolute;
+        width: 2px;
+        height: 60px;
+        color: #272727;
+        left: 0;
+        top: 0;
+    }
+}
+}
+.advBlockImg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@media (min-width: 1075px) {
+    .advBlockWrapper{
+        padding: 50px 120px 70px 50px;
+        .advBlockImgTxt {
+            flex-direction: row;
+            .advBlockTxt {
+                .advBlockHeader {
+                    padding: 0 0 30px 45px;
+                }
+                .advThree {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+        .advBlockImg {
+            flex-direction: row;
+            align-items: flex-end;
+            .advImgPhoto, .advImgTime, .advImgIdea{
+                margin: 0 60px 60px 0;
+                max-width: 400px;
+            }
+        }
+    }
+}
+@media (min-width: 700px) {
+    .infoBlockWrapper {
+        justify-content: space-around;            
+        flex-direction: row;
+        align-items: baseline;
+        padding: 50px 120px 50px 30px;
+        .infoBlockItem{
+            width: 24%;
+            padding: 0px;
+            .infoBlockImg{
+                img{
+                    display: inline;
+                    border-radius: 0%;    
+                }
+            }
+            .infoBlockTxt{
+                margin: 20px;
+                margin-top: 0;
+                .infoBlockTxtHeader{
+                    padding-bottom: 0px;
+                    padding-top: 20px;
+                }
+            }
+        }
+    }
+}

@@ -15,12 +15,12 @@
   <!--form-->
   <div class="form">
     <div class="container">
-    <h2>Добавить новость</h2>
+        <h2>Добавить новость</h2>
         <form id="newsForm">
-            <img >
+            <img>
             <div class="field-block">
                 <label for="message">Изображение:</label>
-                    <input id="image"  name="picture" type="file"  />
+                <input id="image" name="picture" type="file" />
             </div>
             <div>
                 <img id="output">
@@ -45,7 +45,7 @@
         </form>
     </div>
     <div class="container">
-    <h2>Добавить новость</h2>
+        <h2>Добавить новость</h2>
         <form id="newsFormMin">
             <div class="field-block">
                 <label for="message">Заголовок:</label>
@@ -66,7 +66,22 @@
             <button id="buttonMin" class="button" type="submit">Отправить</button>
         </form>
     </div>
+    <div class="container">
+        <h2>Добавить новость</h2>
+        <form id="reviewForm">
+            <div class="field-block">
+                <label for="message">Новость:</label>
+                <textarea id="containerRew" class="field" required name="message" rows="5"></textarea>
+            </div>		
+            <div class="field-block">
+                <label for="message">Заголовок:</label>
+                <textarea id="nameRew" class="field" required name="message" rows="1"></textarea>
+            </div>
+            <button id="buttonMin" class="button" type="submit">Отправить</button>
+        </form>
+    </div>
 </div>
+
   <!--scripts-->
   
 <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>

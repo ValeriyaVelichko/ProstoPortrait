@@ -1,16 +1,29 @@
 .footer{
-    background-color:#2d5b51;
     width:100%;
-    box-shadow: inset 0 10px 20px #363535;
+    background-color:#fcd768;
+    box-shadow: inset 0px 15px 3px 0px rgba(0,0,0,0.2); 
     padding: 3%;
     .massagers_white{
         right: 10px;
         list-style:none ;
         text-decoration: none;
+        display: flex;
+        flex-direction: row;
     }
-    .vk_white,.inst_white,.fb_white {
-        margin: 10px 20px 20px 0;
-        height:52px;
-        width:52px;
+    .socialImg{
+        height: 35px;
+        width: 35px;
+        margin: 10px;
+        display: block;
     }
+}
+@media (min-width: 700px) {
+    .footer{
+        .socialImg{
+            height: 45px;
+            width: 45px;
+            margin: 20px;
+            display: block;
+        } 
+    } 
 }

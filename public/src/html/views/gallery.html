@@ -1,229 +1,26 @@
 <!DOCTYPE html>
 <html>
-                <% 
+<% 
                     var data = {
                       title: "ProstoPortrait"
                     };
                 %>
-                ${  _.template(require('./../includes/head.html'))(data) }
+${ _.template(require('./../includes/head.html'))(data) }
+
 <body>
-<!--MENU
-  <div class="headerMain">
-    <div class="menu">
-      
-       <nav>
-          <ul class="nav">
-            <li>
-  <div class="dropdown">меню
-    <img class="mainmenubtn" src= "gallery/images/menu.png">
-    <div class="dropdown-child">
-      <a href="index.html">главная</a>
-      <a href="gallery.html">галерея</a>
-      <a href="about.html">о себе</a>
-      </div>
-  </div>
-  </li>
-            <li>.ProstoPortrait.</li>
-            <li>+375 29 794 64 63 МТС</li>
-          </ul>
-        </nav>
-      
-    </div>
-  </div>
- 
-Navigation
-<div class="navigation">
-  <div class="icons">
-    <figure >
-     <a href="watercolor.html" ><img class="watercolor"src= "gallery/images/watercolor.png" > </a>
-      <figcaption>Акварель</figcaption>
-  </figure></a>
-  <figure>
-    <a href="graphic.html" ><img class="grapfic"src= "gallery/images/graphic.png"></a>
-     <figcaption>Графика</figcaption>
- </figure></a>
- <figure>
-  <a href="computerGraphic.html" ><img class="computerGrapfic"src= "gallery/images/computerGraphic.png" ></a>
-   <figcaption>Компьютерная Графика</figcaption>
-</figure></a>
-  
-  </div>
+    <!--menu-->
+    ${require('./../includes/menu.html')}
+    <!--navigation-->
+    ${require('./../includes/navigation.html')}
+    <!--content-->
+    ${require('./../includes/content.html')}    
+    <!--OrderForm-->
+    ${require('./../includes/orderForm.html')}
+    <!--footer-->
+    ${require('./../includes/footer.html')}
+    <!--scripts-->
+    ${require('./../includes/scripts/scripts.html')}    
 
-</div>
-
-Content
-<div class="content">
-
-Gallery
-<div class="container">
-        
- <h1>Gallery</h1>
-  <div id="gallery">
-
-      <figure class="photo">
-          <a href="gallery/images/watercolor/galleryImage1.jpg" data-lightbox="roadtrip"><img src="gallery/images/watercolor/galleryImage1.jpg" ></a>
-          
-      </figure>
-
-      <figure class="photo">
-          <a href="gallery/images/watercolor/galleryImage2.jpg" data-lightbox="roadtrip"><img src="gallery/images/watercolor/galleryImage2.jpg" ></a>
- 
-      </figure>
-
-      <figure class="photo">
-          <a href="gallery/images/watercolor/galleryImage3.jpg" data-lightbox="roadtrip"><img src="gallery/images/watercolor/galleryImage3.jpg" ></a>
-         
-      </figure>
-
-      <figure class="photo">
-          <a href="gallery/images/watercolor/galleryImage4.jpg" data-lightbox="roadtrip"><img src="gallery/images/watercolor/galleryImage4.jpg" ></a>
-      
-      </figure>
-
-      <figure class="photo">
-          <a href="gallery/images/watercolor/galleryImage5.jpg"data-lightbox="roadtrip"><img src="gallery/images/watercolor/galleryImage5.jpg" ></a>
-       
-      </figure>
-
-      <figure class="photo">
-          <a href="gallery/images/watercolor/galleryImage6.jpg" data-lightbox="roadtrip"><img src="gallery/images/watercolor/galleryImage6.jpg" ></a>
- 
-      </figure>
-
-      <figure class="photo">
-          <a href="gallery/images/watercolor/galleryImage7.jpg" data-lightbox="roadtrip"><img src="gallery/images/watercolor/galleryImage7.jpg" ></a>
-    
-      </figure>
-
-      <figure class="photo">
-          <a href="gallery/images/watercolor/galleryImage8.jpg" data-lightbox="roadtrip"><img src="gallery/images/watercolor/galleryImage8.jpg" ></a>
-          
-      </figure>
-
-      <figure class="photo">
-          <a href="gallery/images/watercolor/galleryImage9.jpg" data-lightbox="roadtrip"><img src="gallery/images/watercolor/galleryImage9.jpg" ></a>
-          
-      </figure>
-      <figure class="photo">
-        <a href="gallery/images/graphic/galleryImage1.jpg" data-lightbox="roadtrip"><img src="gallery/images/graphic/galleryImage1.jpg" ></a>
-        
-    </figure>
-
-    <figure class="photo">
-        <a href="gallery/images/graphic/galleryImage2.jpg" data-lightbox="roadtrip"><img src="gallery/images/graphic/galleryImage2.jpg" ></a>
-
-    </figure>
-
-
-    <figure class="photo">
-        <a href="gallery/images/graphic/galleryImage4.jpg" data-lightbox="roadtrip"><img src="gallery/images/graphic/galleryImage4.jpg" ></a>
-    
-    </figure>
-
-    <figure class="photo">
-        <a href="gallery/images/graphic/galleryImage3.jpg"data-lightbox="roadtrip"><img src="gallery/images/graphic/galleryImage3.jpg" ></a>
-     
-    </figure>
-
-    <figure class="photo">
-        <a href="gallery/images/graphic/galleryImage1.jpg" data-lightbox="roadtrip"><img src="gallery/images/graphic/galleryImage1.jpg" ></a>
-
-    </figure>
-
-    <figure class="photo">
-        <a href="gallery/images/graphic/galleryImage2.jpg" data-lightbox="roadtrip"><img src="gallery/images/graphic/galleryImage2.jpg" ></a>
-  
-    </figure>
-
-    <figure class="photo">
-        <a href="gallery/images/graphic/galleryImage4.jpg" data-lightbox="roadtrip"><img src="gallery/images/graphic/galleryImage4.jpg" ></a>
-        
-    </figure>
-
-    <figure class="photo">
-        <a href="gallery/images/graphic/galleryImage3.jpg" data-lightbox="roadtrip"><img src="gallery/images/graphic/galleryImage3.jpg" ></a>
-        
-    </figure>
-    <figure class="photo">
-        <a href="gallery/images/graphic/galleryImage1.jpg" data-lightbox="roadtrip"><img src="gallery/images/graphic/galleryImage1.jpg" ></a>
-        
-    </figure>
-    <figure class="photo">
-      <a href="gallery/images/computerGraphic/galleryImage1.jpg" data-lightbox="roadtrip"><img src="gallery/images/computerGraphic/galleryImage1.jpg" ></a>
-      
-  </figure>
-
-  <figure class="photo">
-      <a href="gallery/images/computerGraphic/galleryImage2.jpg" data-lightbox="roadtrip"><img src="gallery/images/computerGraphic/galleryImage2.jpg" ></a>
-
-  </figure>
-
-  <figure class="photo">
-      <a href="Galeria/IMGGaleriComputerGraphic/galleryImage3.jpg" data-lightbox="roadtrip"><img src="gallery/images/computerGraphic/galleryImage3.jpg" ></a>
-     
-  </figure>
-
-  <figure class="photo">
-      <a href="gallery/images/computerGraphic/galleryImage4.jpg" data-lightbox="roadtrip"><img src="gallery/images/computerGraphic/galleryImage4.jpg" ></a>
-  
-  </figure>
-
-  <figure class="photo">
-      <a href="gallery/images/computerGraphic/galleryImage5.jpg"data-lightbox="roadtrip"><img src="gallery/images/computerGraphic/galleryImage5.jpg" ></a>
-   
-  </figure>
-
-  <figure class="photo">
-      <a href="gallery/images/computerGraphic/galleryImage6.jpg" data-lightbox="roadtrip"><img src="gallery/images/computerGraphic/galleryImage6.jpg" ></a>
-
-  </figure>
-
-  <figure class="photo">
-      <a href="gallery/images/computerGraphic/galleryImage7.jpg" data-lightbox="roadtrip"><img src="gallery/images/computerGraphic/galleryImage7.jpg" ></a>
-
-  </figure>
-
-  <figure class="photo">
-      <a href="gallery/images/computerGraphic/galleryImage8.jpg" data-lightbox="roadtrip"><img src="gallery/images/computerGraphic/galleryImage8.jpg" ></a>
-      
-  </figure>
-
-  <figure class="photo">
-      <a href="gallery/images/computerGraphic/galleryImage9.jpg" data-lightbox="roadtrip"><img src="gallery/images/computerGraphic/galleryImage9.jpg" ></a>
-      
-  </figure>
-
-  </div>
-<p>.</p>
-</div>
-</div>
-
-Footer
-<div class="footer">
-  <ul class="massagers_white">
-    <a href= "https://vk.com/v.vyalichka">
-        <tr><img class="vk_white" src="MAIN/images/vk.png" alt=""></tr>
-      </a>
-      <a href= "https://www.instagram.com/vyalichka/">
-        <tr><img class="inst_white" src="MAIN/images/inst.png" alt=""></tr>
-      </a>
-      <a href= "https://www.facebook.com/v.vyalichka">
-        <tr><img class="fb_white" src="MAIN/images/fb.png" alt=""></tr>
-      </a>
-  </ul>
-</div>
-
-<script src="gallery/js/header.js"></script>
-<script src="gallery/js/lightbox-plus-jquery.min.js"></script>-->
- <!--menu-->
- ${require('./../includes/menu.html')}
- <!--navigation-->
- ${require('./../includes/navigation.html')}
- <!--content-->
- ${require('./../includes/content.html')}
- <!--footer-->
- ${require('./../includes/footer.html')}
- <!--scripts-->
- ${require('./../includes/scripts/scripts.html')}
 </body>
+
 </html>
